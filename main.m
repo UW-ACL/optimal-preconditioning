@@ -29,13 +29,13 @@ cots_solver_status(flag_ill)
 x_opt_ill = sol_ill{1};
 solve_time_ill = 1000 * diagnostics_ill.solvertime;
 
-position_error_well = norm(x_opt_well(1:2, end) - p.x_target(1:2), 2);
+position_error_well = 100 * norm(x_opt_well(1:2, end) - p.x_target(1:2), 2) / norm(p.x_target(1:2), 2);
 velocity_error_well = norm(x_opt_well(3:4, end) - p.x_target(3:4), 2);
 attributes_well = [position_error_well; velocity_error_well; solve_time_well];
-position_error_ill = norm(x_opt_ill(1:2, end) - p.x_target(1:2), 2);
+position_error_ill = 100 * norm(x_opt_ill(1:2, end) - p.x_target(1:2), 2) / norm(p.x_target(1:2), 2);
 velocity_error_ill = norm(x_opt_ill(3:4, end) - p.x_target(3:4), 2);
 attributes_ill = [position_error_ill; velocity_error_ill; solve_time_ill];
-table(attributes_well, attributes_ill, 'VariableNames', {'Case: Well-Conditioned', 'Case: Ill-Conditioned'}, 'RowNames', {'Terminal Position Tracking Error', 'Terminal Velocity Tracking Error', 'Solve Time [ms]'})
+table(attributes_well, attributes_ill, 'VariableNames', {'Case: Well-Conditioned', 'Case: Ill-Conditioned'}, 'RowNames', {'Terminal Position Tracking Error (%)', 'Terminal Velocity Tracking Error (abs)', 'Solve Time [ms]'})
 
 setfig;
 
