@@ -1,6 +1,6 @@
-function p = params(conditioning_type)
+function p = params()
 %PARAMS
-%   P = PARAMS(CONDITIONING_TYPE)
+%   P = PARAMS()
 %
 % Problem parameters.
 
@@ -15,14 +15,6 @@ p.rho = 1;
 p.v_max = 0.25;
 p.Q = diag([1, 0.5, 1, 0.5]);
 p.R = diag([1, 0.5]);
-
-if strcmp(conditioning_type, 'well')
-    p.Qf = p.Q;
-elseif strcmp(conditioning_type, 'ill')
-    p.Qf = 10000 * p.Q;
-else
-    error(" Invalid conditioning type. The allowed types are 'well' and 'ill'.");
-end
 
 x_target = [2.9, 0.3, 0, 0].';
 x_ref = zeros(4, p.N);
