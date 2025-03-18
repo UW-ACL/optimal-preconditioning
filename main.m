@@ -16,12 +16,13 @@ addpath(solvers_path);
 addpath(utils_path);
 
 p = params();
+s = solver_settings();
 Qf_scale_well = 1;
-Qf_scale_ill = 10000;
+Qf_scale_ill = 1000;
 
 %% COTS
 
-cots_solver = cots_solver_compiler('ecos', p);
+cots_solver = cots_solver_compiler('osqp', p, s);
 
 [sol_well, flag_well, ~, ~, ~, diagnostics_well] = cots_solver(sqrt(Qf_scale_well));
 cots_solver_status(flag_well)
@@ -46,7 +47,6 @@ table(table_cots, 'VariableNames', {'..:: COTS Solver ::..'})
 
 [A, B] = dt_dynamics(p.dt);
 E = -eye(p.nx);
-s = pipg_settings();
 
 [P, q, H, h] = canonicalize_pipg(p.Q, p.R, Qf_scale_well * p.Q, E, A, B, p);
 tic;

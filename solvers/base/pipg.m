@@ -21,7 +21,7 @@ else
 end
 
 if isnan(w_bar)
-    eta = [zeros(nx*(N-1), 1); zeros(N, 1)];
+    eta = [zeros(nx*(N-1), 1); zeros(N, 1); zeros(4*N, 1); zeros(4*(N-1), 1)];
 else
     eta = w_bar;
 end
