@@ -8,6 +8,8 @@ p = struct;
 
 p.N = 50;
 p.dt = 0.5;
+p.nx = 4;
+p.nu = 2;
 p.x_init = [-2.5, 0.6, 0, 0].';
 p.u_max = 0.1;
 p.theta = 0.063;

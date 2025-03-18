@@ -6,8 +6,7 @@ function [Ad, Bd] = dt_dynamics(dt)
     
 [Ac, Bc] = ct_dynamics();
 
-nx = size(Ac, 1);
-nu = size(Bc, 2);
+[nx, nu] = size(Bc);
 
 Mc = [Ac, Bc; zeros(nu, nx+nu)];
 M = expm(Mc * dt);
