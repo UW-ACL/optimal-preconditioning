@@ -1,7 +1,8 @@
 % Test modified Ruiz equilibration
 
-preconditioners_path = genpath('preconditioners');
-addpath(preconditioners_path);
+clc
+clear
+close all
 
 tol = 1e-8;
 
@@ -38,5 +39,3 @@ assert(norm(q_ruiz - c * D * q, 'fro') <= tol);
 assert(norm(H_ruiz - E * H * D, 'fro') <= tol);
 assert(norm(h_ruiz - E * h, 'fro') <= tol);
 fprintf('\n Test passed.\n\n');
-
-rmpath(preconditioners_path);
