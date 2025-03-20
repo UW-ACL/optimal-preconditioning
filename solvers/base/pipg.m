@@ -1,6 +1,6 @@
-function [z_opt, w_opt, k] = pipg(z_bar, w_bar, P, q, H, h, p, s)
+function [z_opt, w_opt, k] = pipg(z_bar, w_bar, P, q, H, h, c, D, E, p, s)
 %PIPG
-%   [Z_OPT, W_OPT, K] = PIPG(Z_BAR, W_BAR, P, Q, H, H, P, S)
+%   [Z_OPT, W_OPT, K] = PIPG(Z_BAR, W_BAR, P, q, H, h, c, D, E, P, S)
 %
 % The proportional-integral projected gradient method.
 
@@ -26,6 +26,20 @@ else
     eta = w_bar;
 end
 
+if isnan(c)
+    c = 1;
+end
+
+if isnan(D)
+    D = speye(length(zeta));
+end
+
+if isnan(E)
+    E = speye(length(eta));
+end
+
+x_init = D(1:nx, 1:nx) \ p.x_init;
+
 HT = H.';
 
 sigs = svds(H*HT);
@@ -43,19 +57,25 @@ for k = 1:max_iters
     zkm1 = z;
     wkm1 = w;
     
-    z = proj_D(zeta - alf * (P * zeta + q + HT * eta), p);
+    z = zeta - alf * (P * zeta + q + HT * eta);
+    z(1:nx) = x_init;
     w = proj_K_polar(eta + bet * (H * (2*z - zeta) - h), p);
     zeta = (1 - rho_extrap) * zeta + rho_extrap * z;
     eta = (1 - rho_extrap) * eta + rho_extrap * w;
 
-    if norm(z - zkm1, 'inf') <= eps_abs + eps_rel * max(norm(z, 'inf'), norm(zkm1, 'inf')) ...
-        && norm(w - wkm1, 'inf') <= eps_abs + eps_rel * max(norm(w, 'inf'), norm(wkm1, 'inf'))
+    z_unscaled = D * z;
+    zkm1_unscaled = D * zkm1;
+    w_unscaled = (1 / c) * E * w;
+    wkm1_unscaled = (1 / c) * E * wkm1;
+
+    if norm(z_unscaled - zkm1_unscaled, 'inf') <= eps_abs + eps_rel * max(norm(z_unscaled, 'inf'), norm(zkm1_unscaled, 'inf')) ...
+        && norm(w_unscaled - wkm1_unscaled, 'inf') <= eps_abs + eps_rel * max(norm(w_unscaled, 'inf'), norm(wkm1_unscaled, 'inf'))
         break;
     end
 
 end
 
-z_opt = z;
-w_opt = w;
+z_opt = z_unscaled;
+w_opt = wkm1_unscaled;
 
 end
