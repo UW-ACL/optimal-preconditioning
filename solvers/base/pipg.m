@@ -7,8 +7,10 @@ function [z_opt, w_opt, k] = pipg(z_bar, w_bar, P, q, H, h, c, D, E, p, s)
 omg = s.omg;
 rho_extrap = s.rho_extrap;
 max_iters = s.max_iters;
-eps_abs = s.eps_abs;
-eps_rel = s.eps_rel;
+eps_abs_pipg = s.eps_abs_pipg;
+eps_rel_pipg = s.eps_rel_pipg;
+check_every = s.check_every;
+termination = s.termination;
 
 N = p.N;
 nx = p.nx;
@@ -39,11 +41,12 @@ if isnan(E)
 end
 
 x_init = D(1:nx, 1:nx) \ p.x_init;
+zeta = D \ zeta;
 
 HT = H.';
 
-sigs = svds(H*HT);
-sig_max = max(sigs);
+sqrt_sig_max = svds(H, 1, 'largest');
+sig_max = sqrt_sig_max^2;
 lam = max(diag(P));
 
 alf = 2 / (lam + sqrt(lam^2 + 4 * omg^2 * sig_max));
@@ -63,19 +66,30 @@ for k = 1:max_iters
     zeta = (1 - rho_extrap) * zeta + rho_extrap * z;
     eta = (1 - rho_extrap) * eta + rho_extrap * w;
 
-    z_unscaled = D * z;
-    zkm1_unscaled = D * zkm1;
-    w_unscaled = (1 / c) * E * w;
-    wkm1_unscaled = (1 / c) * E * wkm1;
+    if mod(k, check_every) == 0
 
-    if norm(z_unscaled - zkm1_unscaled, 'inf') <= eps_abs + eps_rel * max(norm(z_unscaled, 'inf'), norm(zkm1_unscaled, 'inf')) ...
-        && norm(w_unscaled - wkm1_unscaled, 'inf') <= eps_abs + eps_rel * max(norm(w_unscaled, 'inf'), norm(wkm1_unscaled, 'inf'))
-        break;
+        if strcmp(termination, 'unscaled')
+            z_check = D * z;
+            zkm1_check = D * zkm1;
+            w_check = (1 / c) * E * w;
+            wkm1_check = (1 / c) * E * wkm1;
+        elseif strcmp(termination, 'scaled')
+            z_check = z;
+            zkm1_check = zkm1;
+            w_check = w;
+            wkm1_check = wkm1;
+        end
+    
+        if norm(z_check - zkm1_check, 'inf') <= eps_abs_pipg + eps_rel_pipg * max(norm(z_check, 'inf'), norm(zkm1_check, 'inf')) ...
+            && norm(w_check - wkm1_check, 'inf') <= eps_abs_pipg + eps_rel_pipg * max(norm(w_check, 'inf'), norm(wkm1_check, 'inf'))
+            break;
+        end
+
     end
 
 end
 
-z_opt = z_unscaled;
-w_opt = wkm1_unscaled;
+z_opt = D * z;
+w_opt = (1 / c) * E * w;
 
 end

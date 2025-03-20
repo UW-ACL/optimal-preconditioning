@@ -5,8 +5,8 @@ function cots_solver = cots_solver_compiler(solver_name, p, s)
 % Compile a commercial off-the-shelf convex optimization solver (via
 % YALMIP) for the optimal control problem.
 
-eps_abs = s.eps_abs;
-eps_rel = s.eps_rel;
+eps_abs_cots = s.eps_abs_cots;
+eps_rel_cots = s.eps_rel_cots;
 
 N = p.N;
 dt = p.dt;
@@ -62,9 +62,9 @@ constraints = [constraints; sqrt_Qf_x_err_N == sqrt_Qf_scale * sqrt(Q) * x_err_N
 objective = objective + 0.5 * (sqrt_Qf_x_err_N.' * sqrt_Qf_x_err_N);
 
 if strcmp(solver_name, 'ecos')
-    solver_options = sdpsettings('solver', solver_name, 'verbose', 0, 'ecos.abstol', eps_abs, 'ecos.reltol', eps_rel);
+    solver_options = sdpsettings('solver', solver_name, 'verbose', 0, 'ecos.abstol', eps_abs_cots, 'ecos.reltol', eps_rel_cots);
 elseif strcmp(solver_name, 'osqp')
-    solver_options = sdpsettings('solver', solver_name, 'verbose', 0, 'osqp.eps_abs', eps_abs, 'osqp.eps_rel', eps_rel);
+    solver_options = sdpsettings('solver', solver_name, 'verbose', 0, 'osqp.eps_abs', eps_abs_cots, 'osqp.eps_rel', eps_rel_cots);
 else
     error(" Use `ECOS` or `OSQP`.");
 end
