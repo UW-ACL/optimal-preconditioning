@@ -24,9 +24,6 @@ Qf_scale_well = 1;
 Qf_scale_ill = 1000;
 plot_flag = true;
 
-[A, B] = dt_dynamics(p.dt);
-C = -eye(p.nx);
-
 %% COTS
 
 cots_solver = cots_solver_compiler('osqp', p, s);
@@ -53,6 +50,8 @@ disp(table(table_cots, 'VariableNames', {'..:: COTS Solver ::..'}))
 
 %% Canonicalize Problem
 
+[A, B] = dt_dynamics(p.dt);
+C = -eye(p.nx);
 [P_well, q_well, H_well, h_well] = canonicalize_pipg(p.Q, p.R, Qf_scale_well * p.Q, C, A, B, p);
 [P_ill, q_ill, H_ill, h_ill] = canonicalize_pipg(p.Q, p.R, Qf_scale_ill * p.Q, C, A, B, p);
 
