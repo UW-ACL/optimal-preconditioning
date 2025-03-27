@@ -1,6 +1,6 @@
-function [z_opt, w_opt, k] = pipg(z_bar, w_bar, P, q, H, h, c, D, E, p, s)
+function [z_opt, w_opt, k] = pipg(z_bar, w_bar, P, q, H, h, c, D, E, ground_truth, p, s)
 %PIPG
-%   [Z_OPT, W_OPT, K] = PIPG(Z_BAR, W_BAR, P, q, H, h, c, D, E, P, S)
+%   [Z_OPT, W_OPT, K] = PIPG(Z_BAR, W_BAR, P, q, H, h, c, D, E, GROUND_TRUTH, P, S)
 %
 % The proportional-integral projected gradient method.
 
@@ -9,6 +9,7 @@ rho_extrap = s.rho_extrap;
 max_iters = s.max_iters;
 eps_abs_pipg = s.eps_abs_pipg;
 eps_rel_pipg = s.eps_rel_pipg;
+percent_rel_err = s.percent_rel_err;
 check_every = s.check_every;
 termination = s.termination;
 
@@ -23,7 +24,7 @@ else
 end
 
 if isnan(w_bar)
-    eta = [zeros(nx*(N-1), 1); zeros(N, 1); zeros(4*N, 1); zeros(4*(N-1), 1)];
+    eta = [zeros(nx*(N-1), 1); zeros(N, 1)];
 else
     eta = w_bar;
 end
@@ -40,7 +41,6 @@ if isnan(E)
     E = speye(length(eta));
 end
 
-x_init = D(1:nx, 1:nx) \ p.x_init;
 zeta = D \ zeta;
 
 HT = H.';
@@ -61,7 +61,7 @@ for k = 1:max_iters
     wkm1 = w;
     
     z = zeta - alf * (P * zeta + q + HT * eta);
-    z(1:nx) = x_init;
+    z = D \ proj_D(D * z, p);
     w = proj_K_polar(eta + bet * (H * (2*z - zeta) - h), p);
     zeta = (1 - rho_extrap) * zeta + rho_extrap * z;
     eta = (1 - rho_extrap) * eta + rho_extrap * w;
@@ -78,11 +78,19 @@ for k = 1:max_iters
             zkm1_check = zkm1;
             w_check = w;
             wkm1_check = wkm1;
+        elseif strcmp(termination, 'ground_truth')
+            z_check = D * z;
         end
-    
-        if norm(z_check - zkm1_check, 'inf') <= eps_abs_pipg + eps_rel_pipg * max(norm(z_check, 'inf'), norm(zkm1_check, 'inf')) ...
-            && norm(w_check - wkm1_check, 'inf') <= eps_abs_pipg + eps_rel_pipg * max(norm(w_check, 'inf'), norm(wkm1_check, 'inf'))
-            break;
+
+        if strcmp(termination, 'ground_truth')
+            if 100 * norm(z_check - ground_truth, 'inf') / norm(ground_truth, 'inf') <= percent_rel_err
+                break;
+            end
+        else    
+            if norm(z_check - zkm1_check, 'inf') <= eps_abs_pipg + eps_rel_pipg * max(norm(z_check, 'inf'), norm(zkm1_check, 'inf')) ...
+                && norm(w_check - wkm1_check, 'inf') <= eps_abs_pipg + eps_rel_pipg * max(norm(w_check, 'inf'), norm(wkm1_check, 'inf'))
+                break;
+            end
         end
 
     end

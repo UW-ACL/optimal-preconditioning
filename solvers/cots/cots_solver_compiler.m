@@ -38,14 +38,17 @@ for k = 1:N-1
     constraints = [constraints; x(:, k+1) == Ad * x(:, k) + Bd * u(:, k)];
 end
 
-for k = 1:N-1
-    constraints = [constraints; norm(u(:, k), 'inf') <= u_max];
+for k = 1:N
+    n_k = [cos(theta * k); -sin(theta * k)];
+    constraints = [constraints; n_k.' * x(1:2, k) <= -rho];
 end
 
 for k = 2:N
-    n_k = [cos(theta * k); -sin(theta * k)];
-    constraints = [constraints; n_k.' * x(1:2, k) <= -rho];
     constraints = [constraints; norm(x(3:4, k), 'inf') <= v_max];
+end
+
+for k = 1:N-1
+    constraints = [constraints; norm(u(:, k), 'inf') <= u_max];
 end
 
 objective = 0.0;
@@ -65,8 +68,14 @@ if strcmp(solver_name, 'ecos')
     solver_options = sdpsettings('solver', solver_name, 'verbose', 0, 'ecos.abstol', eps_abs_cots, 'ecos.reltol', eps_rel_cots);
 elseif strcmp(solver_name, 'osqp')
     solver_options = sdpsettings('solver', solver_name, 'verbose', 0, 'osqp.eps_abs', eps_abs_cots, 'osqp.eps_rel', eps_rel_cots);
+elseif strcmp(solver_name, 'gurobi')
+    warning(" `eps_abs_cots` and `eps_rel_cots` will not be used for Gurobi.")
+    solver_options = sdpsettings('solver', solver_name, 'verbose', 0);
+elseif strcmp(solver_name, 'mosek')
+    warning(" `eps_abs_cots` and `eps_rel_cots` will not be used for Mosek.")
+    solver_options = sdpsettings('solver', solver_name, 'verbose', 0);
 else
-    error(" Use `ECOS` or `OSQP`.");
+    error(" Use ECOS, OSQP, Gurobi, or Mosek.");
 end
 
 cots_solver = optimizer(constraints, objective, solver_options, {sqrt_Qf_scale}, {x, u});
