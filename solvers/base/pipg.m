@@ -45,8 +45,7 @@ zeta = D \ zeta;
 
 HT = H.';
 
-sqrt_sig_max = svds(H, 1, 'largest');
-sig_max = sqrt_sig_max^2;
+[sig_max, ~] = power_iteration(NaN, H, s);
 lam = max(diag(P));
 
 alf = 2 / (lam + sqrt(lam^2 + 4 * omg^2 * sig_max));

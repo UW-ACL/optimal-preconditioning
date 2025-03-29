@@ -18,4 +18,9 @@ s.max_iters = 1e5;
 s.termination = 'ground_truth'; % 'unscaled', 'scaled'
 s.check_every = 1;
 
+s.eps_abs_power = 1e-5;
+s.eps_rel_power = 1e-5;
+s.eps_buff_power = 1e-3;
+s.max_iters_power = 200;
+
 end
