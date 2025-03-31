@@ -1,8 +1,10 @@
-function [z_opt, w_opt, k] = pipg(z_bar, w_bar, P, q, H, h, c, D, E, sigma_max, ground_truth, p, s)
+function [z_opt, w_opt, k, pipg_time] = pipg(z_bar, w_bar, P, q, H, h, c, D, E, sigma_max, ground_truth, p, s)
 %PIPG
-%   [Z_OPT, W_OPT, K] = PIPG(Z_BAR, W_BAR, P, q, H, h, c, D, E, SIGMA_MAX, GROUND_TRUTH, P, S)
+%   [Z_OPT, W_OPT, K, PIPG_TIME] = PIPG(Z_BAR, W_BAR, P, q, H, h, c, D, E, SIGMA_MAX, GROUND_TRUTH, P, S)
 %
 % The proportional-integral projected gradient method.
+
+tic;
 
 omg = s.omg;
 rho_extrap = s.rho_extrap;
@@ -104,5 +106,7 @@ end
 
 z_opt = D * z;
 w_opt = (1 / c) * E * w;
+
+pipg_time = 1000 * toc;
 
 end

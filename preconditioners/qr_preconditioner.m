@@ -1,12 +1,14 @@
-function [P_qr, q_qr, H_qr, h_qr, c, D, E] = qr_preconditioner(P, q, H, h)
+function [P_qr, q_qr, H_qr, h_qr, c, D, E, qr_time] = qr_preconditioner(P, q, H, h)
 %QR_PRECONDITIONER
-%   [P_QR, q_QR, H_QR, h_QR, c, D, E] = QR_PRECONDITIONER(P, q, H, h)
+%   [P_QR, q_QR, H_QR, h_QR, c, D, E, QR_TIME] = QR_PRECONDITIONER(P, q, H, h)
 %
 % Reference:
 %
 % Chari et al., Constraint preconditioning and parameter selection for a
 % first-order primal-dual method applied to model predictive control, CDC
 % 2024.
+
+tic;
 
 [m, n] = size(H);
 
@@ -19,11 +21,13 @@ eta = sqrt(lam_max * lam_min + lam_min^2);
 
 P_qr = P;
 q_qr = q;
-H_qr = full(eta * Q_qr.');
+H_qr = eta * Q_qr.';
 h_qr = eta * (R_qr.' \ h);
 
 c = 1;
 D = speye(n);
 E = eta * R_qr.' \ speye(m);
+
+qr_time = 1000 * toc;
 
 end

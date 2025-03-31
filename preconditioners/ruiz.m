@@ -1,8 +1,10 @@
-function [P_ruiz, q_ruiz, H_ruiz, h_ruiz, c, D, E, ruiz_iters] = ruiz(P, q, H, h, ps)
+function [P_ruiz, q_ruiz, H_ruiz, h_ruiz, c, D, E, ruiz_iters, ruiz_time] = ruiz(P, q, H, h, ps)
 %RUIZ
-%   [P_RUIZ, q_RUIZ, H_RUIZ, h_RUIZ, c, D, E, RUIZ_ITERS] = RUIZ(P, q, H, h, PS)
+%   [P_RUIZ, q_RUIZ, H_RUIZ, h_RUIZ, c, D, E, RUIZ_ITERS, RUIZ_TIME] = RUIZ(P, q, H, h, PS)
 %
 % Modified Ruiz equilibration [Algorithm 2, Stellato et al. (OSQP)]
+
+tic;
 
 p_norm = ps.p_norm;
 max_iters_ruiz = ps.max_iters_ruiz;
@@ -58,5 +60,7 @@ end
 
 D = S(1:n, 1:n);
 E = S(n+1:end, n+1:end);
+
+ruiz_time = 1000 * toc;
 
 end

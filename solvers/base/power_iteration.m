@@ -1,6 +1,8 @@
-function [sigma_max, k] = power_iteration(w, H, s)
+function [sigma_max, k, power_iteration_time] = power_iteration(w, H, s)
 %POWER_ITERATION
-%   [SIGMA_MAX, K] = POWER_ITERATION(W, H, S)
+%   [SIGMA_MAX, K, POWER_ITERATION_TIME] = POWER_ITERATION(W, H, S)
+
+tic;
 
 eps_abs_power = s.eps_abs_power;
 eps_rel_power = s.eps_rel_power;
@@ -30,5 +32,7 @@ for k = 1:max_iters_power
 end
 
 sigma_max = (1 + eps_buff_power) * sigma;
+
+power_iteration_time = 1000 * toc;
 
 end
