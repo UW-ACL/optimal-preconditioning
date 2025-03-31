@@ -1,6 +1,6 @@
-function [sigma_min, k, shifted_power_iteration_time] = shifted_power_iteration(w, sigma_max, H, ps)
+function [sigma_min, k, shifted_power_iteration_time] = shifted_power_iteration(sigma_max, H, ps)
 %SHIFTED_POWER_ITERATION
-%   [SIGMA_MIN, K, SHIFTED_POWER_ITERATION_TIME] = SHIFTED_POWER_ITERATION(W, SIGMA_MAX, H, PS)
+%   [SIGMA_MIN, K, SHIFTED_POWER_ITERATION_TIME] = SHIFTED_POWER_ITERATION(SIGMA_MAX, H, PS)
 
 tic;
 
@@ -11,10 +11,8 @@ max_iters_shifted_power = ps.max_iters_shifted_power;
 
 HT = H.';
 
-if isnan(w)
-    m = size(H, 1);
-    w = ones(m, 1) / sqrt(m);
-end
+m = size(H, 1);
+w = ones(m, 1) / sqrt(m);
 
 sigma = norm(w, 2);
 

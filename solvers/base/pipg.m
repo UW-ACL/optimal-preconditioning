@@ -1,6 +1,6 @@
-function [z_opt, w_opt, k, pipg_time] = pipg(z_bar, w_bar, P, q, H, h, c, D, E, sigma_max, ground_truth, p, s)
+function [z_opt, w_opt, k, pipg_time] = pipg(P, q, H, h, c, D, E, sigma_max, ground_truth, p, s)
 %PIPG
-%   [Z_OPT, W_OPT, K, PIPG_TIME] = PIPG(Z_BAR, W_BAR, P, q, H, h, c, D, E, SIGMA_MAX, GROUND_TRUTH, P, S)
+%   [Z_OPT, W_OPT, K, PIPG_TIME] = PIPG(P, q, H, h, c, D, E, SIGMA_MAX, GROUND_TRUTH, P, S)
 %
 % The proportional-integral projected gradient method.
 
@@ -19,36 +19,17 @@ N = p.N;
 nx = p.nx;
 nu = p.nu;
 
-if isnan(z_bar)
-    zeta = [p.x_ref(:); zeros(nu*(N-1), 1)];
-else
-    zeta = z_bar;
-end
-
-if isnan(w_bar)
-    eta = zeros(nx*(N-1), 1);
-else
-    eta = w_bar;
-end
-
-if isnan(c)
-    c = 1;
-end
+zeta = [p.x_ref(:); zeros(nu*(N-1), 1)];
+eta = zeros(nx*(N-1), 1);
 
 nz = length(zeta);
+nw = length(eta);
 
-if isnan(D)
-    D = speye(nz);
-    D_inv = D;
-else
-    diag_elems = diag(D);
-    diag_elems_inv = 1 ./ diag_elems;
-    D_inv = sparse(1:nz, 1:nz, diag_elems_inv, nz, nz);
-end
+diag_elems = diag(D);
+diag_elems_inv = 1 ./ diag_elems;
+D_inv = sparse(1:nz, 1:nz, diag_elems_inv, nz, nz);
 
-if isnan(E)
-    E = speye(length(eta));
-end
+E = speye(nw);
 
 zeta = D_inv * zeta;
 

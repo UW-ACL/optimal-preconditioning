@@ -47,11 +47,15 @@ disp(table(table_cots, 'VariableNames', {'..:: COTS Solver (Ground Truth) ::..'}
 [A, B] = dt_dynamics(p.dt);
 C = -eye(p.nx);
 [P, q, H, h] = canonicalize_pipg(p.Q, p.R, Qf_scale * p.Q, C, A, B, p);
+[m, n] = size(H);
+c = 1;
+D = speye(n);
+E = speye(m);
 
 %% PIPG
 
-[sigma_max, ~, power_iteration_time] = power_iteration(NaN, H, s);
-[z, w, iters, pipg_time] = pipg(NaN, NaN, P, q, H, h, NaN, NaN, NaN, sigma_max, ground_truth, p, s);
+[sigma_max, ~, power_iteration_time] = power_iteration(H, s);
+[z, w, iters, pipg_time] = pipg(P, q, H, h, c, D, E, sigma_max, ground_truth, p, s);
 solve_time_pipg = power_iteration_time + pipg_time;
 kkt_cond = cond_kkt(P, H);
 x_pipg_vec = z(1:p.nx*p.N);
@@ -67,8 +71,8 @@ disp(table(table_pipg, 'VariableNames', {'..:: PIPG ::..'}))
 %% PIPG with Modified Ruiz Equilibration
 
 [P_ruiz, q_ruiz, H_ruiz, h_ruiz, c_ruiz, D_ruiz, E_ruiz, ruiz_iters, ruiz_time] = ruiz(P, q, H, h, ps);
-[sigma_max_ruiz, ~, power_iteration_time_ruiz] = power_iteration(NaN, H_ruiz, s);
-[z_ruiz, w_ruiz, iters_ruiz, pipg_time_ruiz] = pipg(NaN, NaN, P_ruiz, q_ruiz, H_ruiz, h_ruiz, c_ruiz, D_ruiz, E_ruiz, sigma_max_ruiz, ground_truth, p, s);
+[sigma_max_ruiz, ~, power_iteration_time_ruiz] = power_iteration(H_ruiz, s);
+[z_ruiz, w_ruiz, iters_ruiz, pipg_time_ruiz] = pipg(P_ruiz, q_ruiz, H_ruiz, h_ruiz, c_ruiz, D_ruiz, E_ruiz, sigma_max_ruiz, ground_truth, p, s);
 solve_time_pipg_ruiz = ruiz_time + power_iteration_time_ruiz + pipg_time_ruiz;
 kkt_cond_ruiz = cond_kkt(P_ruiz, H_ruiz);
 x_pipg_vec_ruiz = z_ruiz(1:p.nx*p.N);
@@ -84,8 +88,8 @@ disp(table(table_pipg_ruiz, 'VariableNames', {'..:: PIPG + Modified Ruiz Equilib
 %% PIPG with QR Preconditioning
 
 [P_qr, q_qr, H_qr, h_qr, c_qr, D_qr, E_qr, qr_time] = qr_preconditioner(P, q, H, h);
-[sigma_max_qr, ~, power_iteration_time_qr] = power_iteration(NaN, H_qr, s);
-[z_qr, w_qr, iters_qr, pipg_time_qr] = pipg(NaN, NaN, P_qr, q_qr, H_qr, h_qr, c_qr, D_qr, E_qr, sigma_max_qr, ground_truth, p, s);
+[sigma_max_qr, ~, power_iteration_time_qr] = power_iteration(H_qr, s);
+[z_qr, w_qr, iters_qr, pipg_time_qr] = pipg(P_qr, q_qr, H_qr, h_qr, c_qr, D_qr, E_qr, sigma_max_qr, ground_truth, p, s);
 solve_time_pipg_qr = qr_time + power_iteration_time_qr + pipg_time_qr;
 kkt_cond_qr = cond_kkt(P_qr, H_qr);
 x_pipg_vec_qr = z_qr(1:p.nx*p.N);
@@ -101,7 +105,7 @@ disp(table(table_pipg_qr, 'VariableNames', {'..:: PIPG + QR Preconditioning ::..
 %% PIPG with Hypersphere Preconditioning
 
 [P_hyper, q_hyper, H_hyper, h_hyper, c_hyper, D_hyper, E_hyper, sigma_max_hyper, shifted_power_iters, shifted_power_iteration_time, hypersphere_time] = hypersphere(P, q, H, h, s, ps);
-[z_hyper, w_hyper, iters_hyper, pipg_time_hyper] = pipg(NaN, NaN, P_hyper, q_hyper, H_hyper, h_hyper, c_hyper, D_hyper, E_hyper, sigma_max_hyper, ground_truth, p, s);
+[z_hyper, w_hyper, iters_hyper, pipg_time_hyper] = pipg(P_hyper, q_hyper, H_hyper, h_hyper, c_hyper, D_hyper, E_hyper, sigma_max_hyper, ground_truth, p, s);
 solve_time_pipg_hyper = hypersphere_time + pipg_time_hyper;
 kkt_cond_hyper = cond_kkt(P_hyper, H_hyper);
 x_pipg_vec_hyper = z_hyper(1:p.nx*p.N);

@@ -1,6 +1,6 @@
-function [sigma_max, k, power_iteration_time] = power_iteration(w, H, s)
+function [sigma_max, k, power_iteration_time] = power_iteration(H, s)
 %POWER_ITERATION
-%   [SIGMA_MAX, K, POWER_ITERATION_TIME] = POWER_ITERATION(W, H, S)
+%   [SIGMA_MAX, K, POWER_ITERATION_TIME] = POWER_ITERATION(H, S)
 
 tic;
 
@@ -11,10 +11,8 @@ max_iters_power = s.max_iters_power;
 
 HT = H.';
 
-if isnan(w)
-    m = size(H, 1);
-    w = ones(m, 1) / sqrt(m);
-end
+m = size(H, 1);
+w = ones(m, 1) / sqrt(m);
 
 sigma = norm(w, 2);
 

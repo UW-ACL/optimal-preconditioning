@@ -31,8 +31,8 @@ h_hyper = E * h_hyper;
 
 % ..:: Optimal Cost Scaling ::.. %
 
-[sigma_max_hyper, ~] = power_iteration(NaN, H_hyper, s);
-[sigma_min_hyper, shifted_power_iters, shifted_power_iteration_time] = shifted_power_iteration(NaN, sigma_max_hyper, H_hyper, ps);
+[sigma_max_hyper, ~] = power_iteration(H_hyper, s);
+[sigma_min_hyper, shifted_power_iters, shifted_power_iteration_time] = shifted_power_iteration(sigma_max_hyper, H_hyper, ps);
 if shifted_power_iters >= ps.max_iters_shifted_power
     warning(' Shifted power iteration hit `max_iters`.');
 end
