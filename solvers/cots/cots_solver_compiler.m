@@ -32,13 +32,13 @@ sqrt_Qf_x_err_N = sdpvar(nx, 1);
 
 constraints = [];
 
-constraints = [constraints; x(:, 1) == x_init];
-
 for k = 1:N-1
     constraints = [constraints; x(:, k+1) == Ad * x(:, k) + Bd * u(:, k)];
 end
 
-for k = 1:N
+constraints = [constraints; x(:, 1) == x_init];
+
+for k = 2:N
     n_k = [cos(theta * k); -sin(theta * k)];
     constraints = [constraints; n_k.' * x(1:2, k) <= -rho];
 end

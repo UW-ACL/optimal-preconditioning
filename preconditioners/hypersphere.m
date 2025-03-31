@@ -1,6 +1,6 @@
-function [P_hyper, q_hyper, H_hyper, h_hyper, c, D, E] = hypersphere(P, q, H, h, ps)
+function [P_hyper, q_hyper, H_hyper, h_hyper, c, D, E, sigma_max_hyper, shifted_power_iters] = hypersphere(P, q, H, h, s, ps)
 %HYPERSPHERE
-%   [P_HYPER, q_HYPER, H_HYPER, h_HYPER, c, D, E] = HYPERSPHERE(P, q, H, h, PS)
+%   [P_HYPER, q_HYPER, H_HYPER, h_HYPER, c, D, E, SIGMA_MAX_HYPER, SHIFTED_POWER_ITERS] = HYPERSPHERE(P, q, H, h, S, PS)
 %
 % 1. Hypersphere preconditioning 
 % 2. Block row normalization
@@ -29,8 +29,12 @@ h_hyper = E * h_hyper;
 
 % ..:: Optimal Cost Scaling ::.. %
 
-sqrt_sig_min = svds(H_hyper, 1, 'smallestnz');
-c = sqrt_sig_min / sqrt(2);
+[sigma_max_hyper, ~] = power_iteration(NaN, H_hyper, s);
+[sigma_min_hyper, shifted_power_iters] = shifted_power_iteration(NaN, sigma_max_hyper, H_hyper, ps);
+if shifted_power_iters >= ps.max_iters_shifted_power
+    warning(' Shifted power iteration hit `max_iters`.');
+end
+c = sqrt(sigma_min_hyper / 2);
 P_hyper = c * P_hyper;
 q_hyper = c * q_hyper;
 

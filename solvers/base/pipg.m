@@ -1,6 +1,6 @@
-function [z_opt, w_opt, k] = pipg(z_bar, w_bar, P, q, H, h, c, D, E, ground_truth, p, s)
+function [z_opt, w_opt, k] = pipg(z_bar, w_bar, P, q, H, h, c, D, E, sigma_max, ground_truth, p, s)
 %PIPG
-%   [Z_OPT, W_OPT, K] = PIPG(Z_BAR, W_BAR, P, q, H, h, c, D, E, GROUND_TRUTH, P, S)
+%   [Z_OPT, W_OPT, K] = PIPG(Z_BAR, W_BAR, P, q, H, h, c, D, E, SIGMA_MAX, GROUND_TRUTH, P, S)
 %
 % The proportional-integral projected gradient method.
 
@@ -24,7 +24,7 @@ else
 end
 
 if isnan(w_bar)
-    eta = [zeros(nx*(N-1), 1); zeros(N, 1)];
+    eta = zeros(nx*(N-1), 1);
 else
     eta = w_bar;
 end
@@ -33,22 +33,28 @@ if isnan(c)
     c = 1;
 end
 
+nz = length(zeta);
+
 if isnan(D)
-    D = speye(length(zeta));
+    D = speye(nz);
+    D_inv = D;
+else
+    diag_elems = diag(D);
+    diag_elems_inv = 1 ./ diag_elems;
+    D_inv = sparse(1:nz, 1:nz, diag_elems_inv, nz, nz);
 end
 
 if isnan(E)
     E = speye(length(eta));
 end
 
-zeta = D \ zeta;
+zeta = D_inv * zeta;
 
 HT = H.';
 
-[sig_max, ~] = power_iteration(NaN, H, s);
 lam = max(diag(P));
 
-alf = 2 / (lam + sqrt(lam^2 + 4 * omg^2 * sig_max));
+alf = 2 / (lam + sqrt(lam^2 + 4 * omg^2 * sigma_max));
 bet = omg^2 * alf;
 
 z = zeta;
@@ -60,7 +66,7 @@ for k = 1:max_iters
     wkm1 = w;
     
     z = zeta - alf * (P * zeta + q + HT * eta);
-    z = D \ proj_D(D * z, p);
+    z = D_inv * proj_D(D * z, p);
     w = proj_K_polar(eta + bet * (H * (2*z - zeta) - h), p);
     zeta = (1 - rho_extrap) * zeta + rho_extrap * z;
     eta = (1 - rho_extrap) * eta + rho_extrap * w;

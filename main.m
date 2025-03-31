@@ -50,10 +50,11 @@ C = -eye(p.nx);
 
 %% PIPG
 
-kkt_cond = cond_kkt(P, H);
 tic;
-[z, w, iters] = pipg(NaN, NaN, P, q, H, h, NaN, NaN, NaN, ground_truth, p, s);
+[sigma_max, ~] = power_iteration(NaN, H, s);
+[z, w, iters] = pipg(NaN, NaN, P, q, H, h, NaN, NaN, NaN, sigma_max, ground_truth, p, s);
 solve_time_pipg = toc * 1000;
+kkt_cond = cond_kkt(P, H);
 x_pipg_vec = z(1:p.nx*p.N);
 x_pipg = reshape(x_pipg_vec, p.nx, p.N);
 
@@ -66,11 +67,12 @@ disp(table(table_pipg, 'VariableNames', {'..:: PIPG ::..'}))
 
 %% PIPG with Modified Ruiz Equilibration
 
-[P_ruiz, q_ruiz, H_ruiz, h_ruiz, c_ruiz, D_ruiz, E_ruiz, ruiz_iters] = ruiz(P, q, H, h, ps);
-kkt_cond_ruiz = cond_kkt(P_ruiz, H_ruiz);
 tic;
-[z_ruiz, w_ruiz, iters_ruiz] = pipg(NaN, NaN, P_ruiz, q_ruiz, H_ruiz, h_ruiz, c_ruiz, D_ruiz, E_ruiz, ground_truth, p, s);
+[P_ruiz, q_ruiz, H_ruiz, h_ruiz, c_ruiz, D_ruiz, E_ruiz, ruiz_iters] = ruiz(P, q, H, h, ps);
+[sigma_max_ruiz, ~] = power_iteration(NaN, H_ruiz, s);
+[z_ruiz, w_ruiz, iters_ruiz] = pipg(NaN, NaN, P_ruiz, q_ruiz, H_ruiz, h_ruiz, c_ruiz, D_ruiz, E_ruiz, sigma_max_ruiz, ground_truth, p, s);
 solve_time_pipg_ruiz = toc * 1000;
+kkt_cond_ruiz = cond_kkt(P_ruiz, H_ruiz);
 x_pipg_vec_ruiz = z_ruiz(1:p.nx*p.N);
 x_pipg_ruiz = reshape(x_pipg_vec_ruiz, p.nx, p.N);
 
@@ -81,20 +83,38 @@ table_pipg_ruiz = table(attributes_pipg_ruiz_formatted, 'VariableNames', {' '}, 
 fprintf('\n\n');
 disp(table(table_pipg_ruiz, 'VariableNames', {'..:: PIPG + Modified Ruiz Equilibration ::..'}))
 
+%% PIPG with QR Preconditioning
+
+tic;
+[P_qr, q_qr, H_qr, h_qr, c_qr, D_qr, E_qr] = qr_preconditioner(P, q, H, h);
+[sigma_max_qr, ~] = power_iteration(NaN, H_qr, s);
+[z_qr, w_qr, iters_qr] = pipg(NaN, NaN, P_qr, q_qr, H_qr, h_qr, c_qr, D_qr, E_qr, sigma_max_qr, ground_truth, p, s);
+solve_time_pipg_qr = toc * 1000;
+kkt_cond_qr = cond_kkt(P_qr, H_qr);
+x_pipg_vec_qr = z_qr(1:p.nx*p.N);
+x_pipg_qr = reshape(x_pipg_vec_qr, p.nx, p.N);
+
+percent_relative_error_pipg_qr = 100 * norm(z_qr - ground_truth, 'inf') / norm(ground_truth, 'inf');
+attributes_pipg_qr = [percent_relative_error_pipg_qr; solve_time_pipg_qr; iters_qr; kkt_cond_qr];
+attributes_pipg_qr_formatted = str2double(compose('%.6f', attributes_pipg_qr));
+table_pipg_qr = table(attributes_pipg_qr_formatted, 'VariableNames', {' '}, 'RowNames', {'Relative Error w.r.t. Ground Truth (%)', 'Solve Time [ms]', 'Number of Iterations (PIPG)', 'KKT Condition Number'});
+fprintf('\n\n');
+disp(table(table_pipg_qr, 'VariableNames', {'..:: PIPG + QR Preconditioning ::..'}))
+
 %% PIPG with Hypersphere Preconditioning
 
-[P_hyper, q_hyper, H_hyper, h_hyper, c_hyper, D_hyper, E_hyper] = hypersphere(P, q, H, h, ps);
-kkt_cond_hyper = cond_kkt(P_hyper, H_hyper);
 tic;
-[z_hyper, w_hyper, iters_hyper] = pipg(NaN, NaN, P_hyper, q_hyper, H_hyper, h_hyper, c_hyper, D_hyper, E_hyper, ground_truth, p, s);
+[P_hyper, q_hyper, H_hyper, h_hyper, c_hyper, D_hyper, E_hyper, sigma_max_hyper, shifted_power_iters] = hypersphere(P, q, H, h, s, ps);
+[z_hyper, w_hyper, iters_hyper] = pipg(NaN, NaN, P_hyper, q_hyper, H_hyper, h_hyper, c_hyper, D_hyper, E_hyper, sigma_max_hyper, ground_truth, p, s);
 solve_time_pipg_hyper = toc * 1000;
+kkt_cond_hyper = cond_kkt(P_hyper, H_hyper);
 x_pipg_vec_hyper = z_hyper(1:p.nx*p.N);
 x_pipg_hyper = reshape(x_pipg_vec_hyper, p.nx, p.N);
 
 percent_relative_error_pipg_hyper = 100 * norm(z_hyper - ground_truth, 'inf') / norm(ground_truth, 'inf');
-attributes_pipg_hyper = [percent_relative_error_pipg_hyper; solve_time_pipg_hyper; iters_hyper; kkt_cond_hyper];
+attributes_pipg_hyper = [percent_relative_error_pipg_hyper; solve_time_pipg_hyper; iters_hyper; shifted_power_iters; kkt_cond_hyper];
 attributes_pipg_hyper_formatted = str2double(compose('%.6f', attributes_pipg_hyper));
-table_pipg_hyper = table(attributes_pipg_hyper_formatted, 'VariableNames', {' '}, 'RowNames', {'Relative Error w.r.t. Ground Truth (%)', 'Solve Time [ms]', 'Number of Iterations (PIPG)', 'KKT Condition Number'});
+table_pipg_hyper = table(attributes_pipg_hyper_formatted, 'VariableNames', {' '}, 'RowNames', {'Relative Error w.r.t. Ground Truth (%)', 'Solve Time [ms]', 'Number of Iterations (PIPG)', 'Number of Iterations (Shifted Power)', 'KKT Condition Number'});
 fprintf('\n\n');
 disp(table(table_pipg_hyper, 'VariableNames', {'..:: PIPG + Hypersphere Preconditioning ::..'}))
 
