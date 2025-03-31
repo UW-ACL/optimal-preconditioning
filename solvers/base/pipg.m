@@ -35,13 +35,18 @@ zeta = D_inv * zeta;
 
 HT = H.';
 
-lam = max(diag(P));
+lam = full(max(diag(P)));
 
 alf = 2 / (lam + sqrt(lam^2 + 4 * omg^2 * sigma_max));
 bet = omg^2 * alf;
 
 z = zeta;
 w = eta;
+
+z_check = z;
+zkm1_check = z;
+w_check = w;
+wkm1_check = w;
 
 for k = 1:max_iters
 

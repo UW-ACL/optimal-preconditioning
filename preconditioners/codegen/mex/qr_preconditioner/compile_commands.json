@@ -1,0 +1,164 @@
+[
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  CXSparse/Source/cs_ri_bundle.c -o build/maci64/cs_ri_bundle.o",
+    "file": "CXSparse/Source/cs_ri_bundle.c",
+    "output": "build/maci64/cs_ri_bundle.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  CXSparse/Source/cs_ci_bundle.c -o build/maci64/cs_ci_bundle.o",
+    "file": "CXSparse/Source/cs_ci_bundle.c",
+    "output": "build/maci64/cs_ci_bundle.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  CXSparse/CXSparseSupport/solve_from_lu.c -o build/maci64/solve_from_lu.o",
+    "file": "CXSparse/CXSparseSupport/solve_from_lu.c",
+    "output": "build/maci64/solve_from_lu.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  CXSparse/CXSparseSupport/solve_from_qr.c -o build/maci64/solve_from_qr.o",
+    "file": "CXSparse/CXSparseSupport/solve_from_qr.c",
+    "output": "build/maci64/solve_from_qr.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  CXSparse/CXSparseSupport/makeCXSparseMatrix.c -o build/maci64/makeCXSparseMatrix.o",
+    "file": "CXSparse/CXSparseSupport/makeCXSparseMatrix.c",
+    "output": "build/maci64/makeCXSparseMatrix.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  CXSparse/CXSparseSupport/unpackCXStruct.c -o build/maci64/unpackCXStruct.o",
+    "file": "CXSparse/CXSparseSupport/unpackCXStruct.c",
+    "output": "build/maci64/unpackCXStruct.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  qr_preconditioner_data.c -o build/maci64/qr_preconditioner_data.o",
+    "file": "qr_preconditioner_data.c",
+    "output": "build/maci64/qr_preconditioner_data.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  rt_nonfinite.c -o build/maci64/rt_nonfinite.o",
+    "file": "rt_nonfinite.c",
+    "output": "build/maci64/rt_nonfinite.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  qr_preconditioner_initialize.c -o build/maci64/qr_preconditioner_initialize.o",
+    "file": "qr_preconditioner_initialize.c",
+    "output": "build/maci64/qr_preconditioner_initialize.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  qr_preconditioner_terminate.c -o build/maci64/qr_preconditioner_terminate.o",
+    "file": "qr_preconditioner_terminate.c",
+    "output": "build/maci64/qr_preconditioner_terminate.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  qr_preconditioner.c -o build/maci64/qr_preconditioner.o",
+    "file": "qr_preconditioner.c",
+    "output": "build/maci64/qr_preconditioner.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  tic.c -o build/maci64/tic.o",
+    "file": "tic.c",
+    "output": "build/maci64/tic.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  timeKeeper.c -o build/maci64/timeKeeper.o",
+    "file": "timeKeeper.c",
+    "output": "build/maci64/timeKeeper.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  diag.c -o build/maci64/diag.o",
+    "file": "diag.c",
+    "output": "build/maci64/diag.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  sparse.c -o build/maci64/sparse.o",
+    "file": "sparse.c",
+    "output": "build/maci64/sparse.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  sparse1.c -o build/maci64/sparse1.o",
+    "file": "sparse1.c",
+    "output": "build/maci64/sparse1.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  qr.c -o build/maci64/qr.o",
+    "file": "qr.c",
+    "output": "build/maci64/qr.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  warning.c -o build/maci64/warning.o",
+    "file": "warning.c",
+    "output": "build/maci64/warning.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  CXSparseAPI.c -o build/maci64/CXSparseAPI.o",
+    "file": "CXSparseAPI.c",
+    "output": "build/maci64/CXSparseAPI.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  toc.c -o build/maci64/toc.o",
+    "file": "toc.c",
+    "output": "build/maci64/toc.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  interface/_coder_qr_preconditioner_api.c -o build/maci64/_coder_qr_preconditioner_api.o",
+    "file": "interface/_coder_qr_preconditioner_api.c",
+    "output": "build/maci64/_coder_qr_preconditioner_api.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  interface/_coder_qr_preconditioner_mex.c -o build/maci64/_coder_qr_preconditioner_mex.o",
+    "file": "interface/_coder_qr_preconditioner_mex.c",
+    "output": "build/maci64/_coder_qr_preconditioner_mex.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  eml_int_forloop_overflow_check.c -o build/maci64/eml_int_forloop_overflow_check.o",
+    "file": "eml_int_forloop_overflow_check.c",
+    "output": "build/maci64/eml_int_forloop_overflow_check.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  mldivide.c -o build/maci64/mldivide.o",
+    "file": "mldivide.c",
+    "output": "build/maci64/mldivide.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  qr_preconditioner_emxutil.c -o build/maci64/qr_preconditioner_emxutil.o",
+    "file": "qr_preconditioner_emxutil.c",
+    "output": "build/maci64/qr_preconditioner_emxutil.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  interface/_coder_qr_preconditioner_info.c -o build/maci64/_coder_qr_preconditioner_info.o",
+    "file": "interface/_coder_qr_preconditioner_info.c",
+    "output": "build/maci64/_coder_qr_preconditioner_info.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/qr_preconditioner",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./CXSparse/Include\" -I \"./CXSparse/SuiteSparse_config\" -I \"./CXSparse/CXSparseSupport\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c  /Applications/MATLAB_R2023a.app/extern/version/c_mexapi_version.c -o build/maci64/c_mexapi_version.o",
+    "file": "/Applications/MATLAB_R2023a.app/extern/version/c_mexapi_version.c",
+    "output": "build/maci64/c_mexapi_version.o"
+  }
+]

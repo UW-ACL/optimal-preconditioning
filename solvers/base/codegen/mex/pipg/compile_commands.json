@@ -1,0 +1,164 @@
+[
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  pipg_data.c -o build/maci64/pipg_data.o",
+    "file": "pipg_data.c",
+    "output": "build/maci64/pipg_data.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  rt_nonfinite.c -o build/maci64/rt_nonfinite.o",
+    "file": "rt_nonfinite.c",
+    "output": "build/maci64/rt_nonfinite.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  pipg_initialize.c -o build/maci64/pipg_initialize.o",
+    "file": "pipg_initialize.c",
+    "output": "build/maci64/pipg_initialize.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  pipg_terminate.c -o build/maci64/pipg_terminate.o",
+    "file": "pipg_terminate.c",
+    "output": "build/maci64/pipg_terminate.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  pipg.c -o build/maci64/pipg.o",
+    "file": "pipg.c",
+    "output": "build/maci64/pipg.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  tic.c -o build/maci64/tic.o",
+    "file": "tic.c",
+    "output": "build/maci64/tic.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  timeKeeper.c -o build/maci64/timeKeeper.o",
+    "file": "timeKeeper.c",
+    "output": "build/maci64/timeKeeper.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  diag.c -o build/maci64/diag.o",
+    "file": "diag.c",
+    "output": "build/maci64/diag.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  sparse.c -o build/maci64/sparse.o",
+    "file": "sparse.c",
+    "output": "build/maci64/sparse.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  sparse1.c -o build/maci64/sparse1.o",
+    "file": "sparse1.c",
+    "output": "build/maci64/sparse1.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  assertValidSizeArg.c -o build/maci64/assertValidSizeArg.o",
+    "file": "assertValidSizeArg.c",
+    "output": "build/maci64/assertValidSizeArg.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  speye.c -o build/maci64/speye.o",
+    "file": "speye.c",
+    "output": "build/maci64/speye.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  mtimes.c -o build/maci64/mtimes.o",
+    "file": "mtimes.c",
+    "output": "build/maci64/mtimes.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  mtimes1.c -o build/maci64/mtimes1.o",
+    "file": "mtimes1.c",
+    "output": "build/maci64/mtimes1.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  proj_D.c -o build/maci64/proj_D.o",
+    "file": "proj_D.c",
+    "output": "build/maci64/proj_D.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  mod.c -o build/maci64/mod.o",
+    "file": "mod.c",
+    "output": "build/maci64/mod.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  norm.c -o build/maci64/norm.o",
+    "file": "norm.c",
+    "output": "build/maci64/norm.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  toc.c -o build/maci64/toc.o",
+    "file": "toc.c",
+    "output": "build/maci64/toc.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  interface/_coder_pipg_api.c -o build/maci64/_coder_pipg_api.o",
+    "file": "interface/_coder_pipg_api.c",
+    "output": "build/maci64/_coder_pipg_api.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  interface/_coder_pipg_mex.c -o build/maci64/_coder_pipg_mex.o",
+    "file": "interface/_coder_pipg_mex.c",
+    "output": "build/maci64/_coder_pipg_mex.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  eml_int_forloop_overflow_check.c -o build/maci64/eml_int_forloop_overflow_check.o",
+    "file": "eml_int_forloop_overflow_check.c",
+    "output": "build/maci64/eml_int_forloop_overflow_check.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  insertionsort.c -o build/maci64/insertionsort.o",
+    "file": "insertionsort.c",
+    "output": "build/maci64/insertionsort.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  introsort.c -o build/maci64/introsort.o",
+    "file": "introsort.c",
+    "output": "build/maci64/introsort.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  heapsort.c -o build/maci64/heapsort.o",
+    "file": "heapsort.c",
+    "output": "build/maci64/heapsort.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  pipg_emxutil.c -o build/maci64/pipg_emxutil.o",
+    "file": "pipg_emxutil.c",
+    "output": "build/maci64/pipg_emxutil.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  interface/_coder_pipg_info.c -o build/maci64/_coder_pipg_info.o",
+    "file": "interface/_coder_pipg_info.c",
+    "output": "build/maci64/_coder_pipg_info.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/pipg",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=pipg_dense_mex -c  /Applications/MATLAB_R2023a.app/extern/version/c_mexapi_version.c -o build/maci64/c_mexapi_version.o",
+    "file": "/Applications/MATLAB_R2023a.app/extern/version/c_mexapi_version.c",
+    "output": "build/maci64/c_mexapi_version.o"
+  }
+]

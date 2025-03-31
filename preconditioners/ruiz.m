@@ -6,7 +6,6 @@ function [P_ruiz, q_ruiz, H_ruiz, h_ruiz, c, D, E, ruiz_iters, ruiz_time] = ruiz
 
 tic;
 
-p_norm = ps.p_norm;
 max_iters_ruiz = ps.max_iters_ruiz;
 eps_ruiz = ps.eps_ruiz;
 
@@ -31,7 +30,7 @@ for ruiz_iters = 1:max_iters_ruiz
     M = [P_ruiz, H_ruiz.'; H_ruiz, zeros_m_m];
 
     for k = 1:npm
-        del_vals(k) = 1 / sqrt(norm(M(:, k), p_norm));
+        del_vals(k) = 1 / sqrt(norm(full(M(:, k)), 'inf'));
     end
     
     diag_del = sparse(row_indices, col_indices, del_vals, npm, npm);
@@ -44,7 +43,7 @@ for ruiz_iters = 1:max_iters_ruiz
     H_ruiz = E_temp * H_ruiz * D_temp;
     h_ruiz = E_temp * h_ruiz;
     
-    gam = 1 / max(mean(vecnorm(P_ruiz, p_norm)), norm(q_ruiz, p_norm));
+    gam = 1 / max(mean(full(diag(P_ruiz))), norm(q_ruiz, 'inf'));
     
     P_ruiz = gam * P_ruiz;
     q_ruiz = gam * q_ruiz;
@@ -52,7 +51,7 @@ for ruiz_iters = 1:max_iters_ruiz
     S = diag_del * S;
     c = gam * c;
 
-    if norm(ones_npm - del_vals, p_norm) <= eps_ruiz
+    if norm(ones_npm - del_vals, 'inf') <= eps_ruiz
         break
     end
 

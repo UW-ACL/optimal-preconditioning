@@ -1,0 +1,68 @@
+# CompilerName=clang
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root/build/maci64
+matlabdir = /Applications/MATLAB_R2023a.app
+startdir = /Users/abhi/GitHub/optimal-preconditioning/preconditioners
+
+# Toolchain information
+cc = /usr/bin/xcrun -sdk macosx13.3 clang
+cxx = /usr/bin/xcrun -sdk macosx13.3 clang++
+linker = /usr/bin/xcrun -sdk macosx13.3 clang
+linkerxx = /usr/bin/xcrun -sdk macosx13.3 clang++
+
+cflags =  -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I "$root" -I "$startdir" -I "$root/CXSparse/Include" -I "$root/CXSparse/SuiteSparse_config" -I "$root/CXSparse/CXSparseSupport" -I "$root/interface" -I "$matlabdir/extern/include" -I "." -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c 
+
+cxxflags =  -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fobjc-arc -std=c++14 -stdlib=libc++ -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I "$root" -I "$startdir" -I "$root/CXSparse/Include" -I "$root/CXSparse/SuiteSparse_config" -I "$root/CXSparse/CXSparseSupport" -I "$root/interface" -I "$matlabdir/extern/include" -I "." -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -DMODEL=qr_preconditioner_mex -c 
+
+ldflags =  -Wl,-twolevel_namespace -undefined error -arch x86_64 -mmacosx-version-min=10.15 -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -bundle   -L"$matlabdir/bin/maci64" -lmx -lmex -lmat -lc++  -Wl,-rpath,@loader_path -o qr_preconditioner_mex.mexmaci64 -L"$matlabdir/bin/maci64" -lmwlapack -lmwblas -lemlrt -lcovrt -lut -lmwmathutil  -Wl,-exported_symbols_list,qr_preconditioner_mex.map
+
+linkobjs = 
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in -o $out
+
+rule cxx
+    command = $cxx $cxxflags $in -o $out
+
+rule link
+    command = $linker $in $linkobjs $ldflags
+
+rule linkxx
+    command = $linkerxx $in $linkobjs $ldflags
+
+# Build
+build $builddir/cs_ri_bundle.o : cc $root/CXSparse/Source/cs_ri_bundle.c
+build $builddir/cs_ci_bundle.o : cc $root/CXSparse/Source/cs_ci_bundle.c
+build $builddir/solve_from_lu.o : cc $root/CXSparse/CXSparseSupport/solve_from_lu.c
+build $builddir/solve_from_qr.o : cc $root/CXSparse/CXSparseSupport/solve_from_qr.c
+build $builddir/makeCXSparseMatrix.o : cc $root/CXSparse/CXSparseSupport/makeCXSparseMatrix.c
+build $builddir/unpackCXStruct.o : cc $root/CXSparse/CXSparseSupport/unpackCXStruct.c
+build $builddir/qr_preconditioner_data.o : cc $root/qr_preconditioner_data.c
+build $builddir/rt_nonfinite.o : cc $root/rt_nonfinite.c
+build $builddir/qr_preconditioner_initialize.o : cc $root/qr_preconditioner_initialize.c
+build $builddir/qr_preconditioner_terminate.o : cc $root/qr_preconditioner_terminate.c
+build $builddir/qr_preconditioner.o : cc $root/qr_preconditioner.c
+build $builddir/tic.o : cc $root/tic.c
+build $builddir/timeKeeper.o : cc $root/timeKeeper.c
+build $builddir/diag.o : cc $root/diag.c
+build $builddir/sparse.o : cc $root/sparse.c
+build $builddir/sparse1.o : cc $root/sparse1.c
+build $builddir/qr.o : cc $root/qr.c
+build $builddir/warning.o : cc $root/warning.c
+build $builddir/CXSparseAPI.o : cc $root/CXSparseAPI.c
+build $builddir/toc.o : cc $root/toc.c
+build $builddir/_coder_qr_preconditioner_api.o : cc $root/interface/_coder_qr_preconditioner_api.c
+build $builddir/_coder_qr_preconditioner_mex.o : cc $root/interface/_coder_qr_preconditioner_mex.c
+build $builddir/eml_int_forloop_overflow_check.o : cc $root/eml_int_forloop_overflow_check.c
+build $builddir/mldivide.o : cc $root/mldivide.c
+build $builddir/qr_preconditioner_emxutil.o : cc $root/qr_preconditioner_emxutil.c
+build $builddir/_coder_qr_preconditioner_info.o : cc $root/interface/_coder_qr_preconditioner_info.c
+build $builddir/c_mexapi_version.o : cc $matlabdir/extern/version/c_mexapi_version.c
+
+# Link
+build $root/qr_preconditioner_mex.mexmaci64 : link $builddir/cs_ri_bundle.o $builddir/cs_ci_bundle.o $builddir/solve_from_lu.o $builddir/solve_from_qr.o $builddir/makeCXSparseMatrix.o $builddir/unpackCXStruct.o $builddir/qr_preconditioner_data.o $builddir/rt_nonfinite.o $builddir/qr_preconditioner_initialize.o $builddir/qr_preconditioner_terminate.o $builddir/qr_preconditioner.o $builddir/tic.o $builddir/timeKeeper.o $builddir/diag.o $builddir/sparse.o $builddir/sparse1.o $builddir/qr.o $builddir/warning.o $builddir/CXSparseAPI.o $builddir/toc.o $builddir/_coder_qr_preconditioner_api.o $builddir/_coder_qr_preconditioner_mex.o $builddir/eml_int_forloop_overflow_check.o $builddir/mldivide.o $builddir/qr_preconditioner_emxutil.o $builddir/_coder_qr_preconditioner_info.o $builddir/c_mexapi_version.o 

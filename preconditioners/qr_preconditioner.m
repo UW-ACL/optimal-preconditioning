@@ -12,21 +12,21 @@ tic;
 
 [m, n] = size(H);
 
-lam_max = max(diag(P));
-lam_min = min(diag(P));
+lam_max = full(max(diag(P)));
+lam_min = full(min(diag(P)));
 
 eta = sqrt(lam_max * lam_min + lam_min^2);
 
-[Q_qr, R_qr] = qr(H.', "econ");
+[Q_qr, R_qr] = qr(full(H.'), "econ");
 
 P_qr = P;
 q_qr = q;
 H_qr = eta * Q_qr.';
-h_qr = eta * (R_qr.' \ h);
+h_qr = full(eta * (R_qr.' \ h));
 
 c = 1;
 D = speye(n);
-E = eta * R_qr.' \ speye(m);
+E = eta * sparse(R_qr).' \ speye(m);
 
 qr_time = 1000 * toc;
 

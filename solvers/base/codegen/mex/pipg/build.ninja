@@ -1,0 +1,68 @@
+# CompilerName=clang
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root/build/maci64
+matlabdir = /Applications/MATLAB_R2023a.app
+startdir = /Users/abhi/GitHub/optimal-preconditioning/solvers/base
+
+# Toolchain information
+cc = /usr/bin/xcrun -sdk macosx13.3 clang
+cxx = /usr/bin/xcrun -sdk macosx13.3 clang++
+linker = /usr/bin/xcrun -sdk macosx13.3 clang
+linkerxx = /usr/bin/xcrun -sdk macosx13.3 clang++
+
+cflags =  -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I "$root" -I "$startdir" -I "$root/interface" -I "$matlabdir/extern/include" -I "." -DMODEL=pipg_dense_mex -c 
+
+cxxflags =  -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fobjc-arc -std=c++14 -stdlib=libc++ -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I "$root" -I "$startdir" -I "$root/interface" -I "$matlabdir/extern/include" -I "." -DMODEL=pipg_dense_mex -c 
+
+ldflags =  -Wl,-twolevel_namespace -undefined error -arch x86_64 -mmacosx-version-min=10.15 -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -bundle   -L"$matlabdir/bin/maci64" -lmx -lmex -lmat -lc++  -Wl,-rpath,@loader_path -o pipg_dense_mex.mexmaci64 -L"$matlabdir/bin/maci64" -lmwblas -lemlrt -lcovrt -lut -lmwmathutil  -Wl,-exported_symbols_list,pipg_dense_mex.map
+
+linkobjs = 
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in -o $out
+
+rule cxx
+    command = $cxx $cxxflags $in -o $out
+
+rule link
+    command = $linker $in $linkobjs $ldflags
+
+rule linkxx
+    command = $linkerxx $in $linkobjs $ldflags
+
+# Build
+build $builddir/pipg_data.o : cc $root/pipg_data.c
+build $builddir/rt_nonfinite.o : cc $root/rt_nonfinite.c
+build $builddir/pipg_initialize.o : cc $root/pipg_initialize.c
+build $builddir/pipg_terminate.o : cc $root/pipg_terminate.c
+build $builddir/pipg.o : cc $root/pipg.c
+build $builddir/tic.o : cc $root/tic.c
+build $builddir/timeKeeper.o : cc $root/timeKeeper.c
+build $builddir/diag.o : cc $root/diag.c
+build $builddir/sparse.o : cc $root/sparse.c
+build $builddir/sparse1.o : cc $root/sparse1.c
+build $builddir/assertValidSizeArg.o : cc $root/assertValidSizeArg.c
+build $builddir/speye.o : cc $root/speye.c
+build $builddir/mtimes.o : cc $root/mtimes.c
+build $builddir/mtimes1.o : cc $root/mtimes1.c
+build $builddir/proj_D.o : cc $root/proj_D.c
+build $builddir/mod.o : cc $root/mod.c
+build $builddir/norm.o : cc $root/norm.c
+build $builddir/toc.o : cc $root/toc.c
+build $builddir/_coder_pipg_api.o : cc $root/interface/_coder_pipg_api.c
+build $builddir/_coder_pipg_mex.o : cc $root/interface/_coder_pipg_mex.c
+build $builddir/eml_int_forloop_overflow_check.o : cc $root/eml_int_forloop_overflow_check.c
+build $builddir/insertionsort.o : cc $root/insertionsort.c
+build $builddir/introsort.o : cc $root/introsort.c
+build $builddir/heapsort.o : cc $root/heapsort.c
+build $builddir/pipg_emxutil.o : cc $root/pipg_emxutil.c
+build $builddir/_coder_pipg_info.o : cc $root/interface/_coder_pipg_info.c
+build $builddir/c_mexapi_version.o : cc $matlabdir/extern/version/c_mexapi_version.c
+
+# Link
+build $root/pipg_dense_mex.mexmaci64 : link $builddir/pipg_data.o $builddir/rt_nonfinite.o $builddir/pipg_initialize.o $builddir/pipg_terminate.o $builddir/pipg.o $builddir/tic.o $builddir/timeKeeper.o $builddir/diag.o $builddir/sparse.o $builddir/sparse1.o $builddir/assertValidSizeArg.o $builddir/speye.o $builddir/mtimes.o $builddir/mtimes1.o $builddir/proj_D.o $builddir/mod.o $builddir/norm.o $builddir/toc.o $builddir/_coder_pipg_api.o $builddir/_coder_pipg_mex.o $builddir/eml_int_forloop_overflow_check.o $builddir/insertionsort.o $builddir/introsort.o $builddir/heapsort.o $builddir/pipg_emxutil.o $builddir/_coder_pipg_info.o $builddir/c_mexapi_version.o 

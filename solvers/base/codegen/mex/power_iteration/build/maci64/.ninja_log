@@ -1,0 +1,14 @@
+# ninja log v5
+0	407	1743405588337092879	build/maci64/power_iteration_data.o	5879a492bacf6d60
+4	493	1743405588419613306	build/maci64/c_mexapi_version.o	dbb6fac6154bbe1a
+1	494	1743405588420134392	build/maci64/power_iteration_terminate.o	623445cd2d2a2c16
+0	496	1743405588419738932	build/maci64/rt_nonfinite.o	3a62c649b950e102
+2	496	1743405588420750478	build/maci64/tic.o	9daf982d4745b93
+2	497	1743405588420952730	build/maci64/toc.o	21702b29f7ca2459
+1	497	1743405588419866391	build/maci64/power_iteration_initialize.o	577f7e8810af1a02
+4	497	1743405588422379362	build/maci64/_coder_power_iteration_info.o	956544710e32598d
+3	497	1743405588423593160	build/maci64/_coder_power_iteration_api.o	14fb8a00baaca54b
+3	497	1743405588425992089	build/maci64/_coder_power_iteration_mex.o	56c7f832b39feb19
+2	497	1743405588428148850	build/maci64/timeKeeper.o	388398cc6f6f969d
+1	514	1743405588449210667	build/maci64/power_iteration.o	2d7e73ed9000921a
+514	610	1743405588546836047	power_iteration_dense_mex.mexmaci64	aad98807af55a4f9

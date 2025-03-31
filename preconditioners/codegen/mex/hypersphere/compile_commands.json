@@ -1,0 +1,158 @@
+[
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  hypersphere_data.c -o build/maci64/hypersphere_data.o",
+    "file": "hypersphere_data.c",
+    "output": "build/maci64/hypersphere_data.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  rt_nonfinite.c -o build/maci64/rt_nonfinite.o",
+    "file": "rt_nonfinite.c",
+    "output": "build/maci64/rt_nonfinite.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  hypersphere_initialize.c -o build/maci64/hypersphere_initialize.o",
+    "file": "hypersphere_initialize.c",
+    "output": "build/maci64/hypersphere_initialize.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  hypersphere_terminate.c -o build/maci64/hypersphere_terminate.o",
+    "file": "hypersphere_terminate.c",
+    "output": "build/maci64/hypersphere_terminate.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  hypersphere.c -o build/maci64/hypersphere.o",
+    "file": "hypersphere.c",
+    "output": "build/maci64/hypersphere.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  tic.c -o build/maci64/tic.o",
+    "file": "tic.c",
+    "output": "build/maci64/tic.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  timeKeeper.c -o build/maci64/timeKeeper.o",
+    "file": "timeKeeper.c",
+    "output": "build/maci64/timeKeeper.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  diag.c -o build/maci64/diag.o",
+    "file": "diag.c",
+    "output": "build/maci64/diag.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  locBsearch.c -o build/maci64/locBsearch.o",
+    "file": "locBsearch.c",
+    "output": "build/maci64/locBsearch.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  sparse.c -o build/maci64/sparse.o",
+    "file": "sparse.c",
+    "output": "build/maci64/sparse.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  mtimes.c -o build/maci64/mtimes.o",
+    "file": "mtimes.c",
+    "output": "build/maci64/mtimes.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  norm.c -o build/maci64/norm.o",
+    "file": "norm.c",
+    "output": "build/maci64/norm.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  sparse1.c -o build/maci64/sparse1.o",
+    "file": "sparse1.c",
+    "output": "build/maci64/sparse1.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  spfun.c -o build/maci64/spfun.o",
+    "file": "spfun.c",
+    "output": "build/maci64/spfun.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  toc.c -o build/maci64/toc.o",
+    "file": "toc.c",
+    "output": "build/maci64/toc.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  interface/_coder_hypersphere_api.c -o build/maci64/_coder_hypersphere_api.o",
+    "file": "interface/_coder_hypersphere_api.c",
+    "output": "build/maci64/_coder_hypersphere_api.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  interface/_coder_hypersphere_mex.c -o build/maci64/_coder_hypersphere_mex.o",
+    "file": "interface/_coder_hypersphere_mex.c",
+    "output": "build/maci64/_coder_hypersphere_mex.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  eml_int_forloop_overflow_check.c -o build/maci64/eml_int_forloop_overflow_check.o",
+    "file": "eml_int_forloop_overflow_check.c",
+    "output": "build/maci64/eml_int_forloop_overflow_check.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  sqrt.c -o build/maci64/sqrt.o",
+    "file": "sqrt.c",
+    "output": "build/maci64/sqrt.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  insertionsort.c -o build/maci64/insertionsort.o",
+    "file": "insertionsort.c",
+    "output": "build/maci64/insertionsort.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  introsort.c -o build/maci64/introsort.o",
+    "file": "introsort.c",
+    "output": "build/maci64/introsort.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  heapsort.c -o build/maci64/heapsort.o",
+    "file": "heapsort.c",
+    "output": "build/maci64/heapsort.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  fillIn.c -o build/maci64/fillIn.o",
+    "file": "fillIn.c",
+    "output": "build/maci64/fillIn.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  hypersphere_emxutil.c -o build/maci64/hypersphere_emxutil.o",
+    "file": "hypersphere_emxutil.c",
+    "output": "build/maci64/hypersphere_emxutil.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  interface/_coder_hypersphere_info.c -o build/maci64/_coder_hypersphere_info.o",
+    "file": "interface/_coder_hypersphere_info.c",
+    "output": "build/maci64/_coder_hypersphere_info.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/hypersphere",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=hypersphere_mex -c  /Applications/MATLAB_R2023a.app/extern/version/c_mexapi_version.c -o build/maci64/c_mexapi_version.o",
+    "file": "/Applications/MATLAB_R2023a.app/extern/version/c_mexapi_version.c",
+    "output": "build/maci64/c_mexapi_version.o"
+  }
+]

@@ -1,0 +1,65 @@
+# CompilerName=clang
+# Mode=optim
+ninja_required_version = 1.3
+
+# Basic folders
+root = .
+builddir = $root/build/maci64
+matlabdir = /Applications/MATLAB_R2023a.app
+startdir = /Users/abhi/GitHub/optimal-preconditioning/preconditioners
+
+# Toolchain information
+cc = /usr/bin/xcrun -sdk macosx13.3 clang
+cxx = /usr/bin/xcrun -sdk macosx13.3 clang++
+linker = /usr/bin/xcrun -sdk macosx13.3 clang
+linkerxx = /usr/bin/xcrun -sdk macosx13.3 clang++
+
+cflags =  -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I "$root" -I "$startdir" -I "$root/interface" -I "$matlabdir/extern/include" -I "." -DMODEL=ruiz_mex -c 
+
+cxxflags =  -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -fobjc-arc -std=c++14 -stdlib=libc++ -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c++11 -I "$root" -I "$startdir" -I "$root/interface" -I "$matlabdir/extern/include" -I "." -DMODEL=ruiz_mex -c 
+
+ldflags =  -Wl,-twolevel_namespace -undefined error -arch x86_64 -mmacosx-version-min=10.15 -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -bundle   -L"$matlabdir/bin/maci64" -lmx -lmex -lmat -lc++  -Wl,-rpath,@loader_path -o ruiz_mex.mexmaci64 -lemlrt -lcovrt -lut -lmwmathutil  -Wl,-exported_symbols_list,ruiz_mex.map
+
+linkobjs = 
+
+# Build Rules
+rule cc
+    command = $cc $cflags $in -o $out
+
+rule cxx
+    command = $cxx $cxxflags $in -o $out
+
+rule link
+    command = $linker $in $linkobjs $ldflags
+
+rule linkxx
+    command = $linkerxx $in $linkobjs $ldflags
+
+# Build
+build $builddir/ruiz_data.o : cc $root/ruiz_data.c
+build $builddir/rt_nonfinite.o : cc $root/rt_nonfinite.c
+build $builddir/ruiz_initialize.o : cc $root/ruiz_initialize.c
+build $builddir/ruiz_terminate.o : cc $root/ruiz_terminate.c
+build $builddir/ruiz.o : cc $root/ruiz.c
+build $builddir/tic.o : cc $root/tic.c
+build $builddir/timeKeeper.o : cc $root/timeKeeper.c
+build $builddir/sparse.o : cc $root/sparse.c
+build $builddir/horzcat.o : cc $root/horzcat.c
+build $builddir/vertcat.o : cc $root/vertcat.c
+build $builddir/locBsearch.o : cc $root/locBsearch.c
+build $builddir/mtimes.o : cc $root/mtimes.c
+build $builddir/toc.o : cc $root/toc.c
+build $builddir/_coder_ruiz_api.o : cc $root/interface/_coder_ruiz_api.c
+build $builddir/_coder_ruiz_mex.o : cc $root/interface/_coder_ruiz_mex.c
+build $builddir/eml_int_forloop_overflow_check.o : cc $root/eml_int_forloop_overflow_check.c
+build $builddir/sumMatrixIncludeNaN.o : cc $root/sumMatrixIncludeNaN.c
+build $builddir/fillIn.o : cc $root/fillIn.c
+build $builddir/insertionsort.o : cc $root/insertionsort.c
+build $builddir/introsort.o : cc $root/introsort.c
+build $builddir/heapsort.o : cc $root/heapsort.c
+build $builddir/ruiz_emxutil.o : cc $root/ruiz_emxutil.c
+build $builddir/_coder_ruiz_info.o : cc $root/interface/_coder_ruiz_info.c
+build $builddir/c_mexapi_version.o : cc $matlabdir/extern/version/c_mexapi_version.c
+
+# Link
+build $root/ruiz_mex.mexmaci64 : link $builddir/ruiz_data.o $builddir/rt_nonfinite.o $builddir/ruiz_initialize.o $builddir/ruiz_terminate.o $builddir/ruiz.o $builddir/tic.o $builddir/timeKeeper.o $builddir/sparse.o $builddir/horzcat.o $builddir/vertcat.o $builddir/locBsearch.o $builddir/mtimes.o $builddir/toc.o $builddir/_coder_ruiz_api.o $builddir/_coder_ruiz_mex.o $builddir/eml_int_forloop_overflow_check.o $builddir/sumMatrixIncludeNaN.o $builddir/fillIn.o $builddir/insertionsort.o $builddir/introsort.o $builddir/heapsort.o $builddir/ruiz_emxutil.o $builddir/_coder_ruiz_info.o $builddir/c_mexapi_version.o 

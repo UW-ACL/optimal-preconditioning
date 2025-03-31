@@ -1,0 +1,74 @@
+[
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/power_iteration",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=power_iteration_dense_mex -c  power_iteration_data.c -o build/maci64/power_iteration_data.o",
+    "file": "power_iteration_data.c",
+    "output": "build/maci64/power_iteration_data.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/power_iteration",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=power_iteration_dense_mex -c  rt_nonfinite.c -o build/maci64/rt_nonfinite.o",
+    "file": "rt_nonfinite.c",
+    "output": "build/maci64/rt_nonfinite.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/power_iteration",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=power_iteration_dense_mex -c  power_iteration_initialize.c -o build/maci64/power_iteration_initialize.o",
+    "file": "power_iteration_initialize.c",
+    "output": "build/maci64/power_iteration_initialize.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/power_iteration",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=power_iteration_dense_mex -c  power_iteration_terminate.c -o build/maci64/power_iteration_terminate.o",
+    "file": "power_iteration_terminate.c",
+    "output": "build/maci64/power_iteration_terminate.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/power_iteration",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=power_iteration_dense_mex -c  power_iteration.c -o build/maci64/power_iteration.o",
+    "file": "power_iteration.c",
+    "output": "build/maci64/power_iteration.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/power_iteration",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=power_iteration_dense_mex -c  tic.c -o build/maci64/tic.o",
+    "file": "tic.c",
+    "output": "build/maci64/tic.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/power_iteration",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=power_iteration_dense_mex -c  timeKeeper.c -o build/maci64/timeKeeper.o",
+    "file": "timeKeeper.c",
+    "output": "build/maci64/timeKeeper.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/power_iteration",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=power_iteration_dense_mex -c  toc.c -o build/maci64/toc.o",
+    "file": "toc.c",
+    "output": "build/maci64/toc.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/power_iteration",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=power_iteration_dense_mex -c  interface/_coder_power_iteration_api.c -o build/maci64/_coder_power_iteration_api.o",
+    "file": "interface/_coder_power_iteration_api.c",
+    "output": "build/maci64/_coder_power_iteration_api.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/power_iteration",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=power_iteration_dense_mex -c  interface/_coder_power_iteration_mex.c -o build/maci64/_coder_power_iteration_mex.o",
+    "file": "interface/_coder_power_iteration_mex.c",
+    "output": "build/maci64/_coder_power_iteration_mex.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/power_iteration",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=power_iteration_dense_mex -c  interface/_coder_power_iteration_info.c -o build/maci64/_coder_power_iteration_info.o",
+    "file": "interface/_coder_power_iteration_info.c",
+    "output": "build/maci64/_coder_power_iteration_info.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/solvers/base/codegen/mex/power_iteration",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/solvers/base\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=power_iteration_dense_mex -c  /Applications/MATLAB_R2023a.app/extern/version/c_mexapi_version.c -o build/maci64/c_mexapi_version.o",
+    "file": "/Applications/MATLAB_R2023a.app/extern/version/c_mexapi_version.c",
+    "output": "build/maci64/c_mexapi_version.o"
+  }
+]
