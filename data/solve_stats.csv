@@ -1,0 +1,8 @@
+Qf_scale_list,presolve_time_list_original,presolve_time_list_ruiz,presolve_time_list_qr,presolve_time_list_hyper,preconditioning_iters_list_original,preconditioning_iters_list_ruiz,preconditioning_iters_list_qr,preconditioning_iters_list_hyper,pipg_time_list_original,pipg_time_list_ruiz,pipg_time_list_qr,pipg_time_list_hyper,pipg_iters_list_original,pipg_iters_list_ruiz,pipg_iters_list_qr,pipg_iters_list_hyper
+1,0.867,24.989,4.249,12.548,0,20,0,6081,27.022,9.406,77.812,5.819,3081,1101,2240,684
+10,0.83,27.7,3.615,9.653,0,22,0,4758,98.109,2.096,62.367,5.941,11209,237,2098,672
+100,0.799,28.548,3.95,2.89,0,23,0,1413,872.224,11.077,77.443,4.96,100000,1262,2014,558
+1000,0.8,28.545,3.622,2.905,0,23,0,1304,875.715,94.295,145.283,4.62,100000,10774,3894,529
+10000,0.797,30.059,4.166,2.9,0,24,0,1294,872.825,876.718,1307.648,4.618,100000,100000,28588,525
+100000,0.806,35.503,5.162,2.701,0,24,0,1293,885.526,908.619,4480.272,4.575,100000,100000,100000,524
+1000000,0.819,30.284,3.89,2.709,0,24,0,1293,861.138,861.264,3417.23,4.609,100000,100000,100000,524
