@@ -34,6 +34,13 @@ void b_sparse_spallocLike(const emlrtStack *sp, int32_T nzmax,
                           emxArray_real_T *s_d, emxArray_int32_T *s_colidx,
                           emxArray_int32_T *s_rowidx);
 
+void b_sparse_times(const emlrtStack *sp, real_T a, const emxArray_real_T *b_d,
+                    const emxArray_int32_T *b_colidx,
+                    const emxArray_int32_T *b_rowidx, b_sparse *s);
+
+real_T sparse_full(const emlrtStack *sp, const emxArray_real_T *this_d,
+                   const emxArray_int32_T *this_colidx);
+
 int32_T sparse_parenReference(const emlrtStack *sp,
                               const emxArray_real_T *this_d,
                               const emxArray_int32_T *this_colidx,
@@ -45,9 +52,9 @@ void sparse_spallocLike(const emlrtStack *sp, int32_T nzmax,
                         emxArray_real_T *s_d, emxArray_int32_T *s_colidx,
                         emxArray_int32_T *s_rowidx);
 
-void sparse_times(const emlrtStack *sp, real_T a, const emxArray_real_T *b_d,
+void sparse_times(const emlrtStack *sp, const emxArray_real_T *b_d,
                   const emxArray_int32_T *b_colidx,
-                  const emxArray_int32_T *b_rowidx, sparse *s);
+                  const emxArray_int32_T *b_rowidx, c_sparse *s);
 
 void sparse_transpose(const emlrtStack *sp, const emxArray_real_T *this_d,
                       const emxArray_int32_T *this_colidx,

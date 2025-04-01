@@ -54,7 +54,7 @@ mxArray *emlrtMexFcnProperties(void)
       emlrtMxCreateString(
           "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m"));
   emlrtSetField(xEntryPoints, 0, "TimeStamp",
-                emlrtMxCreateDoubleScalar(739707.00806712965));
+                emlrtMxCreateDoubleScalar(739708.05084490741));
   xResult =
       emlrtCreateStructMatrix(1, 1, 7, (const char_T **)&propFieldName[0]);
   emlrtSetField(xResult, 0, "Version",

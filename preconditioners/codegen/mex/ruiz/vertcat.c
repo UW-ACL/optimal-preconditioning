@@ -20,42 +20,42 @@
 #include "mwmathutil.h"
 
 /* Variable Definitions */
-static emlrtRSInfo qb_emlrtRSI = {
+static emlrtRSInfo sb_emlrtRSI = {
     12,               /* lineNo */
     "sparse/vertcat", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/vertcat.m" /* pathName */
 };
 
-static emlrtRSInfo rb_emlrtRSI = {
+static emlrtRSInfo tb_emlrtRSI = {
     13,               /* lineNo */
     "sparse/vertcat", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/vertcat.m" /* pathName */
 };
 
-static emlrtRSInfo sb_emlrtRSI = {
+static emlrtRSInfo ub_emlrtRSI = {
     17,             /* lineNo */
     "sparse/spcat", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/spcat.m" /* pathName */
 };
 
-static emlrtRSInfo tb_emlrtRSI = {
+static emlrtRSInfo vb_emlrtRSI = {
     74,          /* lineNo */
     "dovertcat", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/spcat.m" /* pathName */
 };
 
-static emlrtRSInfo ub_emlrtRSI = {
+static emlrtRSInfo wb_emlrtRSI = {
     93,          /* lineNo */
     "dovertcat", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/spcat.m" /* pathName */
 };
 
-static emlrtRTEInfo eb_emlrtRTEI = {
+static emlrtRTEInfo jb_emlrtRTEI = {
     13,        /* lineNo */
     1,         /* colNo */
     "vertcat", /* fName */
@@ -69,7 +69,7 @@ void sparse_vertcat(const emlrtStack *sp, const emxArray_real_T *varargin_1_d,
                     const emxArray_int32_T *varargin_1_rowidx,
                     const emxArray_real_T *varargin_2_d,
                     const emxArray_int32_T *varargin_2_colidx,
-                    const emxArray_int32_T *varargin_2_rowidx, b_sparse *c)
+                    const emxArray_int32_T *varargin_2_rowidx, c_sparse *c)
 {
   emlrtStack b_st;
   emlrtStack c_st;
@@ -103,42 +103,42 @@ void sparse_vertcat(const emlrtStack *sp, const emxArray_real_T *varargin_1_d,
   varargin_1_rowidx_data = varargin_1_rowidx->data;
   varargin_1_colidx_data = varargin_1_colidx->data;
   varargin_1_d_data = varargin_1_d->data;
-  st.site = &qb_emlrtRSI;
-  b_st.site = &lb_emlrtRSI;
+  st.site = &sb_emlrtRSI;
+  b_st.site = &nb_emlrtRSI;
   i = varargin_1_colidx_data[varargin_1_colidx->size[0] - 1];
   numalloc = varargin_2_colidx_data[varargin_2_colidx->size[0] - 1];
   if (i - 1 > -(numalloc + MIN_int32_T)) {
     emlrtErrorWithMessageIdR2018a(
-        &b_st, &g_emlrtRTEI, "Coder:toolbox:SparseCatTooBig",
+        &b_st, &h_emlrtRTEI, "Coder:toolbox:SparseCatTooBig",
         "Coder:toolbox:SparseCatTooBig", 3, 4, 8, "nonzeros");
   }
   numalloc = (i + numalloc) - 2;
-  st.site = &rb_emlrtRSI;
-  b_st.site = &sb_emlrtRSI;
-  c_st.site = &tb_emlrtRSI;
-  d_st.site = &pb_emlrtRSI;
-  e_st.site = &fb_emlrtRSI;
+  st.site = &tb_emlrtRSI;
+  b_st.site = &ub_emlrtRSI;
+  c_st.site = &vb_emlrtRSI;
+  d_st.site = &rb_emlrtRSI;
+  e_st.site = &hb_emlrtRSI;
   if (numalloc < 0) {
-    emlrtErrorWithMessageIdR2018a(&e_st, &e_emlrtRTEI,
+    emlrtErrorWithMessageIdR2018a(&e_st, &f_emlrtRTEI,
                                   "Coder:toolbox:SparseNegativeSize",
                                   "Coder:toolbox:SparseNegativeSize", 0);
   }
   if (numalloc >= MAX_int32_T) {
     emlrtErrorWithMessageIdR2018a(
-        &e_st, &f_emlrtRTEI, "Coder:toolbox:SparseMaxSize",
+        &e_st, &g_emlrtRTEI, "Coder:toolbox:SparseMaxSize",
         "Coder:toolbox:SparseMaxSize", 2, 12, MAX_int32_T);
   }
   numalloc = muIntScalarMax_sint32(numalloc, 1);
   i = c->d->size[0];
   c->d->size[0] = numalloc;
-  emxEnsureCapacity_real_T(&d_st, c->d, i, &eb_emlrtRTEI);
+  emxEnsureCapacity_real_T(&d_st, c->d, i, &jb_emlrtRTEI);
   i = c->colidx->size[0];
   c->colidx->size[0] = 495;
-  emxEnsureCapacity_int32_T(&d_st, c->colidx, i, &s_emlrtRTEI);
+  emxEnsureCapacity_int32_T(&d_st, c->colidx, i, &ib_emlrtRTEI);
   c->colidx->data[0] = 1;
   i = c->rowidx->size[0];
   c->rowidx->size[0] = numalloc;
-  emxEnsureCapacity_int32_T(&d_st, c->rowidx, i, &eb_emlrtRTEI);
+  emxEnsureCapacity_int32_T(&d_st, c->rowidx, i, &jb_emlrtRTEI);
   for (i = 0; i < numalloc; i++) {
     c->d->data[i] = 0.0;
     c->rowidx->data[i] = 0;
@@ -154,10 +154,10 @@ void sparse_vertcat(const emlrtStack *sp, const emxArray_real_T *varargin_1_d,
     i = varargin_1_colidx_data[ccol];
     kpend_tmp_tmp = varargin_1_colidx_data[ccol + 1];
     kpend_tmp = kpend_tmp_tmp - 1;
-    c_st.site = &ub_emlrtRSI;
+    c_st.site = &wb_emlrtRSI;
     if ((varargin_1_colidx_data[ccol] <= kpend_tmp_tmp - 1) &&
         (kpend_tmp_tmp - 1 > 2147483646)) {
-      d_st.site = &ib_emlrtRSI;
+      d_st.site = &kb_emlrtRSI;
       check_forloop_overflow_error(&d_st);
     }
     for (kp = i; kp <= kpend_tmp; kp++) {
@@ -169,10 +169,10 @@ void sparse_vertcat(const emlrtStack *sp, const emxArray_real_T *varargin_1_d,
     i = varargin_2_colidx_data[ccol];
     kpend_tmp_tmp = varargin_2_colidx_data[ccol + 1];
     kpend_tmp = kpend_tmp_tmp - 1;
-    c_st.site = &ub_emlrtRSI;
+    c_st.site = &wb_emlrtRSI;
     if ((varargin_2_colidx_data[ccol] <= kpend_tmp_tmp - 1) &&
         (kpend_tmp_tmp - 1 > 2147483646)) {
-      d_st.site = &ib_emlrtRSI;
+      d_st.site = &kb_emlrtRSI;
       check_forloop_overflow_error(&d_st);
     }
     for (kp = i; kp <= kpend_tmp; kp++) {

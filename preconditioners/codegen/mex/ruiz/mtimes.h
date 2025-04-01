@@ -32,7 +32,7 @@ void c_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
                      const emxArray_int32_T *a_rowidx,
                      const emxArray_real_T *b_d,
                      const emxArray_int32_T *b_colidx,
-                     const emxArray_int32_T *b_rowidx, sparse *c);
+                     const emxArray_int32_T *b_rowidx, b_sparse *c);
 
 void d_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
                      const emxArray_int32_T *a_colidx,
@@ -44,13 +44,12 @@ void e_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
                      const emxArray_int32_T *a_rowidx,
                      const emxArray_real_T *b_d,
                      const emxArray_int32_T *b_colidx,
-                     const emxArray_int32_T *b_rowidx, emxArray_real_T *c_d,
-                     emxArray_int32_T *c_colidx, emxArray_int32_T *c_rowidx);
+                     const emxArray_int32_T *b_rowidx, c_sparse *c);
 
 void sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
                    const emxArray_int32_T *a_colidx,
                    const emxArray_int32_T *a_rowidx, const emxArray_real_T *b_d,
                    const emxArray_int32_T *b_colidx,
-                   const emxArray_int32_T *b_rowidx, sparse *c);
+                   const emxArray_int32_T *b_rowidx, b_sparse *c);
 
 /* End of code generation (mtimes.h) */

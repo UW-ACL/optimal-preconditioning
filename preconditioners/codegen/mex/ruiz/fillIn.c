@@ -15,7 +15,7 @@
 #include "ruiz_types.h"
 
 /* Function Definitions */
-void b_sparse_fillIn(sparse *this)
+void b_sparse_fillIn(c_sparse *this)
 {
   int32_T c;
   int32_T i;
@@ -42,7 +42,34 @@ void b_sparse_fillIn(sparse *this)
   this->colidx->data[this->colidx->size[0] - 1] = idx;
 }
 
-void sparse_fillIn(b_sparse *this)
+void c_sparse_fillIn(b_sparse *this)
+{
+  int32_T c;
+  int32_T i;
+  int32_T idx;
+  idx = 1;
+  i = this->colidx->size[0];
+  for (c = 0; c <= i - 2; c++) {
+    int32_T ridx;
+    ridx = this->colidx->data[c];
+    this->colidx->data[c] = idx;
+    while (ridx < this->colidx->data[c + 1]) {
+      real_T val;
+      int32_T currRowIdx;
+      currRowIdx = this->rowidx->data[ridx - 1];
+      val = this->d->data[ridx - 1];
+      ridx++;
+      if (val != 0.0) {
+        this->d->data[idx - 1] = val;
+        this->rowidx->data[idx - 1] = currRowIdx;
+        idx++;
+      }
+    }
+  }
+  this->colidx->data[this->colidx->size[0] - 1] = idx;
+}
+
+void sparse_fillIn(c_sparse *this)
 {
   int32_T c;
   int32_T i;

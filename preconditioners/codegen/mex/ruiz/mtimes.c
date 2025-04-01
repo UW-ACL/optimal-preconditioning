@@ -21,119 +21,112 @@
 #include <string.h>
 
 /* Variable Definitions */
-static emlrtRSInfo hb_emlrtRSI = {
-    14,              /* lineNo */
-    "sparse/fillIn", /* fcnName */
-    "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
-    "+internal/@sparse/fillIn.m" /* pathName */
-};
-
-static emlrtRSInfo pc_emlrtRSI = {
+static emlrtRSInfo pd_emlrtRSI = {
     33,              /* lineNo */
     "sparse/mtimes", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRSInfo qc_emlrtRSI = {
+static emlrtRSInfo qd_emlrtRSI = {
     49,         /* lineNo */
     "ssmtimes", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRSInfo rc_emlrtRSI = {
+static emlrtRSInfo rd_emlrtRSI = {
     50,         /* lineNo */
     "ssmtimes", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRSInfo sc_emlrtRSI = {
+static emlrtRSInfo sd_emlrtRSI = {
     74,         /* lineNo */
     "ssmtimes", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRSInfo tc_emlrtRSI = {
+static emlrtRSInfo td_emlrtRSI = {
     86,         /* lineNo */
     "ssmtimes", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRSInfo uc_emlrtRSI = {
+static emlrtRSInfo ud_emlrtRSI = {
     98,         /* lineNo */
     "ssmtimes", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRSInfo vc_emlrtRSI = {
+static emlrtRSInfo vd_emlrtRSI = {
     118,        /* lineNo */
     "ssmtimes", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRSInfo wc_emlrtRSI = {
+static emlrtRSInfo wd_emlrtRSI = {
     120,        /* lineNo */
     "ssmtimes", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRSInfo xc_emlrtRSI = {
+static emlrtRSInfo xd_emlrtRSI = {
     124,        /* lineNo */
     "ssmtimes", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRSInfo yc_emlrtRSI = {
+static emlrtRSInfo yd_emlrtRSI = {
     290,                 /* lineNo */
     "countNnzInProduct", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRSInfo dd_emlrtRSI = {
+static emlrtRSInfo de_emlrtRSI = {
     35,              /* lineNo */
     "sparse/mtimes", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRSInfo ed_emlrtRSI = {
+static emlrtRSInfo ee_emlrtRSI = {
     216,        /* lineNo */
     "sfmtimes", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRSInfo fd_emlrtRSI = {
+static emlrtRSInfo fe_emlrtRSI = {
     241,               /* lineNo */
     "sfmtimes_vector", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRSInfo gd_emlrtRSI = {
+static emlrtRSInfo ge_emlrtRSI = {
     252,               /* lineNo */
     "sfmtimes_vector", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRSInfo hd_emlrtRSI = {
+static emlrtRSInfo he_emlrtRSI = {
     258,               /* lineNo */
     "sfmtimes_vector", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
 };
 
-static emlrtRTEInfo h_emlrtRTEI = {
+static emlrtRTEInfo i_emlrtRTEI = {
     300,                 /* lineNo */
     9,                   /* colNo */
     "countNnzInProduct", /* fName */
@@ -141,7 +134,7 @@ static emlrtRTEInfo h_emlrtRTEI = {
     "+internal/@sparse/mtimes.m" /* pName */
 };
 
-static emlrtRTEInfo hb_emlrtRTEI = {
+static emlrtRTEInfo nb_emlrtRTEI = {
     275,      /* lineNo */
     1,        /* colNo */
     "mtimes", /* fName */
@@ -149,7 +142,7 @@ static emlrtRTEInfo hb_emlrtRTEI = {
     "+internal/@sparse/mtimes.m" /* pName */
 };
 
-static emlrtRTEInfo mb_emlrtRTEI = {
+static emlrtRTEInfo rb_emlrtRTEI = {
     51,       /* lineNo */
     1,        /* colNo */
     "mtimes", /* fName */
@@ -183,10 +176,10 @@ void b_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
   a_rowidx_data = a_rowidx->data;
   a_colidx_data = a_colidx->data;
   a_d_data = a_d->data;
-  st.site = &dd_emlrtRSI;
+  st.site = &de_emlrtRSI;
   memset(&c[0], 0, 298U * sizeof(real_T));
   if (a_colidx_data[a_colidx->size[0] - 1] - 1 != 0) {
-    b_st.site = &ed_emlrtRSI;
+    b_st.site = &ee_emlrtRSI;
     for (acol = 0; acol < 298; acol++) {
       real_T bc;
       int32_T a;
@@ -200,9 +193,9 @@ void b_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
         int32_T apendm1_tmp;
         int32_T c_tmp;
         nap = ((nap_tmp - nap) + ((nap / 4) << 2)) - 1;
-        c_st.site = &fd_emlrtRSI;
+        c_st.site = &fe_emlrtRSI;
         if ((a_colidx_data[acol] <= nap) && (nap > 2147483643)) {
-          d_st.site = &ib_emlrtRSI;
+          d_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&d_st);
         }
         for (ap = a; ap <= nap; ap += 4) {
@@ -216,9 +209,9 @@ void b_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
         }
         apendm1_tmp = nap_tmp - 1;
         a = nap + 1;
-        c_st.site = &gd_emlrtRSI;
+        c_st.site = &ge_emlrtRSI;
         if ((nap + 1 <= nap_tmp - 1) && (nap_tmp - 1 > 2147483646)) {
-          d_st.site = &ib_emlrtRSI;
+          d_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&d_st);
         }
         for (ap = a; ap <= apendm1_tmp; ap++) {
@@ -227,10 +220,10 @@ void b_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
         }
       } else {
         nap = nap_tmp - 1;
-        c_st.site = &hd_emlrtRSI;
+        c_st.site = &he_emlrtRSI;
         if ((a_colidx_data[acol] <= nap_tmp - 1) &&
             (nap_tmp - 1 > 2147483646)) {
-          d_st.site = &ib_emlrtRSI;
+          d_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&d_st);
         }
         for (ap = a; ap <= nap; ap++) {
@@ -248,7 +241,7 @@ void c_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
                      const emxArray_int32_T *a_rowidx,
                      const emxArray_real_T *b_d,
                      const emxArray_int32_T *b_colidx,
-                     const emxArray_int32_T *b_rowidx, sparse *c)
+                     const emxArray_int32_T *b_rowidx, b_sparse *c)
 {
   emlrtStack b_st;
   emlrtStack c_st;
@@ -287,11 +280,11 @@ void c_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
   a_rowidx_data = a_rowidx->data;
   a_colidx_data = a_colidx->data;
   a_d_data = a_d->data;
-  st.site = &pc_emlrtRSI;
-  b_st.site = &qc_emlrtRSI;
+  st.site = &pd_emlrtRSI;
+  b_st.site = &qd_emlrtRSI;
   i = c->colidx->size[0];
   c->colidx->size[0] = b_colidx->size[0];
-  emxEnsureCapacity_int32_T(&b_st, c->colidx, i, &hb_emlrtRTEI);
+  emxEnsureCapacity_int32_T(&b_st, c->colidx, i, &nb_emlrtRTEI);
   bcidx = b_colidx->size[0];
   for (i = 0; i < bcidx; i++) {
     c->colidx->data[i] = 0;
@@ -310,9 +303,9 @@ void c_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
       while ((bcidx + 1 < b_colidx_data[j + 1]) && (cnnz <= cmax)) {
         paend_tmp = a_colidx_data[b_rowidx_data[bcidx]] - 1;
         a_tmp = a_colidx_data[b_rowidx_data[bcidx] - 1];
-        c_st.site = &yc_emlrtRSI;
+        c_st.site = &yd_emlrtRSI;
         if ((a_tmp <= paend_tmp) && (paend_tmp > 2147483646)) {
-          d_st.site = &ib_emlrtRSI;
+          d_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&d_st);
         }
         for (blen_tmp = a_tmp; blen_tmp <= paend_tmp; blen_tmp++) {
@@ -325,7 +318,7 @@ void c_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
         bcidx++;
       }
       if (cnnz < cstart) {
-        emlrtErrorWithMessageIdR2018a(&b_st, &h_emlrtRTEI, "MATLAB:nomem",
+        emlrtErrorWithMessageIdR2018a(&b_st, &i_emlrtRTEI, "MATLAB:nomem",
                                       "MATLAB:nomem", 0);
       } else {
         j++;
@@ -335,17 +328,17 @@ void c_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
       exitg1 = 1;
     }
   } while (exitg1 == 0);
-  b_st.site = &rc_emlrtRSI;
+  b_st.site = &rd_emlrtRSI;
   if (cnnz < 1) {
     cnnz = 1;
   }
   c->maxnz = cnnz;
   i = c->d->size[0];
   c->d->size[0] = cnnz;
-  emxEnsureCapacity_real_T(&b_st, c->d, i, &m_emlrtRTEI);
+  emxEnsureCapacity_real_T(&b_st, c->d, i, &db_emlrtRTEI);
   i = c->rowidx->size[0];
   c->rowidx->size[0] = cnnz;
-  emxEnsureCapacity_int32_T(&b_st, c->rowidx, i, &n_emlrtRTEI);
+  emxEnsureCapacity_int32_T(&b_st, c->rowidx, i, &eb_emlrtRTEI);
   memset(&flag[0], 0, 196U * sizeof(int32_T));
   pb = 0;
   cnnz = -1;
@@ -361,9 +354,9 @@ void c_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
         cmax = a_colidx_data[b_rowidx_data[pb]];
         paend_tmp = cmax - 1;
         a_tmp = a_colidx_data[b_rowidx_data[pb] - 1];
-        b_st.site = &sc_emlrtRSI;
+        b_st.site = &sd_emlrtRSI;
         if ((a_tmp <= cmax - 1) && (cmax - 1 > 2147483646)) {
-          c_st.site = &ib_emlrtRSI;
+          c_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&c_st);
         }
         for (pa = a_tmp; pa <= paend_tmp; pa++) {
@@ -377,9 +370,9 @@ void c_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
         cmax = a_colidx_data[b_rowidx_data[pb]];
         paend_tmp = cmax - 1;
         a_tmp = a_colidx_data[b_rowidx_data[pb] - 1];
-        b_st.site = &tc_emlrtRSI;
+        b_st.site = &td_emlrtRSI;
         if ((a_tmp <= cmax - 1) && (cmax - 1 > 2147483646)) {
-          c_st.site = &ib_emlrtRSI;
+          c_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&c_st);
         }
         for (pa = a_tmp; pa <= paend_tmp; pa++) {
@@ -395,9 +388,9 @@ void c_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
           bd = b_d_data[pb];
           paend_tmp = a_colidx_data[b_rowidx_data[pb]] - 1;
           a_tmp = a_colidx_data[b_rowidx_data[pb] - 1];
-          b_st.site = &uc_emlrtRSI;
+          b_st.site = &ud_emlrtRSI;
           if ((a_tmp <= paend_tmp) && (paend_tmp > 2147483646)) {
-            c_st.site = &ib_emlrtRSI;
+            c_st.site = &kb_emlrtRSI;
             check_forloop_overflow_error(&c_st);
           }
           for (pa = a_tmp; pa <= paend_tmp; pa++) {
@@ -418,20 +411,20 @@ void c_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
     bcidx = c->colidx->data[j + 1] - 1;
     pcstart = c->colidx->data[j];
     if (needSort) {
-      b_st.site = &vc_emlrtRSI;
+      b_st.site = &vd_emlrtRSI;
       b_introsort(&b_st, c->rowidx, c->colidx->data[j], bcidx);
     }
-    b_st.site = &wc_emlrtRSI;
+    b_st.site = &wd_emlrtRSI;
     if ((c->colidx->data[j] <= bcidx) && (bcidx > 2147483646)) {
-      c_st.site = &ib_emlrtRSI;
+      c_st.site = &kb_emlrtRSI;
       check_forloop_overflow_error(&c_st);
     }
     for (cstart = pcstart; cstart <= bcidx; cstart++) {
       c->d->data[cstart - 1] = wd[c->rowidx->data[cstart - 1] - 1];
     }
   }
-  b_st.site = &xc_emlrtRSI;
-  b_sparse_fillIn(c);
+  b_st.site = &xd_emlrtRSI;
+  c_sparse_fillIn(c);
 }
 
 void d_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
@@ -459,10 +452,10 @@ void d_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
   a_rowidx_data = a_rowidx->data;
   a_colidx_data = a_colidx->data;
   a_d_data = a_d->data;
-  st.site = &dd_emlrtRSI;
+  st.site = &de_emlrtRSI;
   memset(&c[0], 0, 196U * sizeof(real_T));
   if (a_colidx_data[a_colidx->size[0] - 1] - 1 != 0) {
-    b_st.site = &ed_emlrtRSI;
+    b_st.site = &ee_emlrtRSI;
     for (acol = 0; acol < 196; acol++) {
       real_T bc;
       int32_T a;
@@ -476,9 +469,9 @@ void d_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
         int32_T apendm1_tmp;
         int32_T c_tmp;
         nap = ((nap_tmp - nap) + ((nap / 4) << 2)) - 1;
-        c_st.site = &fd_emlrtRSI;
+        c_st.site = &fe_emlrtRSI;
         if ((a_colidx_data[acol] <= nap) && (nap > 2147483643)) {
-          d_st.site = &ib_emlrtRSI;
+          d_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&d_st);
         }
         for (ap = a; ap <= nap; ap += 4) {
@@ -492,9 +485,9 @@ void d_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
         }
         apendm1_tmp = nap_tmp - 1;
         a = nap + 1;
-        c_st.site = &gd_emlrtRSI;
+        c_st.site = &ge_emlrtRSI;
         if ((nap + 1 <= nap_tmp - 1) && (nap_tmp - 1 > 2147483646)) {
-          d_st.site = &ib_emlrtRSI;
+          d_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&d_st);
         }
         for (ap = a; ap <= apendm1_tmp; ap++) {
@@ -503,10 +496,10 @@ void d_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
         }
       } else {
         nap = nap_tmp - 1;
-        c_st.site = &hd_emlrtRSI;
+        c_st.site = &he_emlrtRSI;
         if ((a_colidx_data[acol] <= nap_tmp - 1) &&
             (nap_tmp - 1 > 2147483646)) {
-          d_st.site = &ib_emlrtRSI;
+          d_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&d_st);
         }
         for (ap = a; ap <= nap; ap++) {
@@ -524,8 +517,7 @@ void e_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
                      const emxArray_int32_T *a_rowidx,
                      const emxArray_real_T *b_d,
                      const emxArray_int32_T *b_colidx,
-                     const emxArray_int32_T *b_rowidx, emxArray_real_T *c_d,
-                     emxArray_int32_T *c_colidx, emxArray_int32_T *c_rowidx)
+                     const emxArray_int32_T *b_rowidx, c_sparse *c)
 {
   emlrtStack b_st;
   emlrtStack c_st;
@@ -534,8 +526,6 @@ void e_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
   real_T wd[494];
   const real_T *a_d_data;
   const real_T *b_d_data;
-  real_T bd;
-  real_T *c_d_data;
   int32_T flag[494];
   const int32_T *a_colidx_data;
   const int32_T *a_rowidx_data;
@@ -550,10 +540,8 @@ void e_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
   int32_T i;
   int32_T j;
   int32_T pa;
+  int32_T paend_tmp;
   int32_T pb;
-  int32_T pcstart;
-  int32_T *c_colidx_data;
-  int32_T *c_rowidx_data;
   st.prev = sp;
   st.tls = sp->tls;
   b_st.prev = &st;
@@ -568,15 +556,14 @@ void e_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
   a_rowidx_data = a_rowidx->data;
   a_colidx_data = a_colidx->data;
   a_d_data = a_d->data;
-  st.site = &pc_emlrtRSI;
-  b_st.site = &qc_emlrtRSI;
-  i = c_colidx->size[0];
-  c_colidx->size[0] = b_colidx->size[0];
-  emxEnsureCapacity_int32_T(&b_st, c_colidx, i, &mb_emlrtRTEI);
-  c_colidx_data = c_colidx->data;
-  cmax = b_colidx->size[0];
-  for (i = 0; i < cmax; i++) {
-    c_colidx_data[i] = 0;
+  st.site = &pd_emlrtRSI;
+  b_st.site = &qd_emlrtRSI;
+  i = c->colidx->size[0];
+  c->colidx->size[0] = b_colidx->size[0];
+  emxEnsureCapacity_int32_T(&b_st, c->colidx, i, &rb_emlrtRTEI);
+  bcidx = b_colidx->size[0];
+  for (i = 0; i < bcidx; i++) {
+    c->colidx->data[i] = 0;
   }
   memset(&flag[0], 0, 494U * sizeof(int32_T));
   cnnz = 0;
@@ -588,16 +575,16 @@ void e_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
       bcidx = b_colidx_data[j] - 1;
       cstart = cnnz;
       cmax = cnnz + 494;
-      c_colidx_data[j] = cnnz + 1;
+      c->colidx->data[j] = cnnz + 1;
       while ((bcidx + 1 < b_colidx_data[j + 1]) && (cnnz <= cmax)) {
-        pcstart = a_colidx_data[b_rowidx_data[bcidx]] - 1;
+        paend_tmp = a_colidx_data[b_rowidx_data[bcidx]] - 1;
         a_tmp = a_colidx_data[b_rowidx_data[bcidx] - 1];
-        c_st.site = &yc_emlrtRSI;
-        if ((a_tmp <= pcstart) && (pcstart > 2147483646)) {
-          d_st.site = &ib_emlrtRSI;
+        c_st.site = &yd_emlrtRSI;
+        if ((a_tmp <= paend_tmp) && (paend_tmp > 2147483646)) {
+          d_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&d_st);
         }
-        for (blen_tmp = a_tmp; blen_tmp <= pcstart; blen_tmp++) {
+        for (blen_tmp = a_tmp; blen_tmp <= paend_tmp; blen_tmp++) {
           i = a_rowidx_data[blen_tmp - 1] - 1;
           if (flag[i] != j + 1) {
             flag[i] = j + 1;
@@ -607,80 +594,78 @@ void e_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
         bcidx++;
       }
       if (cnnz < cstart) {
-        emlrtErrorWithMessageIdR2018a(&b_st, &h_emlrtRTEI, "MATLAB:nomem",
+        emlrtErrorWithMessageIdR2018a(&b_st, &i_emlrtRTEI, "MATLAB:nomem",
                                       "MATLAB:nomem", 0);
       } else {
         j++;
       }
     } else {
-      c_colidx_data[494] = cnnz + 1;
+      c->colidx->data[494] = cnnz + 1;
       exitg1 = 1;
     }
   } while (exitg1 == 0);
-  b_st.site = &rc_emlrtRSI;
+  b_st.site = &rd_emlrtRSI;
   if (cnnz < 1) {
     cnnz = 1;
   }
-  i = c_d->size[0];
-  c_d->size[0] = cnnz;
-  emxEnsureCapacity_real_T(&b_st, c_d, i, &m_emlrtRTEI);
-  c_d_data = c_d->data;
-  i = c_rowidx->size[0];
-  c_rowidx->size[0] = cnnz;
-  emxEnsureCapacity_int32_T(&b_st, c_rowidx, i, &n_emlrtRTEI);
-  c_rowidx_data = c_rowidx->data;
+  i = c->d->size[0];
+  c->d->size[0] = cnnz;
+  emxEnsureCapacity_real_T(&b_st, c->d, i, &db_emlrtRTEI);
+  i = c->rowidx->size[0];
+  c->rowidx->size[0] = cnnz;
+  emxEnsureCapacity_int32_T(&b_st, c->rowidx, i, &eb_emlrtRTEI);
   memset(&flag[0], 0, 494U * sizeof(int32_T));
   pb = 0;
   cnnz = -1;
   for (j = 0; j < 494; j++) {
+    int32_T pcstart;
     boolean_T needSort;
     needSort = false;
     pcstart = cnnz + 2;
     blen_tmp = b_colidx_data[j + 1];
-    cmax = (blen_tmp - pb) - 1;
-    if (cmax != 0) {
-      if (cmax == 1) {
-        int32_T paend_tmp;
+    bcidx = (blen_tmp - pb) - 1;
+    if (bcidx != 0) {
+      if (bcidx == 1) {
         cmax = a_colidx_data[b_rowidx_data[pb]];
         paend_tmp = cmax - 1;
         a_tmp = a_colidx_data[b_rowidx_data[pb] - 1];
-        b_st.site = &sc_emlrtRSI;
+        b_st.site = &sd_emlrtRSI;
         if ((a_tmp <= cmax - 1) && (cmax - 1 > 2147483646)) {
-          c_st.site = &ib_emlrtRSI;
+          c_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&c_st);
         }
         for (pa = a_tmp; pa <= paend_tmp; pa++) {
-          bcidx = a_rowidx_data[pa - 1];
-          c_rowidx_data[((cnnz + pa) - a_tmp) + 1] = bcidx;
-          wd[bcidx - 1] = a_d_data[pa - 1] * b_d_data[pb];
+          i = a_rowidx_data[pa - 1];
+          c->rowidx->data[((cnnz + pa) - a_tmp) + 1] = i;
+          wd[i - 1] = a_d_data[pa - 1] * b_d_data[pb];
         }
         cnnz = (cnnz + cmax) - a_tmp;
         pb++;
       } else {
-        int32_T paend_tmp;
         cmax = a_colidx_data[b_rowidx_data[pb]];
         paend_tmp = cmax - 1;
         a_tmp = a_colidx_data[b_rowidx_data[pb] - 1];
-        b_st.site = &tc_emlrtRSI;
+        b_st.site = &td_emlrtRSI;
         if ((a_tmp <= cmax - 1) && (cmax - 1 > 2147483646)) {
-          c_st.site = &ib_emlrtRSI;
+          c_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&c_st);
         }
         for (pa = a_tmp; pa <= paend_tmp; pa++) {
           bcidx = a_rowidx_data[pa - 1];
           cstart = (cnnz + pa) - a_tmp;
           flag[bcidx - 1] = cstart + 2;
-          c_rowidx_data[cstart + 1] = bcidx;
+          c->rowidx->data[cstart + 1] = bcidx;
           wd[bcidx - 1] = a_d_data[pa - 1] * b_d_data[pb];
         }
         cnnz = (cnnz + cmax) - a_tmp;
         for (pb++; pb + 1 < blen_tmp; pb++) {
+          real_T bd;
           bd = b_d_data[pb];
           paend_tmp = a_colidx_data[b_rowidx_data[pb]] - 1;
           a_tmp = a_colidx_data[b_rowidx_data[pb] - 1];
-          b_st.site = &uc_emlrtRSI;
+          b_st.site = &ud_emlrtRSI;
           if ((a_tmp <= paend_tmp) && (paend_tmp > 2147483646)) {
-            c_st.site = &ib_emlrtRSI;
+            c_st.site = &kb_emlrtRSI;
             check_forloop_overflow_error(&c_st);
           }
           for (pa = a_tmp; pa <= paend_tmp; pa++) {
@@ -688,7 +673,7 @@ void e_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
             if (flag[i - 1] < pcstart) {
               cnnz++;
               flag[i - 1] = cnnz + 1;
-              c_rowidx_data[cnnz] = i;
+              c->rowidx->data[cnnz] = i;
               wd[i - 1] = a_d_data[pa - 1] * bd;
               needSort = true;
             } else {
@@ -698,48 +683,30 @@ void e_sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
         }
       }
     }
-    bcidx = c_colidx_data[j + 1] - 1;
-    i = c_colidx_data[j];
+    bcidx = c->colidx->data[j + 1] - 1;
+    pcstart = c->colidx->data[j];
     if (needSort) {
-      b_st.site = &vc_emlrtRSI;
-      b_introsort(&b_st, c_rowidx, c_colidx_data[j], bcidx);
-      c_rowidx_data = c_rowidx->data;
+      b_st.site = &vd_emlrtRSI;
+      b_introsort(&b_st, c->rowidx, c->colidx->data[j], bcidx);
     }
-    b_st.site = &wc_emlrtRSI;
-    if ((c_colidx_data[j] <= bcidx) && (bcidx > 2147483646)) {
-      c_st.site = &ib_emlrtRSI;
+    b_st.site = &wd_emlrtRSI;
+    if ((c->colidx->data[j] <= bcidx) && (bcidx > 2147483646)) {
+      c_st.site = &kb_emlrtRSI;
       check_forloop_overflow_error(&c_st);
     }
-    for (cstart = i; cstart <= bcidx; cstart++) {
-      c_d_data[cstart - 1] = wd[c_rowidx_data[cstart - 1] - 1];
+    for (cstart = pcstart; cstart <= bcidx; cstart++) {
+      c->d->data[cstart - 1] = wd[c->rowidx->data[cstart - 1] - 1];
     }
   }
-  b_st.site = &xc_emlrtRSI;
-  cmax = 1;
-  i = c_colidx->size[0];
-  c_st.site = &hb_emlrtRSI;
-  for (pcstart = 0; pcstart <= i - 2; pcstart++) {
-    bcidx = c_colidx_data[pcstart];
-    c_colidx_data[pcstart] = cmax;
-    while (bcidx < c_colidx_data[pcstart + 1]) {
-      cstart = c_rowidx_data[bcidx - 1];
-      bd = c_d_data[bcidx - 1];
-      bcidx++;
-      if (bd != 0.0) {
-        c_d_data[cmax - 1] = bd;
-        c_rowidx_data[cmax - 1] = cstart;
-        cmax++;
-      }
-    }
-  }
-  c_colidx_data[c_colidx->size[0] - 1] = cmax;
+  b_st.site = &xd_emlrtRSI;
+  b_sparse_fillIn(c);
 }
 
 void sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
                    const emxArray_int32_T *a_colidx,
                    const emxArray_int32_T *a_rowidx, const emxArray_real_T *b_d,
                    const emxArray_int32_T *b_colidx,
-                   const emxArray_int32_T *b_rowidx, sparse *c)
+                   const emxArray_int32_T *b_rowidx, b_sparse *c)
 {
   emlrtStack b_st;
   emlrtStack c_st;
@@ -778,11 +745,11 @@ void sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
   a_rowidx_data = a_rowidx->data;
   a_colidx_data = a_colidx->data;
   a_d_data = a_d->data;
-  st.site = &pc_emlrtRSI;
-  b_st.site = &qc_emlrtRSI;
+  st.site = &pd_emlrtRSI;
+  b_st.site = &qd_emlrtRSI;
   i = c->colidx->size[0];
   c->colidx->size[0] = b_colidx->size[0];
-  emxEnsureCapacity_int32_T(&b_st, c->colidx, i, &hb_emlrtRTEI);
+  emxEnsureCapacity_int32_T(&b_st, c->colidx, i, &nb_emlrtRTEI);
   bcidx = b_colidx->size[0];
   for (i = 0; i < bcidx; i++) {
     c->colidx->data[i] = 0;
@@ -801,9 +768,9 @@ void sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
       while ((bcidx + 1 < b_colidx_data[j + 1]) && (cnnz <= cmax)) {
         paend_tmp = a_colidx_data[b_rowidx_data[bcidx]] - 1;
         a_tmp = a_colidx_data[b_rowidx_data[bcidx] - 1];
-        c_st.site = &yc_emlrtRSI;
+        c_st.site = &yd_emlrtRSI;
         if ((a_tmp <= paend_tmp) && (paend_tmp > 2147483646)) {
-          d_st.site = &ib_emlrtRSI;
+          d_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&d_st);
         }
         for (blen_tmp = a_tmp; blen_tmp <= paend_tmp; blen_tmp++) {
@@ -816,7 +783,7 @@ void sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
         bcidx++;
       }
       if (cnnz < cstart) {
-        emlrtErrorWithMessageIdR2018a(&b_st, &h_emlrtRTEI, "MATLAB:nomem",
+        emlrtErrorWithMessageIdR2018a(&b_st, &i_emlrtRTEI, "MATLAB:nomem",
                                       "MATLAB:nomem", 0);
       } else {
         j++;
@@ -826,17 +793,17 @@ void sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
       exitg1 = 1;
     }
   } while (exitg1 == 0);
-  b_st.site = &rc_emlrtRSI;
+  b_st.site = &rd_emlrtRSI;
   if (cnnz < 1) {
     cnnz = 1;
   }
   c->maxnz = cnnz;
   i = c->d->size[0];
   c->d->size[0] = cnnz;
-  emxEnsureCapacity_real_T(&b_st, c->d, i, &m_emlrtRTEI);
+  emxEnsureCapacity_real_T(&b_st, c->d, i, &db_emlrtRTEI);
   i = c->rowidx->size[0];
   c->rowidx->size[0] = cnnz;
-  emxEnsureCapacity_int32_T(&b_st, c->rowidx, i, &n_emlrtRTEI);
+  emxEnsureCapacity_int32_T(&b_st, c->rowidx, i, &eb_emlrtRTEI);
   memset(&flag[0], 0, 298U * sizeof(int32_T));
   pb = 0;
   cnnz = -1;
@@ -852,9 +819,9 @@ void sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
         cmax = a_colidx_data[b_rowidx_data[pb]];
         paend_tmp = cmax - 1;
         a_tmp = a_colidx_data[b_rowidx_data[pb] - 1];
-        b_st.site = &sc_emlrtRSI;
+        b_st.site = &sd_emlrtRSI;
         if ((a_tmp <= cmax - 1) && (cmax - 1 > 2147483646)) {
-          c_st.site = &ib_emlrtRSI;
+          c_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&c_st);
         }
         for (pa = a_tmp; pa <= paend_tmp; pa++) {
@@ -868,9 +835,9 @@ void sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
         cmax = a_colidx_data[b_rowidx_data[pb]];
         paend_tmp = cmax - 1;
         a_tmp = a_colidx_data[b_rowidx_data[pb] - 1];
-        b_st.site = &tc_emlrtRSI;
+        b_st.site = &td_emlrtRSI;
         if ((a_tmp <= cmax - 1) && (cmax - 1 > 2147483646)) {
-          c_st.site = &ib_emlrtRSI;
+          c_st.site = &kb_emlrtRSI;
           check_forloop_overflow_error(&c_st);
         }
         for (pa = a_tmp; pa <= paend_tmp; pa++) {
@@ -886,9 +853,9 @@ void sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
           bd = b_d_data[pb];
           paend_tmp = a_colidx_data[b_rowidx_data[pb]] - 1;
           a_tmp = a_colidx_data[b_rowidx_data[pb] - 1];
-          b_st.site = &uc_emlrtRSI;
+          b_st.site = &ud_emlrtRSI;
           if ((a_tmp <= paend_tmp) && (paend_tmp > 2147483646)) {
-            c_st.site = &ib_emlrtRSI;
+            c_st.site = &kb_emlrtRSI;
             check_forloop_overflow_error(&c_st);
           }
           for (pa = a_tmp; pa <= paend_tmp; pa++) {
@@ -909,20 +876,20 @@ void sparse_mtimes(const emlrtStack *sp, const emxArray_real_T *a_d,
     bcidx = c->colidx->data[j + 1] - 1;
     pcstart = c->colidx->data[j];
     if (needSort) {
-      b_st.site = &vc_emlrtRSI;
+      b_st.site = &vd_emlrtRSI;
       b_introsort(&b_st, c->rowidx, c->colidx->data[j], bcidx);
     }
-    b_st.site = &wc_emlrtRSI;
+    b_st.site = &wd_emlrtRSI;
     if ((c->colidx->data[j] <= bcidx) && (bcidx > 2147483646)) {
-      c_st.site = &ib_emlrtRSI;
+      c_st.site = &kb_emlrtRSI;
       check_forloop_overflow_error(&c_st);
     }
     for (cstart = pcstart; cstart <= bcidx; cstart++) {
       c->d->data[cstart - 1] = wd[c->rowidx->data[cstart - 1] - 1];
     }
   }
-  b_st.site = &xc_emlrtRSI;
-  b_sparse_fillIn(c);
+  b_st.site = &xd_emlrtRSI;
+  c_sparse_fillIn(c);
 }
 
 /* End of code generation (mtimes.c) */

@@ -5,6 +5,9 @@ _ruiz
 _ruiz_initialize
 _ruiz_terminate
 _ruiz_atexit
+_emxEnsureCapacity_int8_T
+_emxFree_int8_T
+_emxInit_int8_T
 _emxFreeStruct_sparse
 _emxInitStruct_sparse
 _emxCopyStruct_sparse
@@ -13,8 +16,8 @@ _emxCopy_int32_T
 _emxEnsureCapacity_real_T
 _emxEnsureCapacity_int32_T
 _emxFreeStruct_sparse1
-_emxFree_real_T
 _emxFree_int32_T
+_emxFree_real_T
 _emxInitStruct_sparse1
 _emxInit_real_T
 _emxInit_int32_T

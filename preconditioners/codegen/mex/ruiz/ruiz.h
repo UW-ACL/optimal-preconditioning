@@ -22,10 +22,10 @@
 #include <string.h>
 
 /* Function Declarations */
-void ruiz(const emlrtStack *sp, const sparse P, const real_T q[298],
-          const sparse H, const real_T h[196], const struct0_T *ps,
-          sparse *P_ruiz, real_T q_ruiz[298], sparse *H_ruiz,
-          real_T h_ruiz[196], real_T *c, sparse *D, sparse *E,
+void ruiz(const emlrtStack *sp, const b_sparse P, const real_T q[298],
+          const b_sparse H, const real_T h[196], const struct0_T *ps,
+          b_sparse *P_ruiz, real_T q_ruiz[298], b_sparse *H_ruiz,
+          real_T h_ruiz[196], real_T *c, b_sparse *D, b_sparse *E,
           real_T *ruiz_iters, real_T *ruiz_time);
 
 /* End of code generation (ruiz.h) */

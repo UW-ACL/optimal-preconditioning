@@ -3,9 +3,9 @@
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * fillIn.h
+ * sparse1.h
  *
- * Code generation for function 'fillIn'
+ * Code generation for function 'sparse1'
  *
  */
 
@@ -22,10 +22,6 @@
 #include <string.h>
 
 /* Function Declarations */
-void b_sparse_fillIn(c_sparse *this);
+void sparse(const emlrtStack *sp, const real_T varargin_3[494], c_sparse *y);
 
-void c_sparse_fillIn(b_sparse *this);
-
-void sparse_fillIn(c_sparse *this);
-
-/* End of code generation (fillIn.h) */
+/* End of code generation (sparse1.h) */

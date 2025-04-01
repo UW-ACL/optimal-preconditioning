@@ -18,7 +18,7 @@
 #include "ruiz_types.h"
 
 /* Variable Definitions */
-static emlrtRTEInfo nb_emlrtRTEI = {
+static emlrtRTEInfo sb_emlrtRTEI = {
     1,                 /* lineNo */
     1,                 /* colNo */
     "_coder_ruiz_api", /* fName */
@@ -27,7 +27,7 @@ static emlrtRTEInfo nb_emlrtRTEI = {
 
 /* Function Declarations */
 static void b_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u,
-                               const emlrtMsgIdentifier *parentId, sparse *y);
+                               const emlrtMsgIdentifier *parentId, b_sparse *y);
 
 static const mxArray *b_emlrt_marshallOut(const real_T u[298]);
 
@@ -35,7 +35,7 @@ static void c_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u,
                                const emlrtMsgIdentifier *parentId,
                                emxArray_real_T *y);
 
-static const mxArray *c_emlrt_marshallOut(const sparse u);
+static const mxArray *c_emlrt_marshallOut(const b_sparse u);
 
 static void d_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u,
                                const emlrtMsgIdentifier *parentId,
@@ -49,23 +49,23 @@ static int32_T e_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u,
 static const mxArray *e_emlrt_marshallOut(const real_T u);
 
 static void emlrt_marshallIn(const emlrtStack *sp, const mxArray *P,
-                             const char_T *identifier, sparse *y);
+                             const char_T *identifier, b_sparse *y);
 
-static const mxArray *emlrt_marshallOut(const sparse u);
+static const mxArray *emlrt_marshallOut(const b_sparse u);
 
 static real_T (*f_emlrt_marshallIn(const emlrtStack *sp, const mxArray *q,
                                    const char_T *identifier))[298];
 
-static const mxArray *f_emlrt_marshallOut(const sparse u);
+static const mxArray *f_emlrt_marshallOut(const b_sparse u);
 
 static real_T (*g_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u,
                                    const emlrtMsgIdentifier *parentId))[298];
 
 static void h_emlrt_marshallIn(const emlrtStack *sp, const mxArray *H,
-                               const char_T *identifier, sparse *y);
+                               const char_T *identifier, b_sparse *y);
 
 static void i_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u,
-                               const emlrtMsgIdentifier *parentId, sparse *y);
+                               const emlrtMsgIdentifier *parentId, b_sparse *y);
 
 static real_T (*j_emlrt_marshallIn(const emlrtStack *sp, const mxArray *h,
                                    const char_T *identifier))[196];
@@ -110,7 +110,7 @@ static real_T v_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
 
 /* Function Definitions */
 static void b_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u,
-                               const emlrtMsgIdentifier *parentId, sparse *y)
+                               const emlrtMsgIdentifier *parentId, b_sparse *y)
 {
   emlrtMsgIdentifier thisId;
   const mxArray *propValues[4];
@@ -172,7 +172,7 @@ static void c_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u,
   emlrtDestroyArray(&u);
 }
 
-static const mxArray *c_emlrt_marshallOut(const sparse u)
+static const mxArray *c_emlrt_marshallOut(const b_sparse u)
 {
   const mxArray *y;
   y = NULL;
@@ -224,7 +224,7 @@ static const mxArray *e_emlrt_marshallOut(const real_T u)
 }
 
 static void emlrt_marshallIn(const emlrtStack *sp, const mxArray *P,
-                             const char_T *identifier, sparse *y)
+                             const char_T *identifier, b_sparse *y)
 {
   emlrtMsgIdentifier thisId;
   thisId.fIdentifier = (const char_T *)identifier;
@@ -234,7 +234,7 @@ static void emlrt_marshallIn(const emlrtStack *sp, const mxArray *P,
   emlrtDestroyArray(&P);
 }
 
-static const mxArray *emlrt_marshallOut(const sparse u)
+static const mxArray *emlrt_marshallOut(const b_sparse u)
 {
   const mxArray *y;
   y = NULL;
@@ -257,7 +257,7 @@ static real_T (*f_emlrt_marshallIn(const emlrtStack *sp, const mxArray *q,
   return y;
 }
 
-static const mxArray *f_emlrt_marshallOut(const sparse u)
+static const mxArray *f_emlrt_marshallOut(const b_sparse u)
 {
   const mxArray *y;
   y = NULL;
@@ -277,7 +277,7 @@ static real_T (*g_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u,
 }
 
 static void h_emlrt_marshallIn(const emlrtStack *sp, const mxArray *H,
-                               const char_T *identifier, sparse *y)
+                               const char_T *identifier, b_sparse *y)
 {
   emlrtMsgIdentifier thisId;
   thisId.fIdentifier = (const char_T *)identifier;
@@ -288,7 +288,7 @@ static void h_emlrt_marshallIn(const emlrtStack *sp, const mxArray *H,
 }
 
 static void i_emlrt_marshallIn(const emlrtStack *sp, const mxArray *u,
-                               const emlrtMsgIdentifier *parentId, sparse *y)
+                               const emlrtMsgIdentifier *parentId, b_sparse *y)
 {
   emlrtMsgIdentifier thisId;
   const mxArray *propValues[4];
@@ -550,17 +550,17 @@ static real_T v_emlrt_marshallIn(const emlrtStack *sp, const mxArray *src,
 void ruiz_api(const mxArray *const prhs[5], int32_T nlhs,
               const mxArray *plhs[9])
 {
+  b_sparse D;
+  b_sparse E;
+  b_sparse H;
+  b_sparse H_ruiz;
+  b_sparse P;
+  b_sparse P_ruiz;
   emlrtStack st = {
       NULL, /* site */
       NULL, /* tls */
       NULL  /* prev */
   };
-  sparse D;
-  sparse E;
-  sparse H;
-  sparse H_ruiz;
-  sparse P;
-  sparse P_ruiz;
   struct0_T ps;
   real_T(*q)[298];
   real_T(*q_ruiz)[298];
@@ -574,18 +574,18 @@ void ruiz_api(const mxArray *const prhs[5], int32_T nlhs,
   h_ruiz = (real_T(*)[196])mxMalloc(sizeof(real_T[196]));
   emlrtHeapReferenceStackEnterFcnR2012b(&st);
   /* Marshall function inputs */
-  emxInitStruct_sparse1(&st, &P, &nb_emlrtRTEI);
+  emxInitStruct_sparse1(&st, &P, &sb_emlrtRTEI);
   emlrt_marshallIn(&st, emlrtAliasP(prhs[0]), "P", &P);
   q = f_emlrt_marshallIn(&st, emlrtAlias(prhs[1]), "q");
-  emxInitStruct_sparse1(&st, &H, &nb_emlrtRTEI);
+  emxInitStruct_sparse1(&st, &H, &sb_emlrtRTEI);
   h_emlrt_marshallIn(&st, emlrtAliasP(prhs[2]), "H", &H);
   h = j_emlrt_marshallIn(&st, emlrtAlias(prhs[3]), "h");
   ps = l_emlrt_marshallIn(&st, emlrtAliasP(prhs[4]), "ps");
   /* Invoke the target function */
-  emxInitStruct_sparse1(&st, &P_ruiz, &nb_emlrtRTEI);
-  emxInitStruct_sparse1(&st, &H_ruiz, &nb_emlrtRTEI);
-  emxInitStruct_sparse1(&st, &D, &nb_emlrtRTEI);
-  emxInitStruct_sparse1(&st, &E, &nb_emlrtRTEI);
+  emxInitStruct_sparse1(&st, &P_ruiz, &sb_emlrtRTEI);
+  emxInitStruct_sparse1(&st, &H_ruiz, &sb_emlrtRTEI);
+  emxInitStruct_sparse1(&st, &D, &sb_emlrtRTEI);
+  emxInitStruct_sparse1(&st, &E, &sb_emlrtRTEI);
   ruiz(&st, P, *q, H, *h, &ps, &P_ruiz, *q_ruiz, &H_ruiz, *h_ruiz, &c, &D, &E,
        &ruiz_iters, &ruiz_time);
   emxFreeStruct_sparse1(&st, &H);

@@ -17,7 +17,7 @@
 #include "ruiz_types.h"
 
 /* Variable Definitions */
-static emlrtRSInfo kc_emlrtRSI = {
+static emlrtRSInfo kd_emlrtRSI = {
     20,         /* lineNo */
     "heapsort", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/lib/+coder/"
@@ -133,9 +133,9 @@ void b_heapsort(const emlrtStack *sp, int32_T x[494], int32_T xstart,
   for (idx = n + 1; idx >= 1; idx--) {
     heapify(x, idx, xstart, xend);
   }
-  st.site = &kc_emlrtRSI;
+  st.site = &kd_emlrtRSI;
   if (n > 2147483646) {
-    b_st.site = &ib_emlrtRSI;
+    b_st.site = &kb_emlrtRSI;
     check_forloop_overflow_error(&b_st);
   }
   for (k = 0; k < n; k++) {
@@ -167,9 +167,9 @@ void c_heapsort(const emlrtStack *sp, emxArray_int32_T *x, int32_T xstart,
     b_heapify(x, idx, xstart, xend);
     x_data = x->data;
   }
-  st.site = &kc_emlrtRSI;
+  st.site = &kd_emlrtRSI;
   if (n > 2147483646) {
-    b_st.site = &ib_emlrtRSI;
+    b_st.site = &kb_emlrtRSI;
     check_forloop_overflow_error(&b_st);
   }
   for (k = 0; k < n; k++) {

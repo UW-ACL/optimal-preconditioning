@@ -204,7 +204,7 @@ if generate_data_flag == true
         solve_time_pipg = power_iteration_time + pipg_time;
         kkt_cond_list_original = [kkt_cond_list_original, cond_kkt(P, H)];
         presolve_time_list_original = [presolve_time_list_original, power_iteration_time];
-        preconditioning_iters_list_original = [preconditioning_iters_list_original, 0];
+        preconditioning_iters_list_original = [preconditioning_iters_list_original, NaN];
         pipg_time_list_original = [pipg_time_list_original, pipg_time];
         pipg_iters_list_original = [pipg_iters_list_original, iters];
     
@@ -226,7 +226,7 @@ if generate_data_flag == true
         solve_time_pipg_qr = qr_time + power_iteration_time_qr + pipg_time_qr;
         kkt_cond_list_qr = [kkt_cond_list_qr, cond_kkt(P_qr, H_qr)];
         presolve_time_list_qr = [presolve_time_list_qr, qr_time + power_iteration_time_qr];
-        preconditioning_iters_list_qr = [preconditioning_iters_list_qr, 0];
+        preconditioning_iters_list_qr = [preconditioning_iters_list_qr, NaN];
         pipg_time_list_qr = [pipg_time_list_qr, pipg_time_qr];
         pipg_iters_list_qr = [pipg_iters_list_qr, iters_qr];
     

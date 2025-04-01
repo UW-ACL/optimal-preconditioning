@@ -17,14 +17,14 @@
 #include "emlrt.h"
 
 /* Variable Definitions */
-static emlrtRSInfo ce_emlrtRSI = {
+static emlrtRSInfo ye_emlrtRSI = {
     31,    /* lineNo */
     "toc", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/eml/lib/matlab/timefun/toc.m" /* pathName
                                                                             */
 };
 
-static emlrtRSInfo de_emlrtRSI = {
+static emlrtRSInfo af_emlrtRSI = {
     36,    /* lineNo */
     "toc", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/eml/lib/matlab/timefun/toc.m" /* pathName
@@ -44,7 +44,7 @@ real_T toc(const emlrtStack *sp)
   int32_T status;
   st.prev = sp;
   st.tls = sp->tls;
-  st.site = &ce_emlrtRSI;
+  st.site = &ye_emlrtRSI;
   b_st.prev = &st;
   b_st.tls = st.tls;
   c_st.prev = &b_st;
@@ -52,14 +52,14 @@ real_T toc(const emlrtStack *sp)
   d_st.prev = &c_st;
   d_st.tls = c_st.tls;
   tstart_tv_sec = b_timeKeeper(&st, &tstart_tv_nsec);
-  st.site = &de_emlrtRSI;
-  b_st.site = &t_emlrtRSI;
-  c_st.site = &u_emlrtRSI;
+  st.site = &af_emlrtRSI;
+  b_st.site = &v_emlrtRSI;
+  c_st.site = &w_emlrtRSI;
   status = emlrtClockGettimeMonotonic(&tnow);
-  d_st.site = &v_emlrtRSI;
+  d_st.site = &x_emlrtRSI;
   if (status != 0) {
     emlrtErrorWithMessageIdR2018a(
-        &d_st, &c_emlrtRTEI, "Coder:toolbox:CoderTimeCallFailed",
+        &d_st, &d_emlrtRTEI, "Coder:toolbox:CoderTimeCallFailed",
         "Coder:toolbox:CoderTimeCallFailed", 5, 4, 26, &cv[0], 12, status);
   }
   return (tnow.tv_sec - tstart_tv_sec) +

@@ -60,23 +60,38 @@ struct emxArray_int32_T {
 typedef struct emxArray_int32_T emxArray_int32_T;
 #endif /* typedef_emxArray_int32_T */
 
-#ifndef typedef_sparse
-#define typedef_sparse
-typedef struct {
-  emxArray_real_T *d;
-  emxArray_int32_T *colidx;
-  emxArray_int32_T *rowidx;
-  int32_T maxnz;
-} sparse;
-#endif /* typedef_sparse */
-
 #ifndef typedef_b_sparse
 #define typedef_b_sparse
 typedef struct {
   emxArray_real_T *d;
   emxArray_int32_T *colidx;
   emxArray_int32_T *rowidx;
+  int32_T maxnz;
 } b_sparse;
 #endif /* typedef_b_sparse */
+
+#ifndef typedef_c_sparse
+#define typedef_c_sparse
+typedef struct {
+  emxArray_real_T *d;
+  emxArray_int32_T *colidx;
+  emxArray_int32_T *rowidx;
+} c_sparse;
+#endif /* typedef_c_sparse */
+
+#ifndef struct_emxArray_int8_T
+#define struct_emxArray_int8_T
+struct emxArray_int8_T {
+  int8_T *data;
+  int32_T *size;
+  int32_T allocatedSize;
+  int32_T numDimensions;
+  boolean_T canFreeData;
+};
+#endif /* struct_emxArray_int8_T */
+#ifndef typedef_emxArray_int8_T
+#define typedef_emxArray_int8_T
+typedef struct emxArray_int8_T emxArray_int8_T;
+#endif /* typedef_emxArray_int8_T */
 
 /* End of code generation (ruiz_types.h) */

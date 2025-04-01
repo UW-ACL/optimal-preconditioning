@@ -3,9 +3,9 @@
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * sumMatrixIncludeNaN.h
+ * sum.h
  *
- * Code generation for function 'sumMatrixIncludeNaN'
+ * Code generation for function 'sum'
  *
  */
 
@@ -13,6 +13,7 @@
 
 /* Include files */
 #include "rtwtypes.h"
+#include "ruiz_types.h"
 #include "emlrt.h"
 #include "mex.h"
 #include <math.h>
@@ -21,6 +22,8 @@
 #include <string.h>
 
 /* Function Declarations */
-real_T sumColumnB(const real_T x[298]);
+void sum(const emlrtStack *sp, const emxArray_real_T *x_d,
+         const emxArray_int32_T *x_colidx, emxArray_real_T *y_d,
+         emxArray_int32_T *y_colidx, emxArray_int32_T *y_rowidx);
 
-/* End of code generation (sumMatrixIncludeNaN.h) */
+/* End of code generation (sum.h) */

@@ -27,6 +27,6 @@ void sparse_vertcat(const emlrtStack *sp, const emxArray_real_T *varargin_1_d,
                     const emxArray_int32_T *varargin_1_rowidx,
                     const emxArray_real_T *varargin_2_d,
                     const emxArray_int32_T *varargin_2_colidx,
-                    const emxArray_int32_T *varargin_2_rowidx, b_sparse *c);
+                    const emxArray_int32_T *varargin_2_rowidx, c_sparse *c);
 
 /* End of code generation (vertcat.h) */

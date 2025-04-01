@@ -43,6 +43,12 @@
   },
   {
     "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/ruiz",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=ruiz_mex -c  speye.c -o build/maci64/speye.o",
+    "file": "speye.c",
+    "output": "build/maci64/speye.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/ruiz",
     "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=ruiz_mex -c  sparse.c -o build/maci64/sparse.o",
     "file": "sparse.c",
     "output": "build/maci64/sparse.o"
@@ -61,6 +67,12 @@
   },
   {
     "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/ruiz",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=ruiz_mex -c  sparse1.c -o build/maci64/sparse1.o",
+    "file": "sparse1.c",
+    "output": "build/maci64/sparse1.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/ruiz",
     "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=ruiz_mex -c  locBsearch.c -o build/maci64/locBsearch.o",
     "file": "locBsearch.c",
     "output": "build/maci64/locBsearch.o"
@@ -70,6 +82,12 @@
     "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=ruiz_mex -c  mtimes.c -o build/maci64/mtimes.o",
     "file": "mtimes.c",
     "output": "build/maci64/mtimes.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/ruiz",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=ruiz_mex -c  sum.c -o build/maci64/sum.o",
+    "file": "sum.c",
+    "output": "build/maci64/sum.o"
   },
   {
     "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/ruiz",
@@ -97,15 +115,15 @@
   },
   {
     "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/ruiz",
-    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=ruiz_mex -c  sumMatrixIncludeNaN.c -o build/maci64/sumMatrixIncludeNaN.o",
-    "file": "sumMatrixIncludeNaN.c",
-    "output": "build/maci64/sumMatrixIncludeNaN.o"
-  },
-  {
-    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/ruiz",
     "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=ruiz_mex -c  fillIn.c -o build/maci64/fillIn.o",
     "file": "fillIn.c",
     "output": "build/maci64/fillIn.o"
+  },
+  {
+    "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/ruiz",
+    "command": "/usr/bin/xcrun -sdk macosx13.3 clang -fno-common -arch x86_64 -mmacosx-version-min=10.15 -fexceptions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk -DMATLAB_MEX_FILE -O2 -fwrapv -DNDEBUG -std=c99 -I \".\" -I \"/Users/abhi/GitHub/optimal-preconditioning/preconditioners\" -I \"./interface\" -I \"/Applications/MATLAB_R2023a.app/extern/include\" -I \".\" -DMODEL=ruiz_mex -c  sqrt.c -o build/maci64/sqrt.o",
+    "file": "sqrt.c",
+    "output": "build/maci64/sqrt.o"
   },
   {
     "directory": "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/codegen/mex/ruiz",

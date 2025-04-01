@@ -17,7 +17,7 @@
 #include "ruiz_types.h"
 
 /* Variable Definitions */
-static emlrtRSInfo ec_emlrtRSI = {
+static emlrtRSInfo ed_emlrtRSI = {
     18,              /* lineNo */
     "insertionsort", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/lib/+coder/"
@@ -39,9 +39,9 @@ void b_insertionsort(const emlrtStack *sp, emxArray_int32_T *x, int32_T xstart,
   b_st.tls = st.tls;
   x_data = x->data;
   a = xstart + 1;
-  st.site = &ec_emlrtRSI;
+  st.site = &ed_emlrtRSI;
   if ((xstart + 1 <= xend) && (xend > 2147483646)) {
-    b_st.site = &ib_emlrtRSI;
+    b_st.site = &kb_emlrtRSI;
     check_forloop_overflow_error(&b_st);
   }
   for (k = a; k <= xend; k++) {
@@ -77,9 +77,9 @@ void insertionsort(const emlrtStack *sp, int32_T x[494], int32_T xstart,
   b_st.prev = &st;
   b_st.tls = st.tls;
   a = xstart + 1;
-  st.site = &ec_emlrtRSI;
+  st.site = &ed_emlrtRSI;
   if ((xstart + 1 <= xend) && (xend > 2147483646)) {
-    b_st.site = &ib_emlrtRSI;
+    b_st.site = &kb_emlrtRSI;
     check_forloop_overflow_error(&b_st);
   }
   for (k = a; k <= xend; k++) {

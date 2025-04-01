@@ -14,7 +14,6 @@
 #include "eml_int_forloop_overflow_check.h"
 #include "fillIn.h"
 #include "horzcat.h"
-#include "introsort.h"
 #include "locBsearch.h"
 #include "mtimes.h"
 #include "rt_nonfinite.h"
@@ -22,7 +21,10 @@
 #include "ruiz_emxutil.h"
 #include "ruiz_types.h"
 #include "sparse.h"
-#include "sumMatrixIncludeNaN.h"
+#include "sparse1.h"
+#include "speye.h"
+#include "sqrt.h"
+#include "sum.h"
 #include "tic.h"
 #include "toc.h"
 #include "vertcat.h"
@@ -66,56 +68,56 @@ static emlrtRSInfo e_emlrtRSI = {
 };
 
 static emlrtRSInfo f_emlrtRSI = {
-    36,     /* lineNo */
+    37,     /* lineNo */
     "ruiz", /* fcnName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
                                                                          */
 };
 
 static emlrtRSInfo g_emlrtRSI = {
-    38,     /* lineNo */
-    "ruiz", /* fcnName */
-    "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
-                                                                         */
-};
-
-static emlrtRSInfo h_emlrtRSI = {
     39,     /* lineNo */
     "ruiz", /* fcnName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
                                                                          */
 };
 
-static emlrtRSInfo i_emlrtRSI = {
-    41,     /* lineNo */
+static emlrtRSInfo h_emlrtRSI = {
+    40,     /* lineNo */
     "ruiz", /* fcnName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
                                                                          */
 };
 
-static emlrtRSInfo j_emlrtRSI = {
+static emlrtRSInfo i_emlrtRSI = {
     42,     /* lineNo */
     "ruiz", /* fcnName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
                                                                          */
 };
 
-static emlrtRSInfo k_emlrtRSI = {
+static emlrtRSInfo j_emlrtRSI = {
     43,     /* lineNo */
     "ruiz", /* fcnName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
                                                                          */
 };
 
-static emlrtRSInfo l_emlrtRSI = {
+static emlrtRSInfo k_emlrtRSI = {
     44,     /* lineNo */
     "ruiz", /* fcnName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
                                                                          */
 };
 
+static emlrtRSInfo l_emlrtRSI = {
+    45,     /* lineNo */
+    "ruiz", /* fcnName */
+    "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
+                                                                         */
+};
+
 static emlrtRSInfo m_emlrtRSI = {
-    46,     /* lineNo */
+    47,     /* lineNo */
     "ruiz", /* fcnName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
                                                                          */
@@ -129,134 +131,171 @@ static emlrtRSInfo n_emlrtRSI = {
 };
 
 static emlrtRSInfo o_emlrtRSI = {
-    51,     /* lineNo */
+    49,     /* lineNo */
     "ruiz", /* fcnName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
                                                                          */
 };
 
 static emlrtRSInfo p_emlrtRSI = {
-    60,     /* lineNo */
+    53,     /* lineNo */
     "ruiz", /* fcnName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
                                                                          */
 };
 
 static emlrtRSInfo q_emlrtRSI = {
-    61,     /* lineNo */
+    56,     /* lineNo */
     "ruiz", /* fcnName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
                                                                          */
 };
 
 static emlrtRSInfo r_emlrtRSI = {
-    63,     /* lineNo */
+    65,     /* lineNo */
     "ruiz", /* fcnName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
                                                                          */
 };
 
-static emlrtRSInfo
-    y_emlrtRSI =
-        {
-            33,      /* lineNo */
-            "speye", /* fcnName */
-            "/Applications/MATLAB_R2023a.app/toolbox/eml/lib/matlab/sparfun/"
-            "speye.m" /* pathName */
+static emlrtRSInfo s_emlrtRSI = {
+    66,     /* lineNo */
+    "ruiz", /* fcnName */
+    "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
+                                                                         */
 };
 
-static emlrtRSInfo ab_emlrtRSI = {
-    8,                /* lineNo */
-    "sparse/eyeLike", /* fcnName */
-    "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
-    "+internal/@sparse/eyeLike.m" /* pathName */
+static emlrtRSInfo t_emlrtRSI = {
+    68,     /* lineNo */
+    "ruiz", /* fcnName */
+    "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pathName
+                                                                         */
 };
 
-static emlrtRSInfo eb_emlrtRSI = {
-    219,             /* lineNo */
-    "sparse/sparse", /* fcnName */
-    "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
-    "+internal/@sparse/sparse.m" /* pathName */
-};
-
-static emlrtRSInfo wb_emlrtRSI = {
+static emlrtRSInfo yb_emlrtRSI = {
     20,                        /* lineNo */
     "sparse/parenReference2D", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/parenReference2D.m" /* pathName */
 };
 
-static emlrtRSInfo yb_emlrtRSI = {
-    93,                        /* lineNo */
+static emlrtRSInfo ac_emlrtRSI = {
+    81,                        /* lineNo */
     "parenReference2DColumns", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/parenReference2D.m" /* pathName */
 };
 
 static emlrtRSInfo bc_emlrtRSI = {
-    275,           /* lineNo */
-    "sparse/full", /* fcnName */
+    93,                        /* lineNo */
+    "parenReference2DColumns", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
-    "+internal/@sparse/sparse.m" /* pathName */
+    "+internal/@sparse/parenReference2D.m" /* pathName */
 };
 
 static emlrtRSInfo cc_emlrtRSI = {
-    138,             /* lineNo */
-    "sparse/sparse", /* fcnName */
+    104,                       /* lineNo */
+    "parenReference2DColumns", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
-    "+internal/@sparse/sparse.m" /* pathName */
+    "+internal/@sparse/parenReference2D.m" /* pathName */
 };
 
 static emlrtRSInfo dc_emlrtRSI = {
-    1672,          /* lineNo */
-    "locSortrows", /* fcnName */
+    360,          /* lineNo */
+    "sparse/abs", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/sparse.m" /* pathName */
 };
 
-static emlrtRSInfo id_emlrtRSI = {
+static emlrtRSInfo ec_emlrtRSI = {
+    459,                /* lineNo */
+    "sparse/spfunImpl", /* fcnName */
+    "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
+    "+internal/@sparse/sparse.m" /* pathName */
+};
+
+static emlrtRSInfo ic_emlrtRSI = {
+    18,    /* lineNo */
+    "abs", /* fcnName */
+    "/Applications/MATLAB_R2023a.app/toolbox/eml/lib/matlab/elfun/abs.m" /* pathName
+                                                                          */
+};
+
+static emlrtRSInfo jc_emlrtRSI = {
+    74,                    /* lineNo */
+    "applyScalarFunction", /* fcnName */
+    "/Applications/MATLAB_R2023a.app/toolbox/eml/eml/+coder/+internal/"
+    "applyScalarFunction.m" /* pathName */
+};
+
+static emlrtRSInfo kc_emlrtRSI = {
+    15,    /* lineNo */
+    "max", /* fcnName */
+    "/Applications/MATLAB_R2023a.app/toolbox/eml/lib/matlab/datafun/max.m" /* pathName
+                                                                            */
+};
+
+static emlrtRSInfo lc_emlrtRSI = {
+    44,         /* lineNo */
+    "minOrMax", /* fcnName */
+    "/Applications/MATLAB_R2023a.app/toolbox/eml/eml/+coder/+internal/"
+    "minOrMax.m" /* pathName */
+};
+
+static emlrtRSInfo mc_emlrtRSI = {
+    79,        /* lineNo */
+    "maximum", /* fcnName */
+    "/Applications/MATLAB_R2023a.app/toolbox/eml/eml/+coder/+internal/"
+    "minOrMax.m" /* pathName */
+};
+
+static emlrtRSInfo nc_emlrtRSI = {
+    225,             /* lineNo */
+    "unaryMinOrMax", /* fcnName */
+    "/Applications/MATLAB_R2023a.app/toolbox/eml/eml/+coder/+internal/"
+    "unaryMinOrMax.m" /* pathName */
+};
+
+static emlrtRSInfo oc_emlrtRSI = {
+    289,                     /* lineNo */
+    "unaryMinOrMaxDispatch", /* fcnName */
+    "/Applications/MATLAB_R2023a.app/toolbox/eml/eml/+coder/+internal/"
+    "unaryMinOrMax.m" /* pathName */
+};
+
+static emlrtRSInfo pc_emlrtRSI = {
+    693,              /* lineNo */
+    "minOrMaxSparse", /* fcnName */
+    "/Applications/MATLAB_R2023a.app/toolbox/eml/eml/+coder/+internal/"
+    "unaryMinOrMax.m" /* pathName */
+};
+
+static emlrtRSInfo qc_emlrtRSI = {
+    756,                          /* lineNo */
+    "minOrMaxSparseColumnReduce", /* fcnName */
+    "/Applications/MATLAB_R2023a.app/toolbox/eml/eml/+coder/+internal/"
+    "unaryMinOrMax.m" /* pathName */
+};
+
+static emlrtRSInfo ie_emlrtRSI = {
     53,            /* lineNo */
     "sparse/diag", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/diag.m" /* pathName */
 };
 
-static emlrtRSInfo jd_emlrtRSI = {
+static emlrtRSInfo je_emlrtRSI = {
     136,          /* lineNo */
     "matrixDiag", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/diag.m" /* pathName */
 };
 
-static emlrtRSInfo
-    kd_emlrtRSI =
-        {
-            49,     /* lineNo */
-            "mean", /* fcnName */
-            "/Applications/MATLAB_R2023a.app/toolbox/eml/lib/matlab/datafun/"
-            "mean.m" /* pathName */
-};
-
-static emlrtRSInfo ld_emlrtRSI = {
-    74,                      /* lineNo */
-    "combineVectorElements", /* fcnName */
-    "/Applications/MATLAB_R2023a.app/toolbox/eml/lib/matlab/datafun/private/"
-    "combineVectorElements.m" /* pathName */
-};
-
-static emlrtRSInfo rd_emlrtRSI = {
+static emlrtRSInfo re_emlrtRSI = {
     18,              /* lineNo */
     "sparse/mtimes", /* fcnName */
     "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
     "+internal/@sparse/mtimes.m" /* pathName */
-};
-
-static emlrtRTEInfo emlrtRTEI = {
-    28,     /* lineNo */
-    18,     /* colNo */
-    "ruiz", /* fName */
-    "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pName
-                                                                         */
 };
 
 static emlrtRTEInfo b_emlrtRTEI = {
@@ -267,15 +306,15 @@ static emlrtRTEInfo b_emlrtRTEI = {
     "+internal/@sparse/parenReference2D.m" /* pName */
 };
 
-static emlrtRTEInfo o_emlrtRTEI = {
-    1501,     /* lineNo */
-    39,       /* colNo */
-    "sparse", /* fName */
-    "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
-    "+internal/@sparse/sparse.m" /* pName */
+static emlrtRTEInfo c_emlrtRTEI = {
+    28,     /* lineNo */
+    18,     /* colNo */
+    "ruiz", /* fName */
+    "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pName
+                                                                         */
 };
 
-static emlrtRTEInfo p_emlrtRTEI = {
+static emlrtRTEInfo m_emlrtRTEI = {
     19,     /* lineNo */
     1,      /* colNo */
     "ruiz", /* fName */
@@ -283,7 +322,7 @@ static emlrtRTEInfo p_emlrtRTEI = {
                                                                          */
 };
 
-static emlrtRTEInfo q_emlrtRTEI = {
+static emlrtRTEInfo n_emlrtRTEI = {
     21,     /* lineNo */
     1,      /* colNo */
     "ruiz", /* fName */
@@ -291,39 +330,55 @@ static emlrtRTEInfo q_emlrtRTEI = {
                                                                          */
 };
 
-static emlrtRTEInfo r_emlrtRTEI = {
-    36,     /* lineNo */
+static emlrtRTEInfo o_emlrtRTEI = {
+    47,     /* lineNo */
     5,      /* colNo */
     "ruiz", /* fName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pName
                                                                          */
 };
 
-static emlrtRTEInfo t_emlrtRTEI = {
-    53,     /* lineNo */
-    5,      /* colNo */
-    "diag", /* fName */
-    "/Applications/MATLAB_R2023a.app/toolbox/shared/coder/coder/+coder/"
-    "+internal/@sparse/diag.m" /* pName */
+static emlrtRTEInfo p_emlrtRTEI = {
+    30,                    /* lineNo */
+    21,                    /* colNo */
+    "applyScalarFunction", /* fName */
+    "/Applications/MATLAB_R2023a.app/toolbox/eml/eml/+coder/+internal/"
+    "applyScalarFunction.m" /* pName */
 };
 
-static emlrtRTEInfo u_emlrtRTEI = {
-    51,     /* lineNo */
+static emlrtRTEInfo q_emlrtRTEI = {
+    33,     /* lineNo */
+    46,     /* colNo */
+    "ruiz", /* fName */
+    "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pName
+                                                                         */
+};
+
+static emlrtRTEInfo r_emlrtRTEI = {
+    56,     /* lineNo */
     9,      /* colNo */
     "ruiz", /* fName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pName
                                                                          */
 };
 
-static emlrtRTEInfo v_emlrtRTEI = {
-    18,     /* lineNo */
-    1,      /* colNo */
+static emlrtRTEInfo s_emlrtRTEI = {
+    15,    /* lineNo */
+    5,     /* colNo */
+    "max", /* fName */
+    "/Applications/MATLAB_R2023a.app/toolbox/eml/lib/matlab/datafun/max.m" /* pName
+                                                                            */
+};
+
+static emlrtRTEInfo t_emlrtRTEI = {
+    33,     /* lineNo */
+    37,     /* colNo */
     "ruiz", /* fName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pName
                                                                          */
 };
 
-static emlrtRTEInfo w_emlrtRTEI = {
+static emlrtRTEInfo u_emlrtRTEI = {
     39,     /* lineNo */
     5,      /* colNo */
     "ruiz", /* fName */
@@ -331,16 +386,24 @@ static emlrtRTEInfo w_emlrtRTEI = {
                                                                          */
 };
 
-static emlrtRTEInfo x_emlrtRTEI = {
-    46,     /* lineNo */
-    29,     /* colNo */
+static emlrtRTEInfo v_emlrtRTEI = {
+    40,     /* lineNo */
+    5,      /* colNo */
+    "ruiz", /* fName */
+    "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pName
+                                                                         */
+};
+
+static emlrtRTEInfo w_emlrtRTEI = {
+    33,     /* lineNo */
+    42,     /* colNo */
     "ruiz", /* fName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pName
                                                                          */
 };
 
 static emlrtRTEInfo y_emlrtRTEI = {
-    30,     /* lineNo */
+    56,     /* lineNo */
     5,      /* colNo */
     "ruiz", /* fName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pName
@@ -348,7 +411,7 @@ static emlrtRTEInfo y_emlrtRTEI = {
 };
 
 static emlrtRTEInfo ab_emlrtRTEI = {
-    41,     /* lineNo */
+    42,     /* lineNo */
     5,      /* colNo */
     "ruiz", /* fName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pName
@@ -356,7 +419,15 @@ static emlrtRTEInfo ab_emlrtRTEI = {
 };
 
 static emlrtRTEInfo bb_emlrtRTEI = {
-    41,     /* lineNo */
+    30,     /* lineNo */
+    5,      /* colNo */
+    "ruiz", /* fName */
+    "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pName
+                                                                         */
+};
+
+static emlrtRTEInfo cb_emlrtRTEI = {
+    42,     /* lineNo */
     14,     /* colNo */
     "ruiz", /* fName */
     "/Users/abhi/GitHub/optimal-preconditioning/preconditioners/ruiz.m" /* pName
@@ -364,46 +435,46 @@ static emlrtRTEInfo bb_emlrtRTEI = {
 };
 
 /* Function Definitions */
-void ruiz(const emlrtStack *sp, const sparse P, const real_T q[298],
-          const sparse H, const real_T h[196], const struct0_T *ps,
-          sparse *P_ruiz, real_T q_ruiz[298], sparse *H_ruiz,
-          real_T h_ruiz[196], real_T *c, sparse *D, sparse *E,
+void ruiz(const emlrtStack *sp, const b_sparse P, const real_T q[298],
+          const b_sparse H, const real_T h[196], const struct0_T *ps,
+          b_sparse *P_ruiz, real_T q_ruiz[298], b_sparse *H_ruiz,
+          real_T h_ruiz[196], real_T *c, b_sparse *D, b_sparse *E,
           real_T *ruiz_iters, real_T *ruiz_time)
 {
-  b_sparse diag_del;
-  b_sparse expl_temp;
+  b_sparse b_expl_temp;
+  b_sparse d_expl_temp;
+  c_sparse P_ruiz_diag;
+  c_sparse c_expl_temp;
+  c_sparse expl_temp;
+  c_sparse varargin_1;
   emlrtStack b_st;
   emlrtStack c_st;
   emlrtStack d_st;
+  emlrtStack e_st;
+  emlrtStack f_st;
+  emlrtStack g_st;
+  emlrtStack h_st;
+  emlrtStack i_st;
   emlrtStack st;
+  emxArray_int32_T *D_temp_colidx;
+  emxArray_int32_T *D_temp_rowidx;
   emxArray_int32_T *E_temp_colidx;
   emxArray_int32_T *E_temp_rowidx;
-  emxArray_int32_T *S_colidx;
-  emxArray_int32_T *S_rowidx;
-  emxArray_int32_T *y_colidx;
-  emxArray_int32_T *y_rowidx;
+  emxArray_int8_T *maxval_colidx;
   emxArray_real_T *E_temp_d;
-  emxArray_real_T *S_d;
-  emxArray_real_T *y_d;
-  sparse b_expl_temp;
-  sparse c_expl_temp;
-  real_T y[494];
+  emxArray_real_T *tmpd;
   real_T b_q_ruiz[298];
   real_T b_h_ruiz[196];
-  real_T *S_d_data;
-  real_T *y_d_data;
+  real_T *tmpd_data;
   int32_T b_k;
   int32_T b_ruiz_iters;
-  int32_T cend;
-  int32_T cptr;
   int32_T i;
   int32_T k;
-  int32_T *S_colidx_data;
-  int32_T *S_rowidx_data;
-  int32_T *y_colidx_data;
-  int32_T *y_rowidx_data;
+  int32_T nzs_tmp_tmp;
+  int32_T *D_temp_colidx_data;
+  int8_T *maxval_colidx_data;
   boolean_T exitg1;
-  boolean_T found;
+  boolean_T p;
   st.prev = sp;
   st.tls = sp->tls;
   b_st.prev = &st;
@@ -412,6 +483,16 @@ void ruiz(const emlrtStack *sp, const sparse P, const real_T q[298],
   c_st.tls = b_st.tls;
   d_st.prev = &c_st;
   d_st.tls = c_st.tls;
+  e_st.prev = &d_st;
+  e_st.tls = d_st.tls;
+  f_st.prev = &e_st;
+  f_st.tls = e_st.tls;
+  g_st.prev = &f_st;
+  g_st.tls = f_st.tls;
+  h_st.prev = &g_st;
+  h_st.tls = g_st.tls;
+  i_st.prev = &h_st;
+  i_st.tls = h_st.tls;
   emlrtHeapReferenceStackEnterFcnR2012b((emlrtConstCTX)sp);
   /* RUIZ */
   /*    [P_RUIZ, q_RUIZ, H_RUIZ, h_RUIZ, c, D, E, RUIZ_ITERS, RUIZ_TIME] =
@@ -421,273 +502,317 @@ void ruiz(const emlrtStack *sp, const sparse P, const real_T q[298],
   st.site = &emlrtRSI;
   tic(&st);
   st.site = &b_emlrtRSI;
-  b_st.site = &x_emlrtRSI;
+  b_st.site = &ab_emlrtRSI;
   *c = 1.0;
+  emxInitStruct_sparse(sp, &expl_temp, &y_emlrtRTEI);
   st.site = &c_emlrtRSI;
-  b_st.site = &y_emlrtRSI;
-  c_st.site = &ab_emlrtRSI;
-  emxInit_real_T(&c_st, &S_d, 1, &v_emlrtRTEI);
-  emxInit_int32_T(&c_st, &S_colidx, &v_emlrtRTEI);
-  emxInit_int32_T(&c_st, &S_rowidx, &v_emlrtRTEI);
-  i = S_d->size[0];
-  S_d->size[0] = 494;
-  emxEnsureCapacity_real_T(&c_st, S_d, i, &m_emlrtRTEI);
-  S_d_data = S_d->data;
-  i = S_rowidx->size[0];
-  S_rowidx->size[0] = 494;
-  emxEnsureCapacity_int32_T(&c_st, S_rowidx, i, &n_emlrtRTEI);
-  S_rowidx_data = S_rowidx->data;
-  i = S_colidx->size[0];
-  S_colidx->size[0] = 495;
-  emxEnsureCapacity_int32_T(&c_st, S_colidx, i, &o_emlrtRTEI);
-  S_colidx_data = S_colidx->data;
-  for (cptr = 0; cptr < 494; cptr++) {
-    S_d_data[cptr] = 1.0;
-    S_rowidx_data[cptr] = cptr + 1;
-  }
-  S_colidx_data[0] = 1;
-  for (cend = 0; cend < 493; cend++) {
-    S_colidx_data[cend + 1] = cend + 2;
-  }
-  S_colidx_data[494] = 495;
-  emxCopyStruct_sparse(sp, P_ruiz, &P, &p_emlrtRTEI);
+  speye(&st, expl_temp.d, expl_temp.colidx, expl_temp.rowidx);
+  emxCopyStruct_sparse(sp, P_ruiz, &P, &m_emlrtRTEI);
   memcpy(&q_ruiz[0], &q[0], 298U * sizeof(real_T));
-  emxCopyStruct_sparse(sp, H_ruiz, &H, &q_emlrtRTEI);
+  emxCopyStruct_sparse(sp, H_ruiz, &H, &n_emlrtRTEI);
   memcpy(&h_ruiz[0], &h[0], 196U * sizeof(real_T));
   emlrtForLoopVectorCheckR2021a(1.0, 1.0, ps->max_iters_ruiz, mxDOUBLE_CLASS,
-                                (int32_T)ps->max_iters_ruiz, &emlrtRTEI,
+                                (int32_T)ps->max_iters_ruiz, &c_emlrtRTEI,
                                 (emlrtConstCTX)sp);
   *ruiz_iters = 1.0;
   b_ruiz_iters = 0;
-  emxInitStruct_sparse(sp, &diag_del, &r_emlrtRTEI);
-  emxInit_real_T(sp, &E_temp_d, 1, &w_emlrtRTEI);
-  emxInit_int32_T(sp, &E_temp_colidx, &w_emlrtRTEI);
-  emxInit_int32_T(sp, &E_temp_rowidx, &w_emlrtRTEI);
-  emxInit_real_T(sp, &y_d, 1, &x_emlrtRTEI);
-  emxInit_int32_T(sp, &y_colidx, &x_emlrtRTEI);
-  emxInit_int32_T(sp, &y_rowidx, &x_emlrtRTEI);
-  emxInitStruct_sparse(sp, &expl_temp, &y_emlrtRTEI);
+  emxInit_int32_T(sp, &D_temp_colidx, &u_emlrtRTEI);
+  emxInit_int32_T(sp, &D_temp_rowidx, &u_emlrtRTEI);
+  emxInit_real_T(sp, &E_temp_d, 1, &v_emlrtRTEI);
+  emxInit_int32_T(sp, &E_temp_colidx, &v_emlrtRTEI);
+  emxInit_int32_T(sp, &E_temp_rowidx, &v_emlrtRTEI);
+  emxInitStruct_sparse(sp, &P_ruiz_diag, &o_emlrtRTEI);
+  emxInit_int8_T(sp, &maxval_colidx, &w_emlrtRTEI);
+  emxInitStruct_sparse(sp, &varargin_1, &q_emlrtRTEI);
+  emxInit_real_T(sp, &tmpd, 1, &x_emlrtRTEI);
   emxInitStruct_sparse1(sp, &b_expl_temp, &ab_emlrtRTEI);
-  emxInitStruct_sparse1(sp, &c_expl_temp, &bb_emlrtRTEI);
+  emxInitStruct_sparse(sp, &c_expl_temp, &bb_emlrtRTEI);
+  emxInitStruct_sparse1(sp, &d_expl_temp, &cb_emlrtRTEI);
   exitg1 = false;
   while ((!exitg1) && (b_ruiz_iters <= (int32_T)ps->max_iters_ruiz - 1)) {
     real_T del_vals[494];
     real_T absx;
-    real_T b_y;
-    real_T varargin_2;
-    int32_T sortedIndices[494];
+    real_T colEx;
+    real_T sqrt_max_abs_M_col_k;
+    int32_T ncol;
+    int32_T xend;
     *ruiz_iters = (real_T)b_ruiz_iters + 1.0;
     st.site = &d_emlrtRSI;
-    sparse_transpose(&st, H_ruiz->d, H_ruiz->colidx, H_ruiz->rowidx, diag_del.d,
-                     diag_del.colidx, diag_del.rowidx);
+    sparse_transpose(&st, H_ruiz->d, H_ruiz->colidx, H_ruiz->rowidx,
+                     P_ruiz_diag.d, P_ruiz_diag.colidx, P_ruiz_diag.rowidx);
     st.site = &d_emlrtRSI;
-    sparse_horzcat(&st, P_ruiz->d, P_ruiz->colidx, P_ruiz->rowidx, diag_del.d,
-                   diag_del.colidx, diag_del.rowidx, y_d, y_colidx, y_rowidx);
+    sparse_horzcat(&st, P_ruiz->d, P_ruiz->colidx, P_ruiz->rowidx,
+                   P_ruiz_diag.d, P_ruiz_diag.colidx, P_ruiz_diag.rowidx,
+                   varargin_1.d, varargin_1.colidx, varargin_1.rowidx);
     st.site = &d_emlrtRSI;
-    b_sparse_horzcat(&st, H_ruiz->d, H_ruiz->colidx, H_ruiz->rowidx, diag_del.d,
-                     diag_del.colidx, diag_del.rowidx);
+    b_sparse_horzcat(&st, H_ruiz->d, H_ruiz->colidx, H_ruiz->rowidx,
+                     P_ruiz_diag.d, P_ruiz_diag.colidx, P_ruiz_diag.rowidx);
     st.site = &d_emlrtRSI;
-    sparse_vertcat(&st, y_d, y_colidx, y_rowidx, diag_del.d, diag_del.colidx,
-                   diag_del.rowidx, &expl_temp);
+    sparse_vertcat(&st, varargin_1.d, varargin_1.colidx, varargin_1.rowidx,
+                   P_ruiz_diag.d, P_ruiz_diag.colidx, P_ruiz_diag.rowidx,
+                   &c_expl_temp);
     for (k = 0; k < 494; k++) {
       st.site = &e_emlrtRSI;
-      b_st.site = &vb_emlrtRSI;
-      c_st.site = &wb_emlrtRSI;
-      i = expl_temp.colidx->data[k];
-      cptr = expl_temp.colidx->data[k + 1] - expl_temp.colidx->data[k];
-      if (cptr > 494) {
-        emlrtErrorWithMessageIdR2018a(&c_st, &b_emlrtRTEI,
+      b_st.site = &e_emlrtRSI;
+      c_st.site = &xb_emlrtRSI;
+      d_st.site = &yb_emlrtRSI;
+      e_st.site = &ac_emlrtRSI;
+      i = c_expl_temp.colidx->data[k];
+      ncol = c_expl_temp.colidx->data[k + 1] - c_expl_temp.colidx->data[k];
+      if (ncol > 494) {
+        emlrtErrorWithMessageIdR2018a(&d_st, &b_emlrtRTEI,
                                       "Coder:builtins:AssertionFailed",
                                       "Coder:builtins:AssertionFailed", 0);
       }
-      d_st.site = &yb_emlrtRSI;
-      b_sparse_spallocLike(&d_st, cptr, diag_del.d, diag_del.colidx,
-                           diag_del.rowidx);
-      if (cptr != 0) {
-        for (b_k = 0; b_k < cptr; b_k++) {
-          cend = (i + b_k) - 1;
-          diag_del.d->data[b_k] = expl_temp.d->data[cend];
-          diag_del.rowidx->data[b_k] = expl_temp.rowidx->data[cend];
+      e_st.site = &bc_emlrtRSI;
+      b_sparse_spallocLike(&e_st, ncol, P_ruiz_diag.d, P_ruiz_diag.colidx,
+                           P_ruiz_diag.rowidx);
+      if (ncol != 0) {
+        e_st.site = &cc_emlrtRSI;
+        for (b_k = 0; b_k < ncol; b_k++) {
+          xend = (i + b_k) - 1;
+          P_ruiz_diag.d->data[b_k] = c_expl_temp.d->data[xend];
+          P_ruiz_diag.rowidx->data[b_k] = c_expl_temp.rowidx->data[xend];
         }
-        diag_del.colidx->data[1] = diag_del.colidx->data[0] + cptr;
+        P_ruiz_diag.colidx->data[1] = P_ruiz_diag.colidx->data[0] + ncol;
       }
-      st.site = &e_emlrtRSI;
-      memset(&y[0], 0, 494U * sizeof(real_T));
-      cend = diag_del.colidx->data[1] - 1;
-      cptr = diag_del.colidx->data[0];
-      b_st.site = &bc_emlrtRSI;
-      if ((diag_del.colidx->data[0] <= diag_del.colidx->data[1] - 1) &&
-          (diag_del.colidx->data[1] - 1 > 2147483646)) {
-        c_st.site = &ib_emlrtRSI;
-        check_forloop_overflow_error(&c_st);
+      b_st.site = &e_emlrtRSI;
+      c_st.site = &dc_emlrtRSI;
+      nzs_tmp_tmp = P_ruiz_diag.colidx->data[P_ruiz_diag.colidx->size[0] - 1];
+      if (nzs_tmp_tmp - 1 < 1) {
+        i = 0;
+      } else {
+        i = nzs_tmp_tmp - 1;
       }
-      for (b_k = cptr; b_k <= cend; b_k++) {
-        y[diag_del.rowidx->data[b_k - 1] - 1] = diag_del.d->data[b_k - 1];
+      d_st.site = &ec_emlrtRSI;
+      e_st.site = &ic_emlrtRSI;
+      xend = tmpd->size[0];
+      tmpd->size[0] = i;
+      emxEnsureCapacity_real_T(&e_st, tmpd, xend, &p_emlrtRTEI);
+      tmpd_data = tmpd->data;
+      f_st.site = &jc_emlrtRSI;
+      if (i > 2147483646) {
+        g_st.site = &kb_emlrtRSI;
+        check_forloop_overflow_error(&g_st);
       }
-      b_y = 0.0;
-      for (b_k = 0; b_k < 494; b_k++) {
-        absx = muDoubleScalarAbs(y[b_k]);
-        if (muDoubleScalarIsNaN(absx) || (absx > b_y)) {
-          b_y = absx;
+      for (b_k = 0; b_k < i; b_k++) {
+        tmpd_data[b_k] = muDoubleScalarAbs(P_ruiz_diag.d->data[b_k]);
+      }
+      if (tmpd->size[0] != nzs_tmp_tmp - 1) {
+        emlrtErrorWithMessageIdR2018a(&c_st, &emlrtRTEI, "MATLAB:samelen",
+                                      "MATLAB:samelen", 0);
+      }
+      d_st.site = &fc_emlrtRSI;
+      b_sparse_spallocLike(&d_st, nzs_tmp_tmp - 1, varargin_1.d,
+                           varargin_1.colidx, varargin_1.rowidx);
+      if (nzs_tmp_tmp - 1 < 1) {
+        ncol = 1;
+      } else {
+        ncol = nzs_tmp_tmp;
+      }
+      for (i = 0; i <= ncol - 2; i++) {
+        varargin_1.rowidx->data[i] = P_ruiz_diag.rowidx->data[i];
+      }
+      i = varargin_1.colidx->size[0];
+      varargin_1.colidx->size[0] = P_ruiz_diag.colidx->size[0];
+      emxEnsureCapacity_int32_T(&c_st, varargin_1.colidx, i, &q_emlrtRTEI);
+      ncol = P_ruiz_diag.colidx->size[0];
+      for (i = 0; i < ncol; i++) {
+        varargin_1.colidx->data[i] = P_ruiz_diag.colidx->data[i];
+      }
+      d_st.site = &gc_emlrtRSI;
+      if (nzs_tmp_tmp - 1 > 2147483646) {
+        e_st.site = &kb_emlrtRSI;
+        check_forloop_overflow_error(&e_st);
+      }
+      for (b_k = 0; b_k <= nzs_tmp_tmp - 2; b_k++) {
+        varargin_1.d->data[b_k] = tmpd_data[b_k];
+      }
+      d_st.site = &hc_emlrtRSI;
+      b_sparse_fillIn(&varargin_1);
+      b_st.site = &kc_emlrtRSI;
+      c_st.site = &lc_emlrtRSI;
+      d_st.site = &mc_emlrtRSI;
+      e_st.site = &nc_emlrtRSI;
+      f_st.site = &oc_emlrtRSI;
+      g_st.site = &pc_emlrtRSI;
+      sqrt_max_abs_M_col_k = 0.0;
+      xend = varargin_1.colidx->data[1] - 1;
+      ncol = varargin_1.colidx->data[1] - varargin_1.colidx->data[0];
+      if (ncol != 0) {
+        colEx = 0.0;
+        if (varargin_1.colidx->data[1] - 1 >= varargin_1.colidx->data[0]) {
+          colEx = varargin_1.d->data[varargin_1.colidx->data[0] - 1];
+          i = varargin_1.colidx->data[0] + 1;
+          for (b_k = i; b_k <= xend; b_k++) {
+            absx = varargin_1.d->data[b_k - 1];
+            if (muDoubleScalarIsNaN(absx)) {
+              p = false;
+            } else if (muDoubleScalarIsNaN(colEx)) {
+              p = true;
+            } else {
+              p = (colEx < absx);
+            }
+            if (p) {
+              colEx = absx;
+            }
+          }
+        }
+        if (ncol < 1) {
+          if ((!muDoubleScalarIsNaN(colEx)) && (colEx > 0.0)) {
+            sqrt_max_abs_M_col_k = colEx;
+          }
+        } else {
+          sqrt_max_abs_M_col_k = colEx;
         }
       }
+      h_st.site = &qc_emlrtRSI;
+      i_st.site = &ab_emlrtRSI;
+      i = P_ruiz_diag.d->size[0];
+      P_ruiz_diag.d->size[0] = 1;
+      emxEnsureCapacity_real_T(&i_st, P_ruiz_diag.d, i, &s_emlrtRTEI);
+      P_ruiz_diag.d->data[0] = 0.0;
+      i = maxval_colidx->size[0];
+      maxval_colidx->size[0] = 2;
+      emxEnsureCapacity_int8_T(&i_st, maxval_colidx, i, &s_emlrtRTEI);
+      maxval_colidx_data = maxval_colidx->data;
+      maxval_colidx_data[0] = 1;
+      maxval_colidx_data[1] = 1;
+      if (sqrt_max_abs_M_col_k != 0.0) {
+        P_ruiz_diag.d->data[0] = sqrt_max_abs_M_col_k;
+        maxval_colidx_data[1] = 2;
+      }
+      i = P_ruiz_diag.colidx->size[0];
+      P_ruiz_diag.colidx->size[0] = 2;
+      emxEnsureCapacity_int32_T(sp, P_ruiz_diag.colidx, i, &t_emlrtRTEI);
+      for (i = 0; i < 2; i++) {
+        P_ruiz_diag.colidx->data[i] = maxval_colidx_data[i];
+      }
+      i = P_ruiz_diag.rowidx->size[0];
+      P_ruiz_diag.rowidx->size[0] = 1;
+      emxEnsureCapacity_int32_T(sp, P_ruiz_diag.rowidx, i, &t_emlrtRTEI);
+      P_ruiz_diag.rowidx->data[0] = 1;
       st.site = &e_emlrtRSI;
-      del_vals[k] = 1.0 / muDoubleScalarSqrt(b_y);
+      b_sqrt(&st, &P_ruiz_diag);
+      st.site = &e_emlrtRSI;
+      sqrt_max_abs_M_col_k =
+          sparse_full(&st, P_ruiz_diag.d, P_ruiz_diag.colidx);
+      del_vals[k] = 1.0 / sqrt_max_abs_M_col_k;
       if (*emlrtBreakCheckR2012bFlagVar != 0) {
         emlrtBreakCheckR2012b((emlrtConstCTX)sp);
       }
     }
     st.site = &f_emlrtRSI;
-    b_st.site = &x_emlrtRSI;
-    for (k = 0; k < 494; k++) {
-      sortedIndices[k] = k + 1;
-    }
-    c_st.site = &cc_emlrtRSI;
-    d_st.site = &dc_emlrtRSI;
-    introsort(&d_st, sortedIndices);
-    i = diag_del.d->size[0];
-    diag_del.d->size[0] = 494;
-    emxEnsureCapacity_real_T(&b_st, diag_del.d, i, &r_emlrtRTEI);
-    i = diag_del.colidx->size[0];
-    diag_del.colidx->size[0] = 495;
-    emxEnsureCapacity_int32_T(&b_st, diag_del.colidx, i, &s_emlrtRTEI);
-    diag_del.colidx->data[0] = 1;
-    i = diag_del.rowidx->size[0];
-    diag_del.rowidx->size[0] = 494;
-    emxEnsureCapacity_int32_T(&b_st, diag_del.rowidx, i, &r_emlrtRTEI);
-    for (i = 0; i < 494; i++) {
-      diag_del.d->data[i] = 0.0;
-      diag_del.rowidx->data[i] = 0;
-    }
-    cptr = 0;
-    for (cend = 0; cend < 494; cend++) {
-      while ((cptr + 1 <= 494) && (sortedIndices[cptr] == cend + 1)) {
-        diag_del.rowidx->data[cptr] = sortedIndices[cptr];
-        cptr++;
-      }
-      diag_del.colidx->data[cend + 1] = cptr + 1;
-      diag_del.d->data[cend] = del_vals[sortedIndices[cend] - 1];
-    }
-    c_st.site = &eb_emlrtRSI;
-    sparse_fillIn(&diag_del);
+    sparse(&st, del_vals, &c_expl_temp);
     st.site = &g_emlrtRSI;
-    sparse_parenReference(&st, diag_del.d, diag_del.colidx, diag_del.rowidx,
-                          y_d, y_colidx, y_rowidx);
+    sparse_parenReference(&st, c_expl_temp.d, c_expl_temp.colidx,
+                          c_expl_temp.rowidx, tmpd, D_temp_colidx,
+                          D_temp_rowidx);
     st.site = &h_emlrtRSI;
-    b_sparse_parenReference(&st, diag_del.d, diag_del.colidx, diag_del.rowidx,
-                            E_temp_d, E_temp_colidx, E_temp_rowidx);
+    b_sparse_parenReference(&st, c_expl_temp.d, c_expl_temp.colidx,
+                            c_expl_temp.rowidx, E_temp_d, E_temp_colidx,
+                            E_temp_rowidx);
     st.site = &i_emlrtRSI;
-    sparse_mtimes(&st, y_d, y_colidx, y_rowidx, P_ruiz->d, P_ruiz->colidx,
-                  P_ruiz->rowidx, &c_expl_temp);
+    sparse_mtimes(&st, tmpd, D_temp_colidx, D_temp_rowidx, P_ruiz->d,
+                  P_ruiz->colidx, P_ruiz->rowidx, &d_expl_temp);
     st.site = &i_emlrtRSI;
-    sparse_mtimes(&st, c_expl_temp.d, c_expl_temp.colidx, c_expl_temp.rowidx,
-                  y_d, y_colidx, y_rowidx, &b_expl_temp);
+    sparse_mtimes(&st, d_expl_temp.d, d_expl_temp.colidx, d_expl_temp.rowidx,
+                  tmpd, D_temp_colidx, D_temp_rowidx, &b_expl_temp);
     memcpy(&b_q_ruiz[0], &q_ruiz[0], 298U * sizeof(real_T));
     st.site = &j_emlrtRSI;
-    b_sparse_mtimes(&st, y_d, y_colidx, y_rowidx, b_q_ruiz, q_ruiz);
+    b_sparse_mtimes(&st, tmpd, D_temp_colidx, D_temp_rowidx, b_q_ruiz, q_ruiz);
     st.site = &k_emlrtRSI;
     c_sparse_mtimes(&st, E_temp_d, E_temp_colidx, E_temp_rowidx, H_ruiz->d,
-                    H_ruiz->colidx, H_ruiz->rowidx, &c_expl_temp);
+                    H_ruiz->colidx, H_ruiz->rowidx, &d_expl_temp);
     st.site = &k_emlrtRSI;
-    c_sparse_mtimes(&st, c_expl_temp.d, c_expl_temp.colidx, c_expl_temp.rowidx,
-                    y_d, y_colidx, y_rowidx, H_ruiz);
+    c_sparse_mtimes(&st, d_expl_temp.d, d_expl_temp.colidx, d_expl_temp.rowidx,
+                    tmpd, D_temp_colidx, D_temp_rowidx, H_ruiz);
     memcpy(&b_h_ruiz[0], &h_ruiz[0], 196U * sizeof(real_T));
     st.site = &l_emlrtRSI;
     d_sparse_mtimes(&st, E_temp_d, E_temp_colidx, E_temp_rowidx, b_h_ruiz,
                     h_ruiz);
     st.site = &m_emlrtRSI;
-    b_st.site = &id_emlrtRSI;
-    cptr = b_expl_temp.colidx->data[b_expl_temp.colidx->size[0] - 1] - 1;
-    c_st.site = &jd_emlrtRSI;
-    b_sparse_spallocLike(&c_st, muIntScalarMin_sint32(298, cptr), y_d, y_colidx,
-                         y_rowidx);
-    y_rowidx_data = y_rowidx->data;
-    y_d_data = y_d->data;
-    cend = 0;
-    for (b_k = 0; b_k < 298; b_k++) {
-      cptr = sparse_locBsearch(b_expl_temp.rowidx, b_k + 1,
-                               b_expl_temp.colidx->data[b_k],
-                               b_expl_temp.colidx->data[b_k + 1], &found);
-      if (found) {
-        y_rowidx_data[cend] = b_k + 1;
-        y_d_data[cend] = b_expl_temp.d->data[cptr - 1];
-        cend++;
+    b_st.site = &ie_emlrtRSI;
+    ncol = b_expl_temp.colidx->data[b_expl_temp.colidx->size[0] - 1] - 1;
+    c_st.site = &je_emlrtRSI;
+    b_sparse_spallocLike(&c_st, muIntScalarMin_sint32(298, ncol), P_ruiz_diag.d,
+                         P_ruiz_diag.colidx, P_ruiz_diag.rowidx);
+    xend = 1;
+    for (nzs_tmp_tmp = 0; nzs_tmp_tmp < 298; nzs_tmp_tmp++) {
+      ncol = sparse_locBsearch(b_expl_temp.rowidx, nzs_tmp_tmp + 1,
+                               b_expl_temp.colidx->data[nzs_tmp_tmp],
+                               b_expl_temp.colidx->data[nzs_tmp_tmp + 1], &p);
+      if (p) {
+        P_ruiz_diag.d->data[xend - 1] = b_expl_temp.d->data[ncol - 1];
+        xend++;
       }
     }
-    i = y_colidx->size[0];
-    y_colidx->size[0] = 2;
-    emxEnsureCapacity_int32_T(&b_st, y_colidx, i, &t_emlrtRTEI);
-    y_colidx_data = y_colidx->data;
-    y_colidx_data[0] = 1;
-    y_colidx_data[1] = cend + 1;
-    st.site = &m_emlrtRSI;
-    memset(&b_q_ruiz[0], 0, 298U * sizeof(real_T));
-    cend = y_colidx_data[1] - 1;
-    i = y_colidx_data[0];
-    b_st.site = &bc_emlrtRSI;
-    for (b_k = i; b_k <= cend; b_k++) {
-      b_q_ruiz[y_rowidx_data[b_k - 1] - 1] = y_d_data[b_k - 1];
-    }
-    st.site = &m_emlrtRSI;
-    b_st.site = &kd_emlrtRSI;
-    c_st.site = &ld_emlrtRSI;
-    b_y = sumColumnB(b_q_ruiz);
-    varargin_2 = 0.0;
+    i = P_ruiz_diag.colidx->size[0];
+    P_ruiz_diag.colidx->size[0] = 2;
+    emxEnsureCapacity_int32_T(&b_st, P_ruiz_diag.colidx, i, &o_emlrtRTEI);
+    P_ruiz_diag.colidx->data[0] = 1;
+    P_ruiz_diag.colidx->data[1] = xend;
+    st.site = &n_emlrtRSI;
+    sum(&st, P_ruiz_diag.d, P_ruiz_diag.colidx, tmpd, D_temp_colidx,
+        D_temp_rowidx);
+    st.site = &o_emlrtRSI;
+    b_st.site = &re_emlrtRSI;
+    sparse_times(&b_st, tmpd, D_temp_colidx, D_temp_rowidx, &varargin_1);
+    st.site = &o_emlrtRSI;
+    sqrt_max_abs_M_col_k = sparse_full(&st, varargin_1.d, varargin_1.colidx);
+    colEx = 0.0;
     for (k = 0; k < 298; k++) {
       absx = muDoubleScalarAbs(q_ruiz[k]);
-      if (muDoubleScalarIsNaN(absx) || (absx > varargin_2)) {
-        varargin_2 = absx;
+      if (muDoubleScalarIsNaN(absx) || (absx > colEx)) {
+        colEx = absx;
       }
     }
-    absx = 1.0 / muDoubleScalarMax(b_y / 298.0, varargin_2);
-    st.site = &n_emlrtRSI;
-    b_st.site = &rd_emlrtRSI;
-    sparse_times(&b_st, absx, b_expl_temp.d, b_expl_temp.colidx,
-                 b_expl_temp.rowidx, P_ruiz);
+    sqrt_max_abs_M_col_k = 1.0 / muDoubleScalarMax(sqrt_max_abs_M_col_k, colEx);
+    st.site = &p_emlrtRSI;
+    b_st.site = &re_emlrtRSI;
+    b_sparse_times(&b_st, sqrt_max_abs_M_col_k, b_expl_temp.d,
+                   b_expl_temp.colidx, b_expl_temp.rowidx, P_ruiz);
     for (i = 0; i < 298; i++) {
-      q_ruiz[i] *= absx;
+      q_ruiz[i] *= sqrt_max_abs_M_col_k;
     }
-    i = y_d->size[0];
-    y_d->size[0] = S_d->size[0];
-    emxEnsureCapacity_real_T(sp, y_d, i, &u_emlrtRTEI);
-    y_d_data = y_d->data;
-    cptr = S_d->size[0] - 1;
-    for (i = 0; i <= cptr; i++) {
-      y_d_data[i] = S_d_data[i];
+    i = tmpd->size[0];
+    tmpd->size[0] = expl_temp.d->size[0];
+    emxEnsureCapacity_real_T(sp, tmpd, i, &r_emlrtRTEI);
+    tmpd_data = tmpd->data;
+    ncol = expl_temp.d->size[0] - 1;
+    for (i = 0; i <= ncol; i++) {
+      tmpd_data[i] = expl_temp.d->data[i];
     }
-    i = y_colidx->size[0];
-    y_colidx->size[0] = S_colidx->size[0];
-    emxEnsureCapacity_int32_T(sp, y_colidx, i, &u_emlrtRTEI);
-    y_colidx_data = y_colidx->data;
-    cptr = S_colidx->size[0] - 1;
-    for (i = 0; i <= cptr; i++) {
-      y_colidx_data[i] = S_colidx_data[i];
+    i = D_temp_colidx->size[0];
+    D_temp_colidx->size[0] = expl_temp.colidx->size[0];
+    emxEnsureCapacity_int32_T(sp, D_temp_colidx, i, &r_emlrtRTEI);
+    D_temp_colidx_data = D_temp_colidx->data;
+    ncol = expl_temp.colidx->size[0] - 1;
+    for (i = 0; i <= ncol; i++) {
+      D_temp_colidx_data[i] = expl_temp.colidx->data[i];
     }
-    i = y_rowidx->size[0];
-    y_rowidx->size[0] = S_rowidx->size[0];
-    emxEnsureCapacity_int32_T(sp, y_rowidx, i, &u_emlrtRTEI);
-    y_rowidx_data = y_rowidx->data;
-    cptr = S_rowidx->size[0] - 1;
-    for (i = 0; i <= cptr; i++) {
-      y_rowidx_data[i] = S_rowidx_data[i];
+    i = D_temp_rowidx->size[0];
+    D_temp_rowidx->size[0] = expl_temp.rowidx->size[0];
+    emxEnsureCapacity_int32_T(sp, D_temp_rowidx, i, &r_emlrtRTEI);
+    D_temp_colidx_data = D_temp_rowidx->data;
+    ncol = expl_temp.rowidx->size[0] - 1;
+    for (i = 0; i <= ncol; i++) {
+      D_temp_colidx_data[i] = expl_temp.rowidx->data[i];
     }
-    st.site = &o_emlrtRSI;
-    e_sparse_mtimes(&st, diag_del.d, diag_del.colidx, diag_del.rowidx, y_d,
-                    y_colidx, y_rowidx, S_d, S_colidx, S_rowidx);
-    S_rowidx_data = S_rowidx->data;
-    S_colidx_data = S_colidx->data;
-    S_d_data = S_d->data;
-    *c *= absx;
-    b_y = 0.0;
+    st.site = &q_emlrtRSI;
+    e_sparse_mtimes(&st, c_expl_temp.d, c_expl_temp.colidx, c_expl_temp.rowidx,
+                    tmpd, D_temp_colidx, D_temp_rowidx, &expl_temp);
+    *c *= sqrt_max_abs_M_col_k;
+    sqrt_max_abs_M_col_k = 0.0;
     for (k = 0; k < 494; k++) {
       absx = 1.0 - del_vals[k];
       del_vals[k] = absx;
       absx = muDoubleScalarAbs(absx);
-      if (muDoubleScalarIsNaN(absx) || (absx > b_y)) {
-        b_y = absx;
+      if (muDoubleScalarIsNaN(absx) || (absx > sqrt_max_abs_M_col_k)) {
+        sqrt_max_abs_M_col_k = absx;
       }
     }
-    if (b_y <= ps->eps_ruiz) {
+    if (sqrt_max_abs_M_col_k <= ps->eps_ruiz) {
       exitg1 = true;
     } else {
       b_ruiz_iters++;
@@ -696,26 +821,28 @@ void ruiz(const emlrtStack *sp, const sparse P, const real_T q[298],
       }
     }
   }
-  emxFreeStruct_sparse1(sp, &c_expl_temp);
+  emxFreeStruct_sparse1(sp, &d_expl_temp);
+  emxFreeStruct_sparse(sp, &c_expl_temp);
   emxFreeStruct_sparse1(sp, &b_expl_temp);
-  emxFreeStruct_sparse(sp, &expl_temp);
-  emxFree_int32_T(sp, &y_rowidx);
-  emxFree_int32_T(sp, &y_colidx);
-  emxFree_real_T(sp, &y_d);
+  emxFree_real_T(sp, &tmpd);
+  emxFreeStruct_sparse(sp, &varargin_1);
+  emxFree_int8_T(sp, &maxval_colidx);
+  emxFreeStruct_sparse(sp, &P_ruiz_diag);
   emxFree_int32_T(sp, &E_temp_rowidx);
   emxFree_int32_T(sp, &E_temp_colidx);
   emxFree_real_T(sp, &E_temp_d);
-  emxFreeStruct_sparse(sp, &diag_del);
-  st.site = &p_emlrtRSI;
-  D->maxnz = sparse_parenReference(&st, S_d, S_colidx, S_rowidx, D->d,
-                                   D->colidx, D->rowidx);
-  st.site = &q_emlrtRSI;
-  E->maxnz = b_sparse_parenReference(&st, S_d, S_colidx, S_rowidx, E->d,
-                                     E->colidx, E->rowidx);
-  emxFree_int32_T(sp, &S_rowidx);
-  emxFree_int32_T(sp, &S_colidx);
-  emxFree_real_T(sp, &S_d);
+  emxFree_int32_T(sp, &D_temp_rowidx);
+  emxFree_int32_T(sp, &D_temp_colidx);
   st.site = &r_emlrtRSI;
+  D->maxnz =
+      sparse_parenReference(&st, expl_temp.d, expl_temp.colidx,
+                            expl_temp.rowidx, D->d, D->colidx, D->rowidx);
+  st.site = &s_emlrtRSI;
+  E->maxnz =
+      b_sparse_parenReference(&st, expl_temp.d, expl_temp.colidx,
+                              expl_temp.rowidx, E->d, E->colidx, E->rowidx);
+  emxFreeStruct_sparse(sp, &expl_temp);
+  st.site = &t_emlrtRSI;
   *ruiz_time = 1000.0 * toc(&st);
   emlrtHeapReferenceStackLeaveFcnR2012b((emlrtConstCTX)sp);
 }

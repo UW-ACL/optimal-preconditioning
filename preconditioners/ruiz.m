@@ -30,7 +30,8 @@ for ruiz_iters = 1:max_iters_ruiz
     M = [P_ruiz, H_ruiz.'; H_ruiz, zeros_m_m];
 
     for k = 1:npm
-        del_vals(k) = 1 / sqrt(norm(full(M(:, k)), 'inf'));
+        sqrt_max_abs_M_col_k = full(sqrt(max(abs(M(:, k)))));
+        del_vals(k) = 1 / sqrt_max_abs_M_col_k;
     end
     
     diag_del = sparse(row_indices, col_indices, del_vals, npm, npm);
@@ -43,7 +44,11 @@ for ruiz_iters = 1:max_iters_ruiz
     H_ruiz = E_temp * H_ruiz * D_temp;
     h_ruiz = E_temp * h_ruiz;
     
-    gam = 1 / max(mean(full(diag(P_ruiz))), norm(q_ruiz, 'inf'));
+    P_ruiz_diag = diag(P_ruiz);
+    P_ruiz_diag_sum = sum(P_ruiz_diag);
+    P_ruiz_diag_mean = full((1 / n) * P_ruiz_diag_sum);
+    
+    gam = 1 / max(P_ruiz_diag_mean, norm(q_ruiz, 'inf'));
     
     P_ruiz = gam * P_ruiz;
     q_ruiz = gam * q_ruiz;
