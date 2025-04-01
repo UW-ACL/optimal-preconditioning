@@ -20,7 +20,7 @@ addpath(utils_path);
 run_default_case_flag = true;
 plot_flag = true;
 generate_data_flag = true;
-save_data_flag = true;
+save_data_flag = false;
 
 p = params();
 s = solver_settings();

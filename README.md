@@ -1,6 +1,6 @@
 # Optimal Preconditioning
 
-Numerical validation of the proposed preconditioning scheme using the optimal control example from [[Yu et al. (2020)](https://ieeexplore.ieee.org/abstract/document/9295329)].
+Numerical validation of the _hypersphere preconditioner_ using a modified version of the optimal control problem from [[Yu et al. (2020)](https://ieeexplore.ieee.org/abstract/document/9295329)].
 
 ## Preprint
 
