@@ -19,7 +19,7 @@ addpath(utils_path);
 
 run_default_case_flag = true;
 plot_flag = true;
-generate_data_flag = true;
+generate_data_flag = false;
 save_data_flag = false;
 
 p = params();
@@ -203,6 +203,11 @@ if generate_data_flag == true
         [z, w, iters, pipg_time] = pipg_mex(P, q, H, h, c, D, E, sigma_max, ground_truth, p, s);
         solve_time_pipg = power_iteration_time + pipg_time;
         kkt_cond_list_original = [kkt_cond_list_original, cond_kkt(P, H)];
+        if iters == s.max_iters
+            power_iteration_time = NaN;
+            pipg_time = NaN;
+            iters = NaN;
+        end
         presolve_time_list_original = [presolve_time_list_original, power_iteration_time];
         preconditioning_iters_list_original = [preconditioning_iters_list_original, NaN];
         pipg_time_list_original = [pipg_time_list_original, pipg_time];
@@ -214,6 +219,12 @@ if generate_data_flag == true
         [z_ruiz, w_ruiz, iters_ruiz, pipg_time_ruiz] = pipg_mex(P_ruiz, q_ruiz, H_ruiz, h_ruiz, c_ruiz, D_ruiz, E_ruiz, sigma_max_ruiz, ground_truth, p, s);
         solve_time_pipg_ruiz = ruiz_time + power_iteration_time_ruiz + pipg_time_ruiz;
         kkt_cond_list_ruiz = [kkt_cond_list_ruiz, cond_kkt(P_ruiz, H_ruiz)];
+        if iters_ruiz == s.max_iters
+            ruiz_time = NaN;
+            power_iteration_time_ruiz = NaN;
+            pipg_time_ruiz = NaN;
+            iters_ruiz = NaN;
+        end
         presolve_time_list_ruiz = [presolve_time_list_ruiz, ruiz_time + power_iteration_time_ruiz];
         preconditioning_iters_list_ruiz = [preconditioning_iters_list_ruiz, ruiz_iters];
         pipg_time_list_ruiz = [pipg_time_list_ruiz, pipg_time_ruiz];
@@ -225,6 +236,12 @@ if generate_data_flag == true
         [z_qr, w_qr, iters_qr, pipg_time_qr] = pipg_dense_mex(P_qr, q_qr, H_qr, h_qr, c_qr, D_qr, E_qr, sigma_max_qr, ground_truth, p, s);
         solve_time_pipg_qr = qr_time + power_iteration_time_qr + pipg_time_qr;
         kkt_cond_list_qr = [kkt_cond_list_qr, cond_kkt(P_qr, H_qr)];
+        if iters_qr == s.max_iters
+            qr_time = NaN;
+            power_iteration_time_qr = NaN;
+            pipg_time_qr = NaN;
+            iters_qr = NaN;
+        end
         presolve_time_list_qr = [presolve_time_list_qr, qr_time + power_iteration_time_qr];
         preconditioning_iters_list_qr = [preconditioning_iters_list_qr, NaN];
         pipg_time_list_qr = [pipg_time_list_qr, pipg_time_qr];
@@ -235,6 +252,11 @@ if generate_data_flag == true
         [z_hyper, w_hyper, iters_hyper, pipg_time_hyper] = pipg_mex(P_hyper, q_hyper, H_hyper, h_hyper, c_hyper, D_hyper, E_hyper, sigma_max_hyper, ground_truth, p, s);
         solve_time_pipg_hyper = hypersphere_time + pipg_time_hyper;
         kkt_cond_list_hyper = [kkt_cond_list_hyper, cond_kkt(P_hyper, H_hyper)];
+        if iters_hyper == s.max_iters
+            hypersphere_time = NaN;
+            pipg_time_hyper = NaN;
+            iters_hyper = NaN;
+        end
         presolve_time_list_hyper = [presolve_time_list_hyper, hypersphere_time];
         preconditioning_iters_list_hyper = [preconditioning_iters_list_hyper, shifted_power_iters];
         pipg_time_list_hyper = [pipg_time_list_hyper, pipg_time_hyper];
